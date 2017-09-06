@@ -56,7 +56,7 @@ include 'assets/partials/head.php';
     <div class="container">
         <div class="header-section">
             <img src="assets/img/features.png" class="img-size">
-            <h2>Características del curso</h2>
+            <h2>Características del Sistema</h2>
         </div>
         <div class="row">
             <div class="col-sm-3">
