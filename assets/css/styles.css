@@ -1,12 +1,81 @@
-/* -- HEADER -- */
-.navbar {
-	margin-bottom: 0;
+ /* == GENERAL == */
+
+ body {
+ 	padding-top:50px;
+ 	background: url('../img/texture.png'); 
+ }
+
+ .wrap {
+	padding-top: 50px;
+	padding-bottom: 50px;
+ }
+
+ .header-section {
+ 	text-align: center;
+ 	-webkit-font-smoothing: antialiased;
+  	text-rendering: optimizelegibility;
+ }
+
+ h1 {
+ 	font-family: 'graduate', cursive;
+ 	
+ }
+
+
+/*FONTS*/
+
+/* graduate-regular - latin */
+@font-face {
+  font-family: 'Graduate';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/graduate-v4-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Graduate'), local('Graduate-Regular'),
+       url('fonts/graduate-v4-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/graduate-v4-latin-regular.woff2') format('woff2'), 
+       url('fonts/graduate-v4-latin-regular.woff') format('woff'), 
+       url('fonts/graduate-v4-latin-regular.ttf') format('truetype'),
+       url('fonts/graduate-v4-latin-regular.svg#Graduate') format('svg');
 }
 
-.jumbotron {
+
+
+
+/* -- HEADER -- */
+h2 {
+	font-family: 'pacifico', cursive;
+}  
+
+  #title-enroll .jumbotron {
+  	background: url('../img/mainBackground.png') 50% 0 no-repeat fixed;
+  	-webkit-font-smoothing: antialiased;
+  	text-rendering: optimizelegibility;
+  	text-align: center;
+  	color: white;
+  }
+
+
+.navbar {
+	padding-bottom: 5px;
+	margin-bottom: 2;
+	height: 85px;
+}
+
+/*.jumbotron {
 	background:#428BCA;
 	color:#fff;
 	padding:20px 0;
+}*/
+
+.logo-home{
+	height: 60px;
+	width: 60px;
+}
+
+.navbar .nav-title{
+	padding-top: 25px;
+	color:gray;
+	font-size: 1.5em;
 }
 
 /* -- POST -- */
@@ -45,4 +114,74 @@
 		margin-bottom: 20px;
 		margin-right: 0;
 	}
+}
+
+/* ==  FEATURES == */
+#system-features {
+	background-color: white;
+	text-align: center;
+}
+
+#system-features i {
+	margin-top: 20px;
+}
+
+/* == INSTRUCTOR ==*/
+#instructor .left-side {
+	text-align: center;
+}
+
+.badge.social{
+	background: #95A5A6;
+	font-size: 20px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 5px;
+	padding: 0;
+	-webkit-border-radius: 35px;
+	.moz-border-radius: 35px;
+	border-radius: 35px;
+}
+
+.badge.social.twitter:hover{
+	background: #55ACEE;
+}
+.badge.social.linkedin:hover{
+	background: #4875b4;
+}
+.badge.social.blog:hover{
+	background: #26c281;
+}
+
+.parag-center{
+	text-align: justify;
+}
+
+.title-instructor{
+	text-align: center;
+}
+.separator{
+	margin-top: 40px;
+	margin-bottom: 15px;
+	
+}
+
+/* == FOOTER  == */
+#footer{
+	padding: 20px;
+	background: #22313f;
+	color: white;
+/*	width: 100%;
+	position: absolute;
+  	bottom: 0;*/
+}
+
+#footer a{
+	color:#f5ab35;
+}
+
+#footer a:hover {
+	color: #f9690e;
 }
