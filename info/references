@@ -1,3 +1,6 @@
+-- FRONT END
+
+
 1. Local Fonts 
 	https://kinsta.com/blog/local-fonts/
 	https://ayudawp.com/como-almacenar-fuentes-google-localmente/
@@ -5,3 +8,9 @@
 
 2. Google Webfonts Helper
 	https://google-webfonts-helper.herokuapp.com/fonts/graduate?subsets=latin
+
+
+-- BAK END ---	
+
+1. Create Getters and Setters to the PHP Model
+	http://mikeangstadt.name/projects/getter-setter-gen/

@@ -59,14 +59,14 @@ CREATE TABLE `users` (
   `user_email` varchar(64) NOT NULL,
   `name` varchar(60) DEFAULT NULL,
   `privilege` int(11) DEFAULT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date_reg` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id_user`, `user_name`, `user_password_hash`, `user_email`, `name`, `privilege`, `fecha_registro`) VALUES
+INSERT INTO `users` (`id_user`, `user_name`, `user_password_hash`, `user_email`, `name`, `privilege`, `date_reg`) VALUES
 (1, 'klvst3r', '1234', 'klvst3r@gmail.com', 'Klvst3r', 1, '2017-09-06 23:00:22');
 
 --
