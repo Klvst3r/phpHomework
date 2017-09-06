@@ -6,8 +6,8 @@
  }
 
  .wrap {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
  }
 
  .header-section {
@@ -47,6 +47,7 @@ h2 {
 }  
 
   #title-enroll .jumbotron {
+  	margin-top: 15px;
   	background: url('../img/mainBackground.png') 50% 0 no-repeat fixed;
   	-webkit-font-smoothing: antialiased;
   	text-rendering: optimizelegibility;
@@ -58,14 +59,14 @@ h2 {
 .navbar {
 	padding-bottom: 5px;
 	margin-bottom: 2;
-	height: 85px;
+	height: 80px;
 }
 
-/*.jumbotron {
+.jumbotron {
 	background:#428BCA;
 	color:#fff;
 	padding:20px 0;
-}*/
+}
 
 .logo-home{
 	height: 60px;
@@ -78,34 +79,7 @@ h2 {
 	font-size: 1.5em;
 }
 
-/* -- POST -- */
-.main {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
 
-.post {
-	padding-bottom:20px;
-	margin-bottom:20px;
-	border-bottom:1px solid #999;
-}
-
-.post .post-title a {
-	color:#333;
-}
-
-.post .thumb {
-	margin-right:10px;
-	width:40%;
-}
-
-.post .thumb img {
-	width:100%;
-}
-
-.post .contenedor-botones {
-	width: 100%;
-}
 
 /* -- Media Querie -- */
 @media screen and (max-width: 768px) {
@@ -126,47 +100,12 @@ h2 {
 	margin-top: 20px;
 }
 
-/* == INSTRUCTOR ==*/
-#instructor .left-side {
-	text-align: center;
+.img-size {
+	height: 85px;
+	width: 85px;
 }
 
-.badge.social{
-	background: #95A5A6;
-	font-size: 20px;
-	height: 35px;
-	width: 35px;
-	text-align: center;
-	line-height: 35px;
-	margin-top: 5px;
-	padding: 0;
-	-webkit-border-radius: 35px;
-	.moz-border-radius: 35px;
-	border-radius: 35px;
-}
 
-.badge.social.twitter:hover{
-	background: #55ACEE;
-}
-.badge.social.linkedin:hover{
-	background: #4875b4;
-}
-.badge.social.blog:hover{
-	background: #26c281;
-}
-
-.parag-center{
-	text-align: justify;
-}
-
-.title-instructor{
-	text-align: center;
-}
-.separator{
-	margin-top: 40px;
-	margin-bottom: 15px;
-	
-}
 
 /* == FOOTER  == */
 #footer{

@@ -55,24 +55,24 @@ include 'assets/partials/head.php';
 <section class="wrap" id="system-features">
     <div class="container">
         <div class="header-section">
-            <img src="assets/img/features.png" class="img-circle">
+            <img src="assets/img/features.png" class="img-size">
             <h2>Características del curso</h2>
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <span class="glyphicon glyphicon-user"></span>
+                <i><img src="assets/img/user_b.png" alt="User"/></i>
                 <h4>Administración de Usuarios</h4>
             </div>
             <div class="col-sm-3">
-                <i class="fa fa-clock-o fa-2x"></i>
+                <i><img src="assets/img/task_b.png" alt="Task"/></i>
                 <h4>Registro de Tareas</h4>
             </div>
             <div class="col-sm-3">
-                <i class="fa fa-graduation-cap fa-2x"></i>
+                <i><img src="assets/img/pdf_b.png" alt="PDF"/></i>
                 <h4>Informes en PDF</h4>
             </div>
             <div class="col-sm-3">
-                <i class="fa fa-mobile fa-2x"></i>
+                <i><img src="assets/img/mobil_b.png" alt="Mobile"/></i>
                 <h4>Accesible desde cualquier dispositivo</h4>
             </div>
         </div><!-- .row -->
