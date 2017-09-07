@@ -41,7 +41,7 @@ class UserDAO extends Connect {
 		// of the system as they are visible via HTML.
 		
 		
-		$query = "SELECT id_user, user_name, user_email, name, privilege, date_reg FROM users WHERE user_name = :user_name AND 
+		$query = "SELECT id_user, user_name, user_password_hash, user_email, name, privilege, date_reg FROM users WHERE user_name = :user_name AND 
 		user_password_hash = :password";
 		
 		
@@ -79,21 +79,21 @@ class UserDAO extends Connect {
 			//resualtas of the query
 			//return "OK";
 			//Returns the number of rows with the fetch function and treats it as an array
-			//$rows = $result->fetch();
+			$rows = $result->fetch();
 
 			//We validate against SQL inyecion on the BackEnd side
-			//if($result->r){
+			if($rows["user_name"] == $user->getUser_name() && $rows["user_password_hash"] == $user->getUser_password_hash()){
 
-				//return true;
-				return "OK";
+				return true;
+				//return "OK";
 				
 			}//if rows
 	
-		//}
+		}//if$result
 		//at all times we return false unless there are values ​​posted in the query
-		//return false;
+		return false;
 		//If you want to check false result
-		return "Falso";
+		//return "Falso";
 	}
 
 	
