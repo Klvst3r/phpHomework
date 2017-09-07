@@ -70,12 +70,30 @@ class UserDAO extends Connect {
 		$result->execute();
 
 		
-		if(count($result)){
-			return true;
-		}
-		
-		return false;
+		//We count the result, if there are results true otherwise false
+		//It is corrected since the result is in a static object and not in the variable $ result
+		//if(count($result)){
+		if($result->rowCount() > 0){
+			//return true;
+			//If it is desired to verify positive result and it will generate the Boolean exit of the number of 
+			//resualtas of the query
+			//return "OK";
+			//Returns the number of rows with the fetch function and treats it as an array
+			//$rows = $result->fetch();
 
+			//We validate against SQL inyecion on the BackEnd side
+			//if($result->r){
+
+				//return true;
+				return "OK";
+				
+			}//if rows
+	
+		//}
+		//at all times we return false unless there are values ​​posted in the query
+		//return false;
+		//If you want to check false result
+		return "Falso";
 	}
 
 	

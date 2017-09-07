@@ -9,3 +9,7 @@ Developments Steps
 7.  Create a Connection to the Database [data/Connect.php]
 9.  Create Model User [model/User.php]
 10. Create Data Access Object to User [data/UserDAO.php]
+11. DAO for user and password [data/UserDAO.php]
+12. Execute login, make User Controller [controller/UserController.php]
+13. Create Index to test the connection and test UserDAO [view/index.php | data/UserDAO.php]
+14. Test Successfull Conection with user_name and password [view/index.php(klvst3r/1234)]

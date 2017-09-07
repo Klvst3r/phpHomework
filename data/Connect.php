@@ -11,7 +11,7 @@
 			//var of Connecton
 			$cn = new PDO("mysql:host=localhost;dbname=phpHomework","dev","desarrollo");
 
-			echo "Connection Successful";
+			//echo "Connection Successful";
 			return $cn;
 
 		} catch(PDOException $ex) {
