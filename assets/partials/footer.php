@@ -13,7 +13,7 @@
 	<!-- Se incluye la referencia del CSS para la validación con el plugin overHang,js de jQuery UI -->
 	<script type="text/javascript" src="assets/js/overhang.min.js"></script>
     
-	<!-- <script src="assets/js/app.js"></script> -->
+	<script src="assets/js/app.js"></script> 
 	
 
 	
