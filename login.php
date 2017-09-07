@@ -17,8 +17,8 @@
 							<legend>Iniciar Sesión</legend>
 						
 							<div class="form-group">
-								<label for="usuario">Usuario</label>
-								<input type="text" name="txtUsuario" class="form-control" id="usuario" autocomplete="off" autofocus required placeholder="Usuario">
+								<label for="user_name">Usuario</label>
+								<input type="text" name="user_name" class="form-control" id="user_name" autocomplete="off" autofocus required placeholder="Usuario">
 							</div>
 							<div class="form-group">
 								<label for="password">Password</label>

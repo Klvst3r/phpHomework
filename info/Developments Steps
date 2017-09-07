@@ -1,0 +1,11 @@
+Developments Steps
+
+1.  Create Structure of Database
+2.  Export Structure of DataBase
+3.  Add Assets
+4.  Create Index Page Front End [index.php]
+5.  Create Login Page Front and Back End [login.php]
+6.  Insert and export Initial data of Login Access
+7.  Create a Connection to the Database [data/Connect.php]
+9.  Create Model User [model/User.php]
+10. Create Data Access Object to User [data/UserDAO.php]
