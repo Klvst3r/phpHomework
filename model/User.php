@@ -21,7 +21,7 @@ class User {
 	/*
 	Google: php getter and setters generator a falta de plugin pegando la clase en:
 	http://mikeangstadt.name/projects/getter-setter-gen/
-	Generar y establecer
+	To Generate y establish
 	*/
 
 	public function getId_user(){

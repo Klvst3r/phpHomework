@@ -2,5 +2,5 @@
 
 include '../controller/UserController.php';
 
-echo UserController::login("klvst3r","1234");
+echo UserController::login("klvst3r","123");
 

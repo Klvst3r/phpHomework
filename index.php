@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 include 'assets/partials/head.php';
 /*include 'assets/partials/menu.php';*/
