@@ -17,3 +17,4 @@ Developments Steps
 16. Make validation of data from login in AJAX [assets/js/app.js]
 17. Use Plugin overhang to make personal config responses [assets/js/overhang.min.js | assets/css/overhang.min.css]
 18. Success Response and status true if it is correct login and redirect or false return to login [assets/js/app.js]
+19. Create file helps to validate and clean flieds and use in validaCode [helps/helps.php | view/validaCode.php]

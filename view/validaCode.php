@@ -2,6 +2,8 @@
 
 include '../controller/UserController.php';
 
+include('../helps/helps.php');
+
 
 
 header('Content-type: application/json');
@@ -10,20 +12,24 @@ header('Content-type: application/json');
 
 $result = array();
 
-if(isset($_POST["user_name"]) && isset($_POST["user_password"])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-	$user_name = $_POST["user_name"];
-	$user_password = $_POST["user_password"];
+	if(isset($_POST["user_name"]) && isset($_POST["user_password"])){
 
-	$result = array("status" => "true");
+		$user_name = $validate_field($_POST["user_name"]);
+		$user_password = $validate_field($_POST["user_password"]);
 
-	if(UserController::login($user_name, $user_password)){
+		$result = array("status" => "true");
+
+		if(UserController::login($user_name, $user_password)){
 		//return print "Logeado";
-		return print(json_encode($result));
+			return print(json_encode($result));
+		}
+
+
 	}
 
-
-}
+}//if $_SERVER
 
 $result = array("status" => "false");
 return print(json_encode($result));
