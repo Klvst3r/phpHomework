@@ -15,11 +15,11 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- SECCION DE FUENTES EN LINEA -->
 
     <!-- Se incluye la referencia CSS de la libreria overHang.js -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/overhang.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/overhang.min.css" /> 
 
+    <!-- SECCION DE FUENTES EN LINEA -->
     <!-- Wontawesome Icons -->
     <!--     <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css"> -->
 

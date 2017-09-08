@@ -13,3 +13,7 @@ Developments Steps
 12. Execute login, make User Controller [controller/UserController.php]
 13. Create Index to test the connection and test UserDAO [view/index.php | data/UserDAO.php]
 14. Test Successfull Conection with user_name and password [view/index.php(klvst3r/1234)]
+15. Receive data in ValidaCode from Login [view/validaCode.php]
+16. Make validation of data from login in AJAX [assets/js/app.js]
+17. Use Plugin overhang to make personal config responses [assets/js/overhang.min.js | assets/css/overhang.min.css]
+18. Success Response and status true if it is correct login and redirect or false return to login [assets/js/app.js]
