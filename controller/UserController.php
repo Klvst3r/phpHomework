@@ -17,12 +17,12 @@ class UserController {
 	}
 
 	// We get the data from the database
-	public function getUser($user_name, $password){
+	public function getUser($user_name, $user_password){
 
 		$obj_user = new User();
 		
-		$obj_user->setUser($user_name);
-		$obj_user->setPassword($password);
+		$obj_user->setUser_name($user_name);
+		$obj_user->setUser_password_hash($user_password);
 		//We send the object from UserDAO
 		return UserDAO::getUser($obj_user);
 

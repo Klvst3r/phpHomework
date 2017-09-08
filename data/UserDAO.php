@@ -32,7 +32,7 @@ class UserDAO extends Connect {
 	 * the imported user entity in the second include.
 	 */
 	/* Method that serves to validate the login
-     * @param object $usuario
+     * @param object $user
 	 * @return boolean
 	 */
 	
@@ -42,7 +42,7 @@ class UserDAO extends Connect {
 		
 		
 		$query = "SELECT id_user, user_name, user_password_hash, user_email, name, privilege, date_reg FROM users WHERE user_name = :user_name AND 
-		user_password_hash = :password";
+		user_password_hash = :user_password";
 		
 		
 		//We select all user information
@@ -64,7 +64,7 @@ class UserDAO extends Connect {
 		$pass_bd = $user->getUser_password_hash();
 
 
-		$result->bindParam(":password", $pass_bd);
+		$result->bindParam(":user_password", $pass_bd);
 
 		//We run the query the PDO connection
 		$result->execute();
@@ -94,7 +94,54 @@ class UserDAO extends Connect {
 		return false;
 		//If you want to check false result
 		//return "Falso";
-	}
+	} //function_login
+
+
+	/*
+	 * after doing the validation you have to obtain the user
+	 */
+	/**
+	 * Method used to obtain a user
+	 *
+	 * @param object $user
+	 * @return object
+	 */
+	
+	 public static function getUser($user){
+		// Hay que especificar que campos necesitamos
+
+		$query = "SELECT id_user, user_name, user_email, name, privilege, date_reg FROM users WHERE user_name = :user_name AND 
+		user_password_hash = :user_password";
+		
+		self::getConection();
+		
+		$result = self::$cnx->prepare($query);
+
+		$user_bd = $user->getUser_name();
+		$result->bindParam(":user_name", $user_bd);
+		
+		$pass_bd = $user->getUser_password_hash();
+		$result->bindParam(":user_password", $pass_bd);
+
+		//Execution
+		$result->execute();
+
+		$rows = $result->fetch();
+
+		$user = new User();
+		//We send the information through its properties
+		//In this way we will already have loaded in the new object in the instance of the entity
+		$user->setId_user($rows["id_user"]);
+		$user->setUser_name($rows["user_name"]);
+		$user->setUser_email($rows["user_email"]);
+		$user->setName($rows["name"]);
+		$user->setPrivilege($rows["privilege"]);
+		$user->setDate_reg($rows["date_reg"]);
+
+		//Return the entity
+		return $user;
+		
+	} //function getUsuario
 
 	
 
