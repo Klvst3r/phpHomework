@@ -19,3 +19,4 @@ Developments Steps
 18. Success Response and status true if it is correct login and redirect or false return to login [assets/js/app.js]
 19. Create file helps to validate and clean flieds and use in validaCode [helps/helps.php | view/validaCode.php]
 20. Obtain the user_name for the session, create getUser [data/UserDAO.php] and create controller [controller/UserController.php]
+21. Work with session [view/validaCode.php], redirect [assets/js/apps.js] and Create Admin [view/admin.php]

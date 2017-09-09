@@ -1,4 +1,7 @@
 <?php
+
+
+
  class Connect {
  	/*
  	 * Connection to DataBase 

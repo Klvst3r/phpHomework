@@ -4,7 +4,7 @@ include '../controller/UserController.php';
 
 include '../helps/helps.php';
 
-
+session_start();
 
 header('Content-type: application/json');
 
@@ -26,10 +26,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 		if(UserController::login($user_name, $user_password)){
 		//return print "Logeado";
-			//return print(json_encode($result));
+			
+
 			$user  = UserController::getUser($user_name, $user_password);
-			echo $user->getUser_name();
-		}
+			
+			//echo $user->getUser_name();
+			$_SESSION["user"] = array (
+				"id_user"		=> $user->getId_user(),
+				"name"			=> $user->getName(),
+				"user_name"		=> $user->getUser_name(),
+				"user_email"	=> $user->getUser_email(),
+				"privilege"		=> $user->getPrivilege()
+				
+			);//$_SESSION
+
+			return print(json_encode($result));
+			
+		}//if $UserController
 
 
 	}

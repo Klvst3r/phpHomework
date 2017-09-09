@@ -56,14 +56,10 @@ class UserDAO extends Connect {
 
 		//The parameters are sent the user in the form by user_name field, the object $user, to the user of the form
 		$user_bd = $user->getUser_name();
-
-
 		$result->bindParam(":user_name", $user_bd);
 
 		//The same with the password, Passing the parameter directly to this query
 		$pass_bd = $user->getUser_password_hash();
-
-
 		$result->bindParam(":user_password", $pass_bd);
 
 		//We run the query the PDO connection

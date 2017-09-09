@@ -24,7 +24,7 @@ $(document).ready(function(){
 					type: "success",
 	  					message: "Usuario Encontrado, te estamos redirigiendo...",
 	  					callback: function(){
-	  						window.location.href = "admin.php";
+	  						window.location.href = "logged_in.php";
 	  					}
 					});
 				}else {

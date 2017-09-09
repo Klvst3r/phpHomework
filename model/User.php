@@ -61,7 +61,7 @@ class User {
 	}
 
 	public function setUser_password_hash($user_password_hash){
-		$this->user_password_hash = $user_password_hash;
+		$this->user_password_hash = md5($user_password_hash);
 	}
 
 	public function getPrivilege(){
