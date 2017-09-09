@@ -20,3 +20,10 @@ Developments Steps
 19. Create file helps to validate and clean flieds and use in validaCode [helps/helps.php | view/validaCode.php]
 20. Obtain the user_name for the session, create getUser [data/UserDAO.php] and create controller [controller/UserController.php]
 21. Work with session [view/validaCode.php], redirect [assets/js/apps.js] and Create Admin [view/admin.php]
+22. Creating Close Session [view/signout.php] 
+23, Creating menu, and main header and main footer [partials/menu.php | partials/mainHead.php | partials/mainFooter.php]
+24. Working with diferenst [logged_in.php] user and privileges [partials/menu.php]
+
+
+
+Verificar si en logged_in se esta recibiendo el submit en caso contrario es un adelante o atras
