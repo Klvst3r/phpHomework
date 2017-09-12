@@ -1,7 +1,12 @@
 <?php
 
-//if(isset($_SESSION["usuario"])){
-?>       
+
+if(isset($_SESSION["user"])){
+  $code = $_SESSION["user"]["code"];
+  if($code == "true" and $_SESSION["user"]["code"] == "true"){
+
+?>
+
        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -10,7 +15,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Klvst3r - phpHomeWork</a>
+            <a class="navbar-brand" href="#">Klvst3r - phpHomeWork</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -19,7 +24,7 @@
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> session <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION["user"]["name"]; ?><i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
@@ -27,7 +32,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="salir.php"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
+                    <li><a href="../view/signout.php"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -57,10 +62,10 @@
                        
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-table fa-fw"></i> Productos</a>
+                        <a href="#"><i class="fa fa-table fa-fw"></i> Calendarios</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-edit fa-fw"></i> Ventas</a>
+                        <a href="#"><i class="fa fa-edit fa-fw"></i> Actividades</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Administración<span class="fa arrow"></span></a>
@@ -83,8 +88,18 @@
     </nav>
 
 <?php
-/*}else{
-            //echo "No existen variables de sesión";
-            return vista::crear("admin.logout");
-        }*/
+
+//After login turn off code
+$_SESSION["user"]["code"] = "false";
+
+}else{
+      $code ="false";
+        header("location:login.php");
+      }
+
+
+}else {
+
+header("location:login.php");
+}
 ?>

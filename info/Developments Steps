@@ -26,6 +26,8 @@ Developments Steps
 25. Validatión against return return and forward [assets/partials/menu.php | assets/partials/menu.php]
 26. Creating admin page [admin.php] and folder of admin [view/admin/index.php] 
 27. Creating assets for admin [admin/inc/adminHead.php | admin/inc/adminHead.php | admin/inc/adminFooter.php]
+28. Add assets for admin [assets/bootstrap, assets/css, assets/font-awesome, assets/jquery, assets/jss, assets/metisMenu]
+
 
 
 

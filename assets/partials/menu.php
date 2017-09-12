@@ -1,8 +1,8 @@
 <?php
 
-if(isset($_SESSION["user"])){
+/*if(isset($_SESSION["user"])){
   $code = $_SESSION["user"]["code"];
-  if($code == "true" and $_SESSION["user"]["code"] == "true"){
+  if($code == "true" and $_SESSION["user"]["code"] == "true"){*/
 
 ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -44,16 +44,17 @@ if(isset($_SESSION["user"])){
 <?php
 
 //After login turn off code
-$_SESSION["user"]["code"] = "false";
+/*$_SESSION["user"]["code"] = "false";
 
 }else{
       $code ="false";
-        header("location:login.php");
+        //header("location:login.php");
+        header("location:view/signout.php");
       }
 
 
 }else {
 
 header("location:login.php");
-}
+}*/
 ?>

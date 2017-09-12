@@ -1,3 +1,9 @@
+
+    <?php 
+    session_start(); 
+    //$_SESSION["user"]["code"] = "true";
+    ?>
+
 	<title>Administración</title>
 
 	<meta charset="utf-8">
@@ -15,6 +21,7 @@
 	<link href="assets/css/jquery-confirm.min.css" rel="stylesheet">
 
 	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">	
+
 
 
 

@@ -43,12 +43,19 @@
 
             <!-- End Work Area -->
 
-
+            <div>
+                <?php
+                echo $_SESSION["user"]["name"];
+                echo "<br>";
+                echo $_SESSION["user"]["code"];
+                ?>
+            </div>
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
+    
 
     <?php  include 'inc/adminFooter.php'; ?>
 
