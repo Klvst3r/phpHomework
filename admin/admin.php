@@ -11,7 +11,7 @@
 
 <head>
 
-    <?php include'admin/inc/adminHead.php'; ?>
+    <?php include'inc/adminHead.php'; ?>
 
 </head>
 
@@ -20,7 +20,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <?php  include'admin/inc/adminMenu.php'; ?>
+        <?php  include'inc/adminMenu.php'; ?>
 
         <div id="page-wrapper">
             <div class="row">
@@ -50,7 +50,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php  include 'admin/inc/adminFooter.php'; ?>
+    <?php  include 'inc/adminFooter.php'; ?>
 
 </body>
 

@@ -29,7 +29,7 @@ include 'assets/partials/menu.php';
 					<p>Panel de Control | <span class="label label-info">Redirigiendo a su menu...</span></p>
 					<?php
 					//echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=administrador.php'<head/>";
-					header("location:admin.php"); 
+					header("location:admin/"); 
 					//$_SESSION["user"]["code"] = "false";
 				}else{
 					//header("location:usuario.php"); 
