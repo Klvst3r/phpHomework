@@ -27,9 +27,9 @@ if(isset($_SESSION["user"])){
                     <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION["user"]["name"]; ?><i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
+                    <li><a href="action.php?a=1"><i class="fa fa-user fa-fw"></i> Perfil</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
+                    <li><a href="action.php?a=2"><i class="fa fa-gear fa-fw"></i> Configuración</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="../view/signout.php"><i class="fa fa-sign-out fa-fw"></i> Salir</a>

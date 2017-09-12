@@ -1,7 +1,7 @@
 
     <?php 
     session_start(); 
-    //$_SESSION["user"]["code"] = "true";
+    $_SESSION["user"]["code"] = "true";
     ?>
 
 	<title>Administración</title>

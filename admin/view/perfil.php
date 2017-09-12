@@ -17,7 +17,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Principal</h1>
+                    <h1 class="page-header">Perfil</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -25,25 +25,16 @@
             
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                <h3 class="panel-title">Usuarios</h3>
+                <h3 class="panel-title">Usuario</h3>
                 </div>
                 <div class="panel-body">
-                    <a href="usuario.php" class="btn btn-default btn-large"><i class="fa fa-users"></i> Listado de usuarios</a>
+                    Información Pefil
                 </div>
             </div>          
 
             <!--TERMINO CONTENIDO -->
 
-             <div>
-                <?php
-                echo $_SESSION["user"]["name"];
-                echo "<br>";
-                //$_SESSION["user"]["op"] = "op";
-                echo $_SESSION["user"]["code"];
-                echo "<br>";
-                echo $_SESSION["user"]["op"];
-                ?>
-            </div>
+             
         </div>
         <!-- /#page-wrapper -->
     </div>

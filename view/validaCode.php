@@ -38,7 +38,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				"user_name"		=> $user->getUser_name(),
 				"user_email"	=> $user->getUser_email(),
 				"privilege"		=> $user->getPrivilege(),
-				"code"			=> $code
+				"code"			=> $code,
+				"op"      		=> "false"
 				
 			);//$_SESSION
 
