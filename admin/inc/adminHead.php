@@ -1,1 +1,1 @@
-aqui va el head del menu de administrador
+head del menu de administrador

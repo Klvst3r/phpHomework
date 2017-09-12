@@ -1,1 +1,1 @@
-Aqui va el menu de administrador
+menu de administrador y validación contra accesos sin logearse

@@ -1,1 +1,1 @@
-aqui va el footer del administrador
+footer del administrador
