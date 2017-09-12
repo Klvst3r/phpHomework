@@ -1,4 +1,7 @@
-<?php include 'assets/partials/head.php'; ?>
+<?php include 'assets/partials/head.php'; 
+
+$code = $_POST["code"]="false";
+?>
 
 
 
@@ -15,6 +18,9 @@
 					<div class="panel-body">
 						<form id="loginForm" action="view/validaCode.php" method="POST" role="form">
 							<legend>Iniciar Sesión</legend>
+							<div>
+								<input type="hidden" name="code" value="true">
+							</div>
 						
 							<div class="form-group">
 								<label for="user_name">Usuario</label>

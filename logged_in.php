@@ -4,6 +4,9 @@ include 'assets/partials/menu.php';
 
 //verifing if user's session exist
 //if(isset($_SESSION["user"])){
+
+//$code = $_SESSION["user"]["code"];
+
 	
 ?>
 
@@ -18,13 +21,16 @@ include 'assets/partials/menu.php';
 				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["user"]["name"]; ?></h1>
 				<?php 
 					//echo $_SESSION["user"]["privilege"]==1?'Admin':'Registro'; 
+			//if($code == "true" and $_SESSION["user"]["code"] == "true"){
 				if($_SESSION["user"]["privilege"]==1){
+
 
 					?>
 					<p>Panel de Control | <span class="label label-info">Redirigiendo a su menu...</span></p>
 					<?php
-					echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=administrador.php'<head/>";
-					//header("location:administrador.php"); 
+					//echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=administrador.php'<head/>";
+					header("location:admin.php"); 
+					//$_SESSION["user"]["code"] = "false";
 				}else{
 					//header("location:usuario.php"); 
 					?>
@@ -32,6 +38,12 @@ include 'assets/partials/menu.php';
 					<?php
 					echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=usuario.php'<head/>";
 				}
+
+			/*}
+			else{
+			$code ="false";
+				header("location:login.php");
+			}*/
 
 
 				?>
@@ -46,6 +58,12 @@ include 'assets/partials/menu.php';
 </div><!-- /.container -->
 
 <?php 
+/*echo $code;
+echo "<br/>";
+echo $_SESSION["user"]["code"];*/
+
+
+
 
 //temporaly unused
 //header("location:login.php");

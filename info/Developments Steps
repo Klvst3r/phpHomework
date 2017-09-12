@@ -23,7 +23,9 @@ Developments Steps
 22. Creating Close Session [view/signout.php] 
 23, Creating menu, and main header and main footer [partials/menu.php | partials/mainHead.php | partials/mainFooter.php]
 24. Working with diferenst [logged_in.php] user and privileges [partials/menu.php]
+25. Validatión against return return and forward [assets/partials/menu.php | assets/partials/menu.php]
+26. Creating admin page [admin.php] and folder of admin [view/admin/index.php] 
+27. Creating assets for admin [admin/inc/adminHead.php | admin/inc/adminHead.php | admin/inc/adminFooter.php]
 
 
 
-Verificar si en logged_in se esta recibiendo el submit en caso contrario es un adelante o atras

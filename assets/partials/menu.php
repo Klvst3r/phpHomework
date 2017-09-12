@@ -1,6 +1,8 @@
 <?php
 
 if(isset($_SESSION["user"])){
+  $code = $_SESSION["user"]["code"];
+  if($code == "true" and $_SESSION["user"]["code"] == "true"){
 
 ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -14,6 +16,8 @@ if(isset($_SESSION["user"])){
           </button>
           <a class="navbar-brand">Panel de Control | 
             <span class="label label-info"><?php echo $_SESSION["user"]["privilege"]==1?'Admin':'Registro'; ?></span></a>
+
+
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -29,6 +33,8 @@ if(isset($_SESSION["user"])){
             <?php
              } 
            }
+
+           
             ?>
           </ul>
         </div><!--/.nav-collapse -->
@@ -36,6 +42,15 @@ if(isset($_SESSION["user"])){
     </nav>
 
 <?php
+
+//After login turn off code
+$_SESSION["user"]["code"] = "false";
+
+}else{
+      $code ="false";
+        header("location:login.php");
+      }
+
 
 }else {
 

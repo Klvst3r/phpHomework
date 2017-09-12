@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	if(isset($_POST["user_name"]) && isset($_POST["user_password"])){
 
+		$code = $_POST["code"];
 		$user_name = validate_field($_POST["user_name"]);
 		$user_password = validate_field($_POST["user_password"]);
 
@@ -36,7 +37,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				"name"			=> $user->getName(),
 				"user_name"		=> $user->getUser_name(),
 				"user_email"	=> $user->getUser_email(),
-				"privilege"		=> $user->getPrivilege()
+				"privilege"		=> $user->getPrivilege(),
+				"code"			=> $code
 				
 			);//$_SESSION
 
