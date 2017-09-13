@@ -13,7 +13,7 @@ if(isset($a)){
 			require_once("view/config.php");
 			break;
 		case 3:
-			require_once("views/modificar.php");
+			require_once("view/users.php");
 			break;
 		case 4:
 			require_once("views/modifDatos.php");

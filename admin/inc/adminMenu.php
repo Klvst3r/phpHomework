@@ -71,7 +71,7 @@ if(isset($_SESSION["user"])){
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Administración<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="usuarios.php">Usuarios</a>
+                                <a href="action.php?a=3">Usuarios</a>
                             </li>
                             <li>
                                 <a href="privilegios.php">Privilegios</a>
