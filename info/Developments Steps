@@ -27,6 +27,9 @@ Developments Steps
 26. Creating admin page [admin.php] and folder of admin [view/admin/index.php] 
 27. Creating assets for admin [admin/inc/adminHead.php | admin/inc/adminHead.php | admin/inc/adminFooter.php]
 28. Add assets for admin [assets/bootstrap, assets/css, assets/font-awesome, assets/jquery, assets/jss, assets/metisMenu]
+29. Creating action for admin menu [admin/action.php]
+30. Creatin of user perfil and config [admin/view/perfil.php | admin/view/config.php]
+31. Creating view list user [admin/view/users.php]
 
 
 
