@@ -1,0 +1,126 @@
+PHP References PDO
+
+http://www.mclibre.org/consultar/php/lecciones/php_db_pdo.html
+
+http://fernando-gaitan.com.ar/php-orientado-a-objetos-parte-12-pdo-buscar-registros-en-una-base-de-datos/
+
+http://josehernandez.xyz/2012/01/07/consultas-base-datos-pdo.html
+
+PDOStatement::getColumnMeta
+http://php.net/manual/es/pdostatement.getcolumnmeta.php
+
+PDO::cubrid_schema
+http://php.net/manual/es/pdo.cubrid-schema.php
+
+PDOStatement::fetchAll
+http://php.net/manual/es/pdostatement.fetchall.php
+
+PDOStatement::fetchColumn
+http://php.net/manual/es/pdostatement.fetchcolumn.php
+
+mysqli::$field_count
+http://php.net/manual/es/mysqli.field-count.php
+
+mysql_num_fields (obsolete)
+http://php.net/manual/es/function.mysql-num-fields.php
+
+Funciones de MySQL (PDO_MYSQL) 
+http://php.net/manual/es/ref.pdo-mysql.php
+
+Extensión MySQL mejorada 
+http://php.net/manual/es/book.mysqli.php
+
+mysqli_result::fetch_field_direct
+http://php.net/manual/es/mysqli-result.fetch-field-direct.php
+
+mysqli_result::fetch_field
+http://php.net/manual/es/mysqli-result.fetch-field.php
+
+mysqli::$field_count
+http://php.net/manual/es/mysqli.field-count.php
+
+PDOStatement::columnCount
+http://php.net/manual/es/pdostatement.columncount.php
+
+mysqli_result::fetch_field
+http://php.net/manual/es/mysqli-result.fetch-field.php
+
+mysql_fetch_row
+http://php.net/manual/es/function.mysql-fetch-row.php
+
+mysqli_result::$field_count
+http://php.net/manual/es/mysqli-result.field-count.php
+
+
+Reference Function to obtain table data and meta data "Used to obtain meta for table"
+/*-----------------
+PDOStatement::getColumnMeta
+http://php.net/manual/en/pdostatement.getcolumnmeta.php
+
+----------------*/
+
+
+public static function getTableUsers(){
+
+		$query = " SELECT id_user, user_name, user_email, name, date_reg FROM users";
+
+		self::getConection();
+
+		$result = self::$cnx->prepare($query);
+
+		$result->execute();
+
+
+		foreach(range(0, $result->columnCount() - 1) as $column_index)
+			{
+				$meta[] = $result->getColumnMeta($column_index);
+			}
+
+			echo $meta["0"]["name"]."<br/>";
+			echo $meta["1"]["name"]."<br/>";
+			echo $meta["2"]["name"]."<br/>";
+			echo $meta["3"]["name"]."<br/>";
+			echo $meta["4"]["name"]."<br/>";
+
+
+			/*while($row = $result->fetch(PDO::FETCH_NUM))
+			{*/
+				/*foreach($row as $column_index => $column_value)
+				{*/
+    				
+    				//echo "nom Col";
+    				//var_dump($meta);
+    				//echo $meta["0"]["name"];
+				//}
+			//}
+
+
+		$rows = $result->rowCount();
+
+		if($rows > 0){
+
+			echo "Hay " . $rows . " usuarios en la BD <br/>";
+
+
+			for($i = 0; $i < $rows; $i++){
+				$data = $result->fetch();
+				echo $data["user_name"]."<br/>";
+			}
+
+			$cols = $result->columnCount();
+
+    		echo "<br/>";
+    		printf("EL resultado tiene %d campos.\n", $cols);
+
+    		
+    	/*	$nameCols = $result->fetchColumn(0);
+    		echo "nombre =" . $nameCols . "\n";*/
+        
+
+		}else{
+			echo "No hay usuarios en la BD";
+		}
+
+		//$rows;
+		
+ 	}

@@ -54,31 +54,29 @@ class ListUser extends Connect {
 		$result->execute();
 
 
+		$rows = $result->rowCount();
+		$cols = $result->columnCount();
+
+		/* -- Cols -- */
+    		printf("El resultado tiene %d campos.\n", $cols);
+		echo "<br/>";
+
 		foreach(range(0, $result->columnCount() - 1) as $column_index)
 			{
 				$meta[] = $result->getColumnMeta($column_index);
 			}
 
-			echo $meta["0"]["name"]."<br/>";
-			echo $meta["1"]["name"]."<br/>";
-			echo $meta["2"]["name"]."<br/>";
-			echo $meta["3"]["name"]."<br/>";
-			echo $meta["4"]["name"]."<br/>";
+
+			for ($i=0; $i < $cols; $i++){
+				echo $meta[$i]["name"]."<br/>";	
+			}
+			
 
 
-			/*while($row = $result->fetch(PDO::FETCH_NUM))
-			{*/
-				/*foreach($row as $column_index => $column_value)
-				{*/
-    				
-    				//echo "nom Col";
-    				//var_dump($meta);
-    				//echo $meta["0"]["name"];
-				//}
-			//}
+		/* -- End Cols -- */			
+		echo "<br/>";
 
-
-		$rows = $result->rowCount();
+		/* -- Rows -- */
 
 		if($rows > 0){
 
@@ -90,22 +88,12 @@ class ListUser extends Connect {
 				echo $data["user_name"]."<br/>";
 			}
 
-			$cols = $result->columnCount();
-
-    		echo "<br/>";
-    		printf("EL resultado tiene %d campos.\n", $cols);
-
-    		
-    	/*	$nameCols = $result->fetchColumn(0);
-    		echo "nombre =" . $nameCols . "\n";*/
-        
-
-
+		/* -- End Rows -- */			
 
     		
 
-
-
+    		
+    
     
 
 
