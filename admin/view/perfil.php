@@ -47,21 +47,21 @@
                                     </div>
                                     <div class="info">
                                         <div class="title">
-                                            <a target="_blank" href="http://scripteden.com/">name:Script Eden</a>
+                                            <a target="_blank" href="http://scripteden.com/">Alias: Klvst3r</a>
                                         </div>
                                         <div class="desc">Profession: Passional Dev + Designer + UI + UX</div>
                                         <div class="desc">Activities:Curious developer</div>
                                         <div class="desc">Habilities:Tech geek & Programmer</div>
                                     </div>
                                     <div class="bottom">
-                                        <a class="btn btn-primary btn-twitter btn-sm" href="#">
+                                        <a class="btn-social btn-primary btn-twitter btn-sm" href="#">
                                             <i class="fa fa-twitter"></i>
                                         </a>
-                                        <a class="btn btn-danger btn-sm" rel="publisher"
+                                        <a class="btn-social btn-danger btn-sm" rel="publisher"
                                         href="#">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
-                                    <a class="btn btn-primary btn-sm" rel="publisher"
+                                    <a class="btn-social btn-primary btn-sm" rel="publisher"
                                     href="#">
                                     <i class="fa fa-facebook"></i>
                                 </a>
