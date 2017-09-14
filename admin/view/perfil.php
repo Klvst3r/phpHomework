@@ -23,23 +23,71 @@
             </div>
             <!-- INICIO CONTENIDO -->
             
+            <div class="col-sm-6 col-sm-offset-3">
+            
+
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                <h3 class="panel-title">Usuario</h3>
+                    <h3 class="panel-title">Mi Perfil</h3>
                 </div>
-                <div class="panel-body">
-                    Información Pefil
+                
+                <div class="panel-body ">
+                    <!-- Información Pefil -->
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 ">
+
+                                <div class="card hovercard">
+                                    <div class="cardheader">
+
+                                    </div>
+                                    <div class="avatar">
+                                        <img alt="" src="../assets/img/klvst3r.png">
+                                    </div>
+                                    <div class="info">
+                                        <div class="title">
+                                            <a target="_blank" href="http://scripteden.com/">name:Script Eden</a>
+                                        </div>
+                                        <div class="desc">Profession: Passional Dev + Designer + UI + UX</div>
+                                        <div class="desc">Activities:Curious developer</div>
+                                        <div class="desc">Habilities:Tech geek & Programmer</div>
+                                    </div>
+                                    <div class="bottom">
+                                        <a class="btn btn-primary btn-twitter btn-sm" href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" rel="publisher"
+                                        href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                    <a class="btn btn-primary btn-sm" rel="publisher"
+                                    href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>          
+            </div>
 
-            <!--TERMINO CONTENIDO -->
-
-             
+            </div>
+            <!-- End Información Pefil -->
         </div>
-        <!-- /#page-wrapper -->
-    </div>
-    <!-- /#wrapper -->
-    <?php  include 'inc/adminFooter.php'; ?>
+            
+    </div>          
+
+    <!--TERMINO CONTENIDO -->
+
+
+</div>
+<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+<?php  include 'inc/adminFooter.php'; ?>
 </body>
 
 </html>

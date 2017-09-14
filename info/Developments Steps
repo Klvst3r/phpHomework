@@ -30,6 +30,8 @@ Developments Steps
 29. Creating action for admin menu [admin/action.php]
 30. Creatin of user perfil and config [admin/view/perfil.php | admin/view/config.php]
 31. Creating view list user [admin/view/users.php]
+32. Creating List User Class Definition [admin/sql/ListUser.php]
+33. Send Data and Params to Class List User [admin/view/users.php]
 
 
 

@@ -20,6 +20,8 @@
 
 	<link href="assets/css/jquery-confirm.min.css" rel="stylesheet">
 
+	<link href="assets/css/style-perfil.css" rel="stylesheet">
+
 	<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">	
 
 

@@ -4,6 +4,8 @@
 if(isset($_SESSION["user"])){
   $code = $_SESSION["user"]["code"];
   if($code == "true" and $_SESSION["user"]["code"] == "true"){
+  //Definition of Paht principal
+  define("PATH", $_SESSION["user"]["url"]);
 
 ?>
 
@@ -15,7 +17,7 @@ if(isset($_SESSION["user"])){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Klvst3r - phpHomeWork</a>
+            <a class="navbar-brand" href="#">Klvst3r - phpHomeWork  </a>
         </div>
         <!-- /.navbar-header -->
 
@@ -56,7 +58,9 @@ if(isset($_SESSION["user"])){
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-dashboard fa-fw"></i> Principal</a>
+                        <?php
+                        echo '<a href="'. PATH .'/admin/"><i class="fa fa-dashboard fa-fw"></i> Principal</a>';
+                        ?>
                     </li>
                     <li>
                        

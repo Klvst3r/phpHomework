@@ -28,7 +28,12 @@
                 <h3 class="panel-title">Usuarios</h3>
                 </div>
                 <div class="panel-body">
-                    <a href="usuario.php" class="btn btn-default btn-large"><i class="fa fa-users"></i> Listado de usuarios</a>
+                    <a href="action.php?a=3" class="btn btn-default btn-large"><i class="fa fa-users"></i> Listado de usuarios</a>
+
+                    <a href="action.php?a=3" class="btn btn-default btn-large"><i class="fa fa-user" aria-hidden="true"></i>
+
+ Privilegios Asignados</a>
+
                 </div>
             </div>          
 
@@ -36,12 +41,12 @@
 
              <div>
                 <?php
-                echo $_SESSION["user"]["name"];
+                /*echo $_SESSION["user"]["name"];
                 echo "<br>";
                 //$_SESSION["user"]["op"] = "op";
                 echo $_SESSION["user"]["code"];
                 echo "<br>";
-                echo $_SESSION["user"]["op"];
+                echo $_SESSION["user"]["op"];*/
                 ?>
             </div>
         </div>

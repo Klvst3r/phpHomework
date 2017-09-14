@@ -39,7 +39,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				"user_email"	=> $user->getUser_email(),
 				"privilege"		=> $user->getPrivilege(),
 				"code"			=> $code,
-				"op"      		=> "false"
+				"op"      		=> "false",
+				"url" 			=> "/dev/phpHomework"
 				
 			);//$_SESSION
 
