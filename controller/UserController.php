@@ -28,6 +28,11 @@ class UserController {
 
 	}
 
+	/*function tableUsers(){
+		echo "Estamos en UserControls";
+	}*/
+
+
 	public function registrar($nombre, $email, $user_name, $password, $privilegio){
 
 		$obj_user = new User();
