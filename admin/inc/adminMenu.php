@@ -24,7 +24,7 @@ if(isset($_SESSION["user"])){
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION["user"]["name"]; ?><i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION["user"]["name"];  ?> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="action.php?a=1"><i class="fa fa-user fa-fw"></i> Perfil</a>

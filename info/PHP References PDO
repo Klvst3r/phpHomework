@@ -99,23 +99,53 @@ public static function getTableUsers(){
 
 		if($rows > 0){
 
-			echo "Hay " . $rows . " usuarios en la BD <br/>";
+			//echo "Hay " . $rows . " usuarios en la BD <br/>";
 
 
-			for($i = 0; $i < $rows; $i++){
+			/*for($i = 0; $i < $rows; $i++){
 				$data = $result->fetch();
 				echo $data["user_name"]."<br/>";
+				//echo $data[$i]."<br/>";
+			}*/
+
+		/* -- End Rows -- */			
+
+				//echo "<br/>";
+
+		//echo "Table<br/>";  
+
+		echo '<table class="table table-hover">';
+		echo '<thead>
+		        <tr>';
+		foreach(range(0, $result->columnCount() - 1) as $column_index){
+				$meta[] = $result->getColumnMeta($column_index);
+		}
+
+		for ($i=0; $i < $cols; $i++){
+				echo '<th>' . $meta[$i]["name"] . '</td>';	
+		}       		
+
+    	echo '</tr>
+              </thead>
+              <tbody>';
+        for($i = 0; $i < $rows; $i++){
+        //$data[] = $result->fetch();
+        $data = $result->fetch();
+        	echo '<tr>';
+				
+				for($j = 0; $j < $cols; $j++){
+					//echo '<td>'. $j.'</td>';	
+					//echo '<td>'.$data[$j].'</td>';	
+					
+					echo '<td>' . $data[$j] .'</td>';
+
+				}
+			echo '</tr>';
 			}
+		echo "</tbody></table><br/>";
+    
+    
 
-			$cols = $result->columnCount();
-
-    		echo "<br/>";
-    		printf("EL resultado tiene %d campos.\n", $cols);
-
-    		
-    	/*	$nameCols = $result->fetchColumn(0);
-    		echo "nombre =" . $nameCols . "\n";*/
-        
 
 		}else{
 			echo "No hay usuarios en la BD";
@@ -123,4 +153,28 @@ public static function getTableUsers(){
 
 		//$rows;
 		
+
  	}
+
+
+ 	//Numero de Columnas
+ 	public static function nCols(){
+
+	self::getConection();
+
+	$dbh = self::$cnx->prepare($query);
+
+	$pdo_stmt = $dbh->execute(' SELECT id_user, user_name, user_email, name, date_reg FROM users');
+
+	foreach(range(0, $pdo_stmt->columnCount() - 1) as $column_index)
+	{
+		$meta[] = $pdo_stmt->getColumnMeta($column_index);
+	}
+
+	while($row = $pdo_stmt->fetch(PDO::FETCH_NUM))
+	{
+		foreach($row as $column_index => $column_value)
+		{
+		}
+	}
+}//function nameCols
