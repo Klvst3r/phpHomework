@@ -53,23 +53,61 @@ class ListUser extends Connect {
 
 		$result->execute();
 
+
+		foreach(range(0, $result->columnCount() - 1) as $column_index)
+			{
+				$meta[] = $result->getColumnMeta($column_index);
+			}
+
+			echo $meta["0"]["name"]."<br/>";
+			echo $meta["1"]["name"]."<br/>";
+			echo $meta["2"]["name"]."<br/>";
+			echo $meta["3"]["name"]."<br/>";
+			echo $meta["4"]["name"]."<br/>";
+
+
+			/*while($row = $result->fetch(PDO::FETCH_NUM))
+			{*/
+				/*foreach($row as $column_index => $column_value)
+				{*/
+    				
+    				//echo "nom Col";
+    				//var_dump($meta);
+    				//echo $meta["0"]["name"];
+				//}
+			//}
+
+
 		$rows = $result->rowCount();
 
 		if($rows > 0){
 
 			echo "Hay " . $rows . " usuarios en la BD <br/>";
 
-			$cols = $result->columnCount();
-			
-
-    		printf("EL resultado tiene %d campos.\n", $cols);
-
-    		echo "<br/>";
 
 			for($i = 0; $i < $rows; $i++){
 				$data = $result->fetch();
 				echo $data["user_name"]."<br/>";
 			}
+
+			$cols = $result->columnCount();
+
+    		echo "<br/>";
+    		printf("EL resultado tiene %d campos.\n", $cols);
+
+    		
+    	/*	$nameCols = $result->fetchColumn(0);
+    		echo "nombre =" . $nameCols . "\n";*/
+        
+
+
+
+    		
+
+
+
+    
+
 
 		}else{
 			echo "No hay usuarios en la BD";
@@ -80,7 +118,34 @@ class ListUser extends Connect {
 
 
 
+
+
  	}
+
+
+
+		public static function nCols(){
+
+			self::getConection();
+
+			$dbh = self::$cnx->prepare($query);
+
+			$pdo_stmt = $dbh->execute(' SELECT id_user, user_name, user_email, name, date_reg FROM users');
+
+			foreach(range(0, $pdo_stmt->columnCount() - 1) as $column_index)
+			{
+				$meta[] = $pdo_stmt->getColumnMeta($column_index);
+			}
+
+			while($row = $pdo_stmt->fetch(PDO::FETCH_NUM))
+			{
+				foreach($row as $column_index => $column_value)
+				{
+    //do something with the data, using the ids to establish the discussion.has_many(comments) relationship.
+				}
+			}
+}//function nameCols
+
 
 } //Class
 
