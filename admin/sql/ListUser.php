@@ -76,6 +76,8 @@ class ListUser extends Connect {
 		/* -- End Cols -- */			
 		echo "<br/>";
 
+		
+
 		/* -- Rows -- */
 
 		if($rows > 0){
@@ -90,9 +92,35 @@ class ListUser extends Connect {
 
 		/* -- End Rows -- */			
 
-    		
+				echo "<br/>";
 
-    		
+		echo "Table<br/>";  
+
+		echo '<table class="table table-hover">';
+		echo '<thead>
+		        <tr>';
+		foreach(range(0, $result->columnCount() - 1) as $column_index){
+				$meta[] = $result->getColumnMeta($column_index);
+		}
+
+		for ($i=0; $i < $cols; $i++){
+				echo '<th>' . $meta[$i]["name"] . '</td>';	
+		}       		
+
+    	echo '</tr>
+              </thead>
+              <tbody>';
+        for($i = 0; $i < $rows; $i++){
+        	echo '<tr>';
+				$data[] = $result->fetch();
+				for($j = 0; $j < $cols; $j++){
+					//echo '<td>'. $j.'</td>';	
+					//echo '<td>'.$data[$j].'</td>';	
+					echo '<td>' . $data[$j] .'</td>';
+				}
+			echo '</tr>';
+			}
+		echo "</tbody></table><br/>";
     
     
 
