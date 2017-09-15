@@ -9,8 +9,10 @@ session_start();
 header('Content-type: application/json');
 
 
-
 $result = array();
+
+/*echo "USer_Name: ". $_POST["user_name"] . "<br>";
+echo "USer_Name: ". $_POST["user_password"] . "<br>";*/
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -37,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				"name"			=> $user->getName(),
 				"user_name"		=> $user->getUser_name(),
 				"user_email"	=> $user->getUser_email(),
-				"privilege"		=> $user->getPrivilege(),
+				"id_priv"		=> $user->getId_Priv(),
 				"code"			=> $code,
 				"op"      		=> "false",
 				"url" 			=> "/dev/phpHomework"

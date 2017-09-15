@@ -41,7 +41,7 @@ class UserController {
 		$obj_user->setEmail($email);
 		$obj_user->setUser($user_name);
 		$obj_user->setPassword($password);
-		$obj_user->setPrivilegio($privilegio);
+		$obj_user->setId_Priv($id_priv);
 
 		//We send the object from UserDAO
 		return UserDAO::registrar($obj_user);

@@ -9,7 +9,7 @@ class User {
 	private $user_name;
 	private $user_email;
 	private $user_password_hash;
-	private $privilege;
+	private $id_priv;
 	private $date_reg;
 
 	/**
@@ -64,12 +64,12 @@ class User {
 		$this->user_password_hash = md5($user_password_hash);
 	}
 
-	public function getPrivilege(){
-		return $this->privilege;
+	public function getId_Priv(){
+		return $this->id_priv;
 	}
 
-	public function setPrivilege($privilege){
-		$this->privilege = $privilege;
+	public function setId_Priv($id_priv){
+		$this->id_priv = $id_priv;
 	}
 
 	public function getDate_reg(){

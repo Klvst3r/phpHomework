@@ -21,7 +21,8 @@
             <!-- INICIO CONTENIDO -->
 			<?php
 			
-            $query = " SELECT id_user as ID, user_name as Usuario, user_email as Email, name as Nombre, date_reg as Registro FROM users";
+            $query = " SELECT A.id_user as ID, A.user_name as Usuario, A.user_email as Email, A.name as Nombre, 
+                        A.date_reg as Registro, B.desc_priv  as Privilegio FROM users A, privileges B where A.id_priv = B.id_priv ";
 
             $edit = '<a class="btn btn-primary btn-sm" href="editUser.php">Editar</a>';
             $delete = '<button class="btn btn-danger btn-sm" onclick="confirmar('."eliminar.php".')">Eliminar</button>';

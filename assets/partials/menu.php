@@ -15,7 +15,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand">Panel de Control | 
-            <span class="label label-info"><?php echo $_SESSION["user"]["privilege"]==1?'Admin':'Registro'; ?></span></a>
+            <span class="label label-info"><?php echo $_SESSION["user"]["id_priv"]==1?'Admin':'Registro'; ?></span></a>
 
 
         </div>
@@ -26,7 +26,7 @@
             <li><a href="login.php">Login</a></li>
             <li><a href="registro.php">Registro</a></li>
             <?php }else{ ?> 
-            <?php if($_SESSION["user"]["privilege"] == 1) { ?>
+            <?php if($_SESSION["user"]["id_priv"] == 1) { ?>
             <li><a href="../logged_in.php">Admin</a></li>
             <?php } else { ?>
             <li><a href="user.php">Usuario</a></li>

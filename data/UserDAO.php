@@ -41,7 +41,7 @@ class UserDAO extends Connect {
 		// of the system as they are visible via HTML.
 		
 		
-		$query = "SELECT id_user, user_name, user_password_hash, user_email, name, privilege, date_reg FROM users WHERE user_name = :user_name AND 
+		$query = "SELECT id_user, user_name, user_password_hash, user_email, name, id_priv, date_reg FROM users WHERE user_name = :user_name AND 
 		user_password_hash = :user_password";
 		
 		
@@ -106,7 +106,7 @@ class UserDAO extends Connect {
 	 public static function getUser($user){
 		// Hay que especificar que campos necesitamos
 
-		$query = "SELECT id_user, user_name, user_email, name, privilege, date_reg FROM users WHERE user_name = :user_name AND 
+		$query = "SELECT id_user, user_name, user_email, name, id_priv, date_reg FROM users WHERE user_name = :user_name AND 
 		user_password_hash = :user_password";
 		
 		self::getConection();
@@ -131,7 +131,7 @@ class UserDAO extends Connect {
 		$user->setUser_name($rows["user_name"]);
 		$user->setUser_email($rows["user_email"]);
 		$user->setName($rows["name"]);
-		$user->setPrivilege($rows["privilege"]);
+		$user->setId_Priv($rows["id_priv"]);
 		$user->setDate_reg($rows["date_reg"]);
 
 		//Return the entity

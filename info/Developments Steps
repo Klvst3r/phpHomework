@@ -32,6 +32,9 @@ Developments Steps
 31. Creating view list user [admin/view/users.php]
 32. Creating List User Class Definition [admin/sql/ListUser.php]
 33. Send Data and Params to Class List User [admin/view/users.php]
+34. Add table privileges in BD, export estructure and data [assets/bd/0.Diseño/ | assets/bd/1. first stage | assets/bd/2.Second Stage]
+35. Modified Model [model/User.php], User Controller [controller/UserController.php,  Principal Class [data/UserDAO.php] and validCode [	view/validaCode.php]
+36. Modify query to construct table list users in admin page [admin/view/users.php]
 
 
 

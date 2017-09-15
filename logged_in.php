@@ -20,9 +20,9 @@ include 'assets/partials/menu.php';
 			<div class="container text-center">
 				<h1><strong>Bienvenido</strong> <?php echo $_SESSION["user"]["name"]; ?></h1>
 				<?php 
-					//echo $_SESSION["user"]["privilege"]==1?'Admin':'Registro'; 
+					//echo $_SESSION["user"]["id_priv"]==1?'Admin':'Registro'; 
 			//if($code == "true" and $_SESSION["user"]["code"] == "true"){
-				if($_SESSION["user"]["privilege"]==1){
+				if($_SESSION["user"]["id_priv"]==1){
 
 
 					?>
