@@ -16,10 +16,10 @@ if(isset($a)){
 			require_once("view/users.php");
 			break;
 		case 4:
-			require_once("views/modifDatos.php");
+			require_once("view/newUserForm.php");
 			break;
 		case 5:
-			require_once("views/ejecutar.php");
+			require_once("view/ejecutar.php");
 			break;
 		case 6:
 			require_once("pdf.php");

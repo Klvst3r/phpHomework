@@ -8,7 +8,7 @@ include '../assets/class/SQL.php';
 
 //SQL::test();
 
-class ListUser extends Connect {
+class User extends Connect {
 	
 	protected static $cnx;
 

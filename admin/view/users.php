@@ -3,7 +3,7 @@
 <head>
     <?php 
     include 'inc/adminHead.php'; 
-    include 'sql/ListUser.php';
+    include 'sql/User.php';
 
     ?>
 </head>
@@ -13,7 +13,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Listado de usuarios | <a href="view/newUser.php" class="btn btn-primary"><i class="fa fa-plus"></i> Nuevo usuario</a>
+                    <h1 class="page-header">Listado de usuarios | <a href="action.php?a=4" class="btn btn-primary"><i class="fa fa-plus"></i> Nuevo usuario</a>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -28,7 +28,7 @@
 
             $params = $edit . ' ' . $delete;
 
-			ListUser::getTableUsers($query, $params);
+			User::getTableUsers($query, $params);
 
 
             ?>
