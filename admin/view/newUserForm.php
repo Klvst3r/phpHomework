@@ -3,7 +3,11 @@
 
 <head>
 
-    <?php include'inc/adminHead.php'; ?>
+    <?php 
+    include'inc/adminHead.php'; 
+    include'../data/Form.php'; 
+
+    ?>
 
 </head>
 
@@ -31,7 +35,12 @@
                 <div class="col-md-6">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                        <form action="addNewUser.php" method="POST" role="form">
+                        <!-- <form action="addNewUser.php" method="POST" role="form"> -->
+
+                        
+                          <?php
+                          $form = new Form('newUser','POST','addNewUser.php', 'form', '');
+                          ?>
                             <legend>Datos del usuario</legend>
 
                             <?php if(isset($usuario)) { ?>
