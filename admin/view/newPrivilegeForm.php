@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <?php 
     include'inc/adminHead.php'; 
     include'../data/Form.php'; 
     include 'sql/Combo.php';
-
-    
-
     ?>
 
 </head>
-
 <body>
-
 <div id="wrapper">
+
 	<!-- Navigation -->
         <?php  include'inc/adminMenu.php'; ?>
         <div id="page-wrapper">
@@ -40,7 +35,7 @@
                      <div class="panel-body">
                        
                           <?php
-                          $form = new Form('newUser','POST','addNewUser.php', 'form', '');
+                          $form = new Form('newUser','POST','addNewPrivilege.php', 'form', '');
                           ?>
                             <legend>Datos del Privilegio</legend>
 
@@ -72,8 +67,6 @@
                               )); 
 
 
-                          
-
                           $form -> addField(3, array(
                               "type_button"    =>  "btn btn-primary"
                               
@@ -82,7 +75,6 @@
                       $form->closeForm();
 
                             ?>
-                        
 
                   </div>
               </div>
@@ -94,6 +86,7 @@
 </div>
 <!-- /#page-wrapper -->
 
+
 </div>
 <!-- /#wrapper -->
 
@@ -101,4 +94,4 @@
 
 </body>
 
-</html>    	
+</html>    

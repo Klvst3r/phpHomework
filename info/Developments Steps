@@ -37,6 +37,8 @@ Developments Steps
 36. Modify query to construct table list users in admin page [admin/view/users.php]
 37. Create Class Form with principal fields to create a form [data/Form.php]
 38. Create Class Combo to create combos in forms for administrator user [admin/sql/Combo.php]
+39. Create List Privileges Form [admin/view/privileges.php]
+40. Create List Privileges Form [admin/view/newPrivilegeForm.php] 
 
 
 
