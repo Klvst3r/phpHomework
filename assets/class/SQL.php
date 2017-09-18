@@ -59,7 +59,9 @@ function error(){
 }//error
 
 function combo($link, $query, $name, $value, $enable, $onchange, $iniselect){
-         if ($this->runQuery($link, $query)){
+
+        echo "combo<br/>";
+        /* if ($this->runQuery($link, $query)){
             echo "<select name='$name' style='font-family: Verdana; font-size: 9pt; border: 1px solid #C0C0C0' $enable $onchange>";
          if ($this->filas()==0)
             echo "<option value='0'>'No hay opciones !!'</option>";
@@ -75,7 +77,7 @@ function combo($link, $query, $name, $value, $enable, $onchange, $iniselect){
               }
          }//end else
          echo "</select>";
-         }
+         }*/
 }//combo
 
 function table($link, $query){

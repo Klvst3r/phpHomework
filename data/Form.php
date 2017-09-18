@@ -11,7 +11,7 @@ class form {
 
   function verifyParams($array, $limit, $type){
            if (count($array) <> $limit){
-                echo 'faltan par�metros para agregar un campo tipo <b>' . $type . '</b>... solo pasó <b>' . count($array) . '</b> de <b>' . $limit . '</b>.';   
+                echo 'faltan parámetros para agregar un campo tipo <b>' . $type . '</b>... solo pasó <b>' . count($array) . '</b> de <b>' . $limit . '</b>.';   
                 return 0;
            }
            else{
@@ -50,17 +50,53 @@ class form {
 
             }            
         break;
-       
-        /*case 3: //submit
-  			if ($check = $this -> verifyParams($p, 5, "SUBMIT")){
-            	echo "<input type='submit' $p[disabled]  name='$p[nombre]' value='$p[value]' style='$p[style]' $p[js]>";   
+               case 2: //password
+                   if ($check = $this -> verifyParams($p, 3, "PASSWORD")){
+                       /*echo "<input type='password' name='$p[nombre]' maxlength='$p[maxlength]' size='$p[size]' style='$p[style]' $p[js]>";   */
+                    /*   
+       		    	1. nombre del campo = user_name -> $p["field_name"]
+       		    	2. etiqueta texto  -> $p["label_field"]
+       		    	3. placeholder -> p["placeholder"]
+       		    	*/
+
+                    echo '<div class="form-group">
+                            <label for="' . $p["field_name"] . '">' . $p["label_field"] . '</label>
+                              <input type="password" name="' . $p["field_name"] . '" class="form-control" id="' . $p["field_name"] .
+                              '" placeholder="'. $p["placeholder"] . '" />
+                          </div>';
+                   }
+               break;
+        case 3: //submit-button
+  			if ($check = $this -> verifyParams($p, 1, "SUBMIT")){
+            	/*echo "<input type='submit' $p[disabled]  name='$p[nombre]' value='$p[value]' style='$p[style]' $p[js]>";   */
+            	/*<button type="submit" class="btn btn-primary">Registrar</button>*/
+            	echo '<button type="submit" class="' . $p["type_button"] . '">Registrar</button>';
             }
         break;
         case 4: //hidden
             if ($check = $this -> verifyParams($p, 2, "HIDDEN")){
-                echo "<input name='$p[nombre]' type='hidden' value='$p[value]'/>";
+                /*echo "<input name='$p[nombre]' type='hidden' value='$p[value]'/>";*/
+                /*<input type="hidden" value="<?php echo $usuario->id ?>" name="usuario_id" />*/
+                echo '<input type="hidden" value="' . $p["value"] . '" name="' . $p["field_name"] . '" />';
             }
-        break; */
+        break; 
+        case 5:
+        	if ($check = $this -> verifyParams($p, 5, "EMAIL")){
+        		/*
+		    	1. nombre del campo = user_name -> $p["field_name"]
+		    	2. etiqueta texto  -> $p["label_field"]
+				3. value -> $p["value"]
+				4. placeholder -> $p["placeholder"]
+				5. required -> $p["required"]
+		    	*/
+
+        		echo '<div class="form-group">
+                        <label for="' . $p["field_name"] . '">' . $p["label_field"] . '</label>
+                          <input type="email" value="' .$p["value"] . '" name="' . $p["field_name"] . '" class="form-control" id="' .
+                           $p["field_name"] . '" placeholder="' . $p["placeholder"] . '" ' . $p["required"]. '/>
+                      </div>';
+        	}
+        break;
         default: //
                 echo 'Error al agregar el campo, opción no valida <b>' . ($type). '</b>...el programa abortó.';
         exit;
@@ -68,6 +104,8 @@ class form {
   	}//switch
 
   }//function addFlield
+
+  
 
 
 

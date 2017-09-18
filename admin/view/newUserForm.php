@@ -6,6 +6,9 @@
     <?php 
     include'inc/adminHead.php'; 
     include'../data/Form.php'; 
+    include'../assets/class/SQL.php';
+
+    //$combo = new SQL;
 
     ?>
 
@@ -43,9 +46,13 @@
                           ?>
                             <legend>Datos del usuario</legend>
 
-                            <?php if(isset($usuario)) { ?>
-                                  <input type="hidden" value="<?php echo $usuario->id ?>" name="usuario_id" />
-                            <?php } ?>
+                            <?php if(isset($usuario)) { 
+                                  /*<input type="hidden" value="<?php echo $usuario->id ?>" name="usuario_id" />*/
+                                   $form -> addField(4, array(
+                                    "field_name"    =>  "usuario_id",
+                                    "value"   =>  ""
+                                    )); 
+                             } ?>
 
                             <?php 
 
@@ -62,7 +69,36 @@
                               "placeholder"   =>  "Alias del Usuario",
                               "required"      =>  "required",
                               "autofocus"     =>  "autofocus"
-                              ));  
+                              )); 
+
+                            $form -> addField(2, array(
+                              "field_name"    =>  "user_password",
+                              "label_field"   =>  "Password",
+                              "placeholder"   =>  "********"
+                              )); 
+
+                            $form -> addField(5, array(
+                              "field_name"    =>  "user_email",
+                              "label_field"   =>  "Email",
+                              "value"         =>  "",
+                              "placeholder"   =>  "usuario@dominio",
+                              "required"      =>  "required"
+                              )); 
+
+                            $form -> addField(1, array(
+                              "field_name"    =>  "name", 
+                              "label_field"   =>  "Nombre",
+                              "readonly"      =>  "",
+                              "disabled"      =>  "",
+                              "value"         =>  "", 
+                              "maxlength"     =>  "",
+                              "size"          =>  "",
+                              "style"         =>  "", 
+                              "js"            =>  "",
+                              "placeholder"   =>  "Nombre y Apellidos",
+                              "required"      =>  "required",
+                              "autofocus"     =>  ""
+                              )); 
 
                             ?>
 
@@ -72,33 +108,43 @@
                               type="text" name="user_name" class="form-control" id="user_name" placeholder="Alias del Usuario" required autofocus />
                             </div> -->
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                               <label for="user_password">Password</label>
                               <input type="password" name="user_password" class="form-control" id="user_password" />
-                            </div>
+                            </div> -->
                           
-                            <div class="form-group">
+                           <!--  <div class="form-group">
                               <label for="user_email">Email</label>
-                              <input value="<?php echo isset($usuario) ? $usuario->email : '' ?>"
+                              <input value="<?php /*echo isset($usuario) ? $usuario->email : '' */?>"
                               type="email" name="user_email" class="form-control" id="user_email" placeholder="usuario@dominio" required  />
-                            </div>
+                            </div> -->
                             
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                               <label for="name">Nombre</label>
-                              <input value="<?php echo isset($usuario) ? $usuario->usuario : '' ?>"
+                              <input value="<?php /*echo isset($usuario) ? $usuario->usuario : '' */?>"
                               type="text" name="name" class="form-control" id="name" placeholder="Alias del Usuario" required autofocus />
-                            </div>                            
+                            </div>                             -->
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                               <label for="inputPrivi">Privilegio</label>
                               <select name="privilegio" id="inputPrivi" class="form-control" required="required">
-                                  <option <?php echo isset($usuario) && $usuario->privilegio == 'admin' ? 'selected' : '' ?> value?"admin">Administrador</option>
-                                  <option <?php echo isset($usuario) && $usuario->privilegio == 'venta' ? 'selected' : '' ?> value?"venta">Vendedor</option>
+                                  <option <?php /* echo isset($usuario) && $usuario->privilegio == 'admin' ? 'selected' : '' */?> value?"admin">Administrador</option>
+                                  <option <?php /* echo isset($usuario) && $usuario->privilegio == 'venta' ? 'selected' : '' */?> value?"venta">Vendedor</option>
                               </select>
                             </div>
+ -->
+                          <?php
+                          //aqui va el como
+                          $form::combo("","","","","","","");
 
+                          $form -> addField(3, array(
+                              "type_button"    =>  "btn btn-primary"
+                              
+                              )); 
 
-                          <button type="submit" class="btn btn-primary">Registrar</button>
+                            ?>
+
+                          <!-- <button type="submit" class="btn btn-primary">Registrar</button> -->
                       </form>  
                   </div>
               </div>
