@@ -47,11 +47,30 @@
                                   <input type="hidden" value="<?php echo $usuario->id ?>" name="usuario_id" />
                             <?php } ?>
 
-                            <div class="form-group">
+                            <?php 
+
+                            $form -> addField(1, array(
+                              "field_name"    =>  "user_name", 
+                              "label_field"   =>  "Nombre de Usuario",
+                              "readonly"      =>  "",
+                              "disabled"      =>  "",
+                              "value"         =>  "", 
+                              "maxlength"     =>  "",
+                              "size"          =>  "",
+                              "style"         =>  "", 
+                              "js"            =>  "",
+                              "placeholder"   =>  "Alias del Usuario",
+                              "required"      =>  "required",
+                              "autofocus"     =>  "autofocus"
+                              ));  
+
+                            ?>
+
+                            <!-- <div class="form-group">
                               <label for="user_name">Nombre de Usuario</label>
-                              <input value="<?php echo isset($usuario) ? $usuario->usuario : '' ?>"
+                              <input value="<?php /*echo isset($usuario) ? $usuario->usuario : ''*/ ?>"
                               type="text" name="user_name" class="form-control" id="user_name" placeholder="Alias del Usuario" required autofocus />
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                               <label for="user_password">Password</label>
