@@ -35,6 +35,8 @@ Developments Steps
 34. Add table privileges in BD, export estructure and data [assets/bd/0.Diseño/ | assets/bd/1. first stage | assets/bd/2.Second Stage]
 35. Modified Model [model/User.php], User Controller [controller/UserController.php,  Principal Class [data/UserDAO.php] and validCode [	view/validaCode.php]
 36. Modify query to construct table list users in admin page [admin/view/users.php]
+37. Create Class Form with principal fields to create a form [data/Form.php]
+38. Create Class Combo to create combos in forms for administrator user [admin/sql/Combo.php]
 
 
 

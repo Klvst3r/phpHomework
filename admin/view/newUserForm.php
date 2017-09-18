@@ -6,9 +6,9 @@
     <?php 
     include'inc/adminHead.php'; 
     include'../data/Form.php'; 
-    include'../assets/class/SQL.php';
+    include 'sql/Combo.php';
 
-    //$combo = new SQL;
+    
 
     ?>
 
@@ -135,7 +135,9 @@
  -->
                           <?php
                           //aqui va el como
-                          $form::combo("","","","","","","");
+                          $query = " SELECT A.id_priv as privilegio, B.desc_priv as descripcion FROM users A, privileges B where A.id_priv = B.id_priv ";
+                          $combo = new combo($query,"privilegio","inputPrivi","","Privilegio","required","","","1");
+                          //$combo->combo();
 
                           $form -> addField(3, array(
                               "type_button"    =>  "btn btn-primary"

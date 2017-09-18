@@ -60,7 +60,7 @@ function error(){
 
 function combo($link, $query, $name, $value, $enable, $onchange, $iniselect){
 
-        echo "combo<br/>";
+        
         /* if ($this->runQuery($link, $query)){
             echo "<select name='$name' style='font-family: Verdana; font-size: 9pt; border: 1px solid #C0C0C0' $enable $onchange>";
          if ($this->filas()==0)

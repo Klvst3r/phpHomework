@@ -178,3 +178,17 @@ public static function getTableUsers(){
 		}
 	}
 }//function nameCols
+
+
+
+MySQL Functions (PDO_MYSQL) -> mysqli_fetch_row
+
+http://php.net/manual/en/ref.pdo-mysql.php
+/*
+hile(list($id, $descrip) = $result->fetch()){
+	               if ($id == $value)
+	                   echo '<option selected value="' . $id . '">' . $descrip. '</option>';
+	               else
+	                   echo '<option value="' . $id . '">' . $descrip. '</option>';
+	            }
+*/	            
