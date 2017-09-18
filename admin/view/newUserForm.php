@@ -31,7 +31,7 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-
+            <!-- End Navigation -->
             <!-- Begin Work Area -->
             <br/>
             <div class="row">
@@ -144,10 +144,12 @@
                               
                               )); 
 
-                            ?>
+                      $form->closeForm();
 
+                            ?>
+                        
                           <!-- <button type="submit" class="btn btn-primary">Registrar</button> -->
-                      </form>  
+                      <!-- </form>   -->
                   </div>
               </div>
 
