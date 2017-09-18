@@ -19,7 +19,7 @@ if(isset($a)){
 			require_once("view/newUserForm.php");
 			break;
 		case 5:
-			require_once("view/ejecutar.php");
+			require_once("view/privileges.php");
 			break;
 		case 6:
 			require_once("pdf.php");

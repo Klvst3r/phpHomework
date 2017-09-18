@@ -78,7 +78,7 @@ if(isset($_SESSION["user"])){
                                 <a href="action.php?a=3">Usuarios</a>
                             </li>
                             <li>
-                                <a href="privilegios.php">Privilegios</a>
+                                <a href="action.php?a=5">Privilegios</a>
                             </li>
                         
                         </ul>
