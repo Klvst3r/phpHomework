@@ -16,7 +16,6 @@ class Privilege extends Connect {
 
 	private static function disconnect(){
 		//This close the conection in PDO
-		
 		self::$cnx = null;
 	}
 
