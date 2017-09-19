@@ -3,7 +3,6 @@
 <head>
     <?php 
     include 'inc/adminHead.php'; 
-    //include 'sql/User.php';
     include 'sql/Privilege.php';
 
     ?>
@@ -29,11 +28,9 @@
 
             $params = $edit . ' ' . $delete;
 
-			User::getTableUsers($query, $params);
-
+            Privilege::getTablePrivileges($query, $params)
 
             ?>
-            
 
             <!--TERMINO CONTENIDO -->
         </div>
