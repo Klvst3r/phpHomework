@@ -68,6 +68,9 @@ class Privilege extends Connect {
 			echo "No hay privilegios en la BD";
 		}
 
+		//free memory
+		self::disconnect();
+
 
 }//function getTableUsers
 

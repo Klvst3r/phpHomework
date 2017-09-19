@@ -73,6 +73,8 @@ class User extends Connect {
 			echo "No hay usuarios en la BD";
 		}
 
+		//free memory
+		self::disconnect();
 
 	}//function getTableUsers
 

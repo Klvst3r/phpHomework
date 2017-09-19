@@ -42,6 +42,7 @@ Developments Steps
 41. Create Model Privilege [model/Privilege.php]
 42. Create Controller Privilege [controllerPrivilegeController.php]
 43. Create Class PRivilege to obtain in a Table the Privileges from BD [admin/sql/Privilege.php]
+44. Add function to free liberate memory after Show data in tables from DB [admin/sql/User.php |admin/sql/Privilege.php]
 
 
 

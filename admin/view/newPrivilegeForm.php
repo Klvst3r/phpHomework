@@ -35,7 +35,7 @@
                      <div class="panel-body">
                        
                           <?php
-                          $form = new Form('newUser','POST','addNewPrivilege.php', 'form', '');
+                          $form = new Form('newUser','POST','action.php?a=7', 'form', '');
                           ?>
                             <legend>Datos del Privilegio</legend>
 
