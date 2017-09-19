@@ -3,7 +3,8 @@
 <head>
     <?php 
     include 'inc/adminHead.php'; 
-    include 'sql/User.php';
+    //include 'sql/User.php';
+    include 'sql/Privilege.php';
 
     ?>
 </head>

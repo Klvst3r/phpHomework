@@ -39,7 +39,9 @@ Developments Steps
 38. Create Class Combo to create combos in forms for administrator user [admin/sql/Combo.php]
 39. Create List Privileges Form [admin/view/privileges.php]
 40. Create List Privileges Form [admin/view/newPrivilegeForm.php] 
-
+41. Create Model Privilege [model/Privilege.php]
+42. Create Controller Privilege [controllerPrivilegeController.php]
+43. Create Class PRivilege to obtain in a Table the Privileges from BD [admin/sql/Privilege.php]
 
 
 
