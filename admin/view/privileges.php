@@ -4,7 +4,7 @@
     <?php 
     include 'inc/adminHead.php'; 
     include 'sql/PrivilegeSQL.php';
-    include '../helps/helps.php';
+    //include '../helps/helps.php';
 
     ?>
 </head>
