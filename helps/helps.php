@@ -1,5 +1,6 @@
 <?php
 
+
 //Code that will allow us to make the validations of the fields from the form by the post method
 /**
  * Function used to validate and clean a field

@@ -3,7 +3,8 @@
 <head>
     <?php 
     include 'inc/adminHead.php'; 
-    include 'sql/Privilege.php';
+    include 'sql/PrivilegeSQL.php';
+    include '../helps/helps.php';
 
     ?>
 </head>
@@ -28,7 +29,7 @@
 
             $params = $edit . ' ' . $delete;
 
-            Privilege::getTablePrivileges($query, $params)
+            PrivilegeSQL::getTablePrivileges($query, $params)
 
             ?>
 

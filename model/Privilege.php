@@ -1,6 +1,6 @@
 <?php 
 
-class User {
+class Privilege {
 	//variables names accord to the cols in the table, definded as properties from our class
 
 	/*

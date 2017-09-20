@@ -1,12 +1,17 @@
+
 <?php
 
 include '../data/Connect.php';
 include '../assets/class/SQL.php';
+include '../model/Privilege.php';
+//include '../data/PrivilegeDAO.php';
 
 
-class Privilege extends Connect {
+class PrivilegeSQL extends Connect {
 	
 	protected static $cnx;
+
+	
 
 	private static function getConection(){
 
@@ -74,16 +79,42 @@ class Privilege extends Connect {
 
 }//function getTableUsers
 
-public static function regPrivilege($sql){
+/*public static function regPrivilege($priv){
 
-	$query = $sql;
+	//echo $priv;
 
-	echo $query;
+	$query = "INSERT INTO privileges (id_priv, desc_priv) VALUES (NULL, :desc_priv)";
 
-		//self::getConection();
+	self::getConection();
+	
+	$result = self::$cnx->prepare($query);
 
-		//$resultado = self::$cnx->prepare($query);
+	//echo "<br/>";
 
-}// function regPrivilege
+	//echo $query;
+	//$priv = $privilege->getDesc_priv();
+	
+
+	echo "Insercion Exitosa";
+	$desc_priv = $priv;
+	$result->bindParam(":desc_priv", $desc_priv);
+*/
+	/*if($result->execute()){
+			//return true;
+			return "true";
+		}
+
+		return "false";*/
+
+		//disconect
+		//self::disconnect();
+
+	/*$obj_priv = new Privilege();
+
+	$obj_priv->setDesc_priv($data);*/
+
+	//Send the object from model
+	//return $obj_priv;
+//}// function regPrivilege
 
 } //Class

@@ -9,6 +9,7 @@
  	 *
  	 */ 
 
+
 	public static function connection(){
 		try {
 			//var of Connecton
@@ -20,7 +21,9 @@
 		} catch(PDOException $ex) {
 			die($ex->getMessage());
 		  }
-	}
+	}//Connection
+
+	
 }
 
 /*Test of Connection*/

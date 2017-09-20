@@ -52,7 +52,7 @@
                             <?php 
 
                             $form -> addField(1, array(
-                              "field_name"    =>  "privilege_name", 
+                              "field_name"    =>  "desc_priv", 
                               "label_field"   =>  "Nombre del privilegio",
                               "readonly"      =>  "",
                               "disabled"      =>  "",
