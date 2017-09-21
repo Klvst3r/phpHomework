@@ -139,6 +139,13 @@ class UserDAO extends Connect {
 		
 	} //function getUsuario
 
+
+
+
+/*	public static function regUser($user){
+		
+	}//function regUser*/
+
 	
 
 

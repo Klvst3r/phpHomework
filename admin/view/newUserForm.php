@@ -57,7 +57,7 @@
 
                             $form -> addField(1, array(
                               "field_name"    =>  "user_name", 
-                              "label_field"   =>  "Nombre de Usuario",
+                              "label_field"   =>  "Usuario",
                               "readonly"      =>  "",
                               "disabled"      =>  "",
                               "value"         =>  "", 
@@ -86,7 +86,7 @@
 
                             $form -> addField(1, array(
                               "field_name"    =>  "name", 
-                              "label_field"   =>  "Nombre",
+                              "label_field"   =>  "Nombre de Usuario",
                               "readonly"      =>  "",
                               "disabled"      =>  "",
                               "value"         =>  "", 

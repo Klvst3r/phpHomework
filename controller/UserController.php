@@ -34,7 +34,7 @@ class UserController {
 
 	//UserController::regPirvilege($user_name, $user_password, $user_email, $name, $privilege, $date_reg);
 	public function regUser($user, $pass, $email, $name, $priv, $date){
-
+		//1. Ceerate Object to Work
 		$obj_user = new User();
 
 		/*
@@ -64,16 +64,26 @@ class UserController {
 		$this->date_reg = $date_reg;
 	}
 		 */
-		
+		//Set data to te model
 		$obj_user->setName($name);
 		$obj_user->setUser_name($user);
 		$obj_user->setUser_email($email);
 		$obj_user->setUser_password_hash($pass);
 		$obj_user->setId_Priv($priv);
-		$obj_user->setDate_reg($date)
+		$obj_user->setDate_reg($date);
+
+		//We send the object from UserDAO
+		//return UserDAO::regUser($obj_user);
+		/*echo "Username: " . $name . "<br/>";
+		echo "Name: " . $user . "<br/>";
+		echo "Email: " . $email . "<br/>";
+		echo "Password: " . $pass . "<br/>";
+		echo "Privilege: " . $priv . "<br/>";
+		echo "Date: " . $date . "<br/>";*/
 
 		//We send the object from UserDAO
 		return UserDAO::regUser($obj_user);
+
 
 	}
 
