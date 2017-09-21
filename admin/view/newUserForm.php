@@ -41,7 +41,7 @@
 
                         
                           <?php
-                          $form = new Form('newUser','POST','addNewUser.php', 'form', '');
+                          $form = new Form('newUser','POST','action.php?a=8', 'form', '');
                           ?>
                             <legend>Datos del usuario</legend>
 
@@ -134,8 +134,8 @@
  -->
                           <?php
                           //aqui va el como
-                          $query = " SELECT A.id_priv as privilegio, B.desc_priv as descripcion FROM users A, privileges B where A.id_priv = B.id_priv ";
-                          $combo = new combo($query,"privilegio","inputPrivi","","Privilegio","required","","","1");
+                          /*$query = " SELECT A.id_priv as privilegio, B.desc_priv as descripcion FROM users A, privileges B where A.id_priv = B.id_priv ";
+                          $combo = new combo($query,"privilegio","inputPrivi","","Privilegio","required","","","1");*/
                           //$combo->combo();
 
                           $form -> addField(3, array(

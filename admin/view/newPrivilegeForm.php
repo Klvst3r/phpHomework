@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 
-    <?php 
-    include'inc/adminHead.php'; 
-    include'../data/Form.php'; 
+    <?php
+    include'inc/adminHead.php';
+    include'../data/Form.php';
     include 'sql/Combo.php';
     ?>
 
@@ -18,7 +18,7 @@
             <br/>
             <div class="row">
                 <div class="col-lg-12">
-                	<h1 class="page-header"><?php echo isset($user) ? 'Actualizar' : 'Nuevo' ?> Privilegio | 
+                	<h1 class="page-header"><?php echo isset($user) ? 'Actualizar' : 'Nuevo' ?> Privilegio |
                     <a href="action.php?a=5" class="btn btn-default">
                         <i class="fa fa-users"></i> Ver Listado</a>
                     </h1>
@@ -33,44 +33,44 @@
                 <div class="col-md-6">
                   <div class="panel panel-default">
                      <div class="panel-body">
-                       
+
                           <?php
-                          $form = new Form('newUser','POST','action.php?a=7', 'form', '');
+                          $form = new Form('newPrivilege','POST','action.php?a=7', 'form', '');
                           ?>
                             <legend>Datos del Privilegio</legend>
 
-							
-                            <?php 
+
+                            <?php
                             //Datos del usuario si es edición
-                            if(isset($usuario)) { 
+                            if(isset($usuario)) {
                                    $form -> addField(4, array(
                                     "field_name"    =>  "usuario_id",
                                     "value"   =>  ""
-                                    )); 
+                                    ));
                              } ?>
 
-                            <?php 
+                            <?php
 
                             $form -> addField(1, array(
-                              "field_name"    =>  "desc_priv", 
+                              "field_name"    =>  "desc_priv",
                               "label_field"   =>  "Nombre del privilegio",
                               "readonly"      =>  "",
                               "disabled"      =>  "",
-                              "value"         =>  "", 
+                              "value"         =>  "",
                               "maxlength"     =>  "",
                               "size"          =>  "",
-                              "style"         =>  "", 
+                              "style"         =>  "",
                               "js"            =>  "",
                               "placeholder"   =>  "Descripción del privilegio",
                               "required"      =>  "required",
                               "autofocus"     =>  "autofocus"
-                              )); 
+                              ));
 
 
                           $form -> addField(3, array(
                               "type_button"    =>  "btn btn-primary"
-                              
-                              )); 
+
+                              ));
 
                       $form->closeForm();
 
@@ -94,4 +94,4 @@
 
 </body>
 
-</html>    
+</html>

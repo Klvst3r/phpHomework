@@ -27,13 +27,13 @@ Developments Steps
 ------------------------------- Start Sessions Variables -----------------------------
 20. Obtain the user_name for the session, create getUser [data/UserDAO.php] and create controller [controller/UserController.php]
 21. Work with session [view/validaCode.php], redirect [assets/js/apps.js] and Create Admin [view/admin.php]
-22. Creating Close Session [view/signout.php] 
+22. Creating Close Session [view/signout.php]
 ------------------------------- Create Wrap System -----------------------------------
 23, Creating menu, and main header and main footer [partials/menu.php | partials/mainHead.php | partials/mainFooter.php]
 24. Working with diferenst [logged_in.php] user and privileges [partials/menu.php]
 25. Validatión against return return and forward [assets/partials/menu.php | assets/partials/menu.php]
 -------------------------------- Admin Page ------------------------------------------
-26. Creating admin page [admin.php] and folder of admin [view/admin/index.php] 
+26. Creating admin page [admin.php] and folder of admin [view/admin/index.php]
 27. Creating assets for admin [admin/inc/adminHead.php | admin/inc/adminHead.php | admin/inc/adminFooter.php]
 ----------------------------- Incorporate JS, CSS and Bootstrap ------------------------
 28. Add assets for admin [assets/bootstrap, assets/css, assets/font-awesome, assets/jquery, assets/jss, assets/metisMenu]
@@ -52,12 +52,12 @@ Developments Steps
 38. Create Class Combo to create combos in forms for administrator user [admin/sql/Combo.php]
 --------------- Create Files, Clases, Models Controllers and Views for Privileges ------------------------------------------
 39. Create List Privileges Form [admin/view/privileges.php]
-40. Create List Privileges Form [admin/view/newPrivilegeForm.php] 
+40. Create List Privileges Form [admin/view/newPrivilegeForm.php]
 41. Create Model Privilege [model/Privilege.php]
 42. Create Controller Privilege [controllerPrivilegeController.php]
 43. Create Class PRivilege to obtain in a Table the Privileges from BD [admin/sql/Privilege.php]
 44. Add function to free liberate memory after Show data in tables from DB [admin/sql/User.php |admin/sql/Privilege.php]
----------------------------- Process of Privileges -----------------------------------------
+---------------------------- Process of Add Privileges -----------------------------------------
 45. We start from the list of privileges showing the table of contents
 	[admin/view/privileges.php]
 46. Through the "new privilege" button we go to the new privilege Registration form
@@ -75,10 +75,10 @@ Developments Steps
 	[admin/view/addNewPrivilege.php]
 		A) 	Management header is included
 			[admin/inc/adminHead.php]
-	
+
 		B)	Controlador de Privilegios
 		 	[controller/PrivilegeController.php]
-	
+
 		C)	Helpers to validate fiels
 			[helps/helps.php]
 48.	Through the privilege controller, an object is created and data is sent using the object to the Privilege model
@@ -88,16 +88,23 @@ Developments Steps
 49. The PrivilegeDAO class establishes a connection with the DB, creates the query, receives the information in a form
 	of parameters of the DB model and executes the query
 	[data/PrivilegeDAO.php]
-		A)	Connection with the DB is included 
+		A)	Connection with the DB is included
 			[data/Connect.php]
 		B)	Privilege registration function in included
 			[model/Privilege.php]
-50. The latter script (data / PrivilegeDAO.php) returns control to the privilege controller in the data logging script (admin / view / 
+50. The latter script (data / PrivilegeDAO.php) returns control to the privilege controller in the data logging script (admin / view /
 	privileges.php) by the controller's regPrivilege method. Ending by redirection to the view of the list of privileges
 	[admin/view/privileges.php]
-
-
-
-
-
-
+---------------------------- Process of Add User -----------------------------------------
+51. We start from the list of Users showing the table of contents
+	[admin/view/users.php] -> submit (action.php?a=4 )
+52. Through the "new user" button we go to the new user Registration form
+	[admin/view/newUserForm.php]
+		A) It includes the class for the call of the function of obtaining table of data with users
+			[admin/sql/PrivilegeSQL.php]
+		B)  Management header is included
+			[admin/inc/adminHead.php]
+		C)  The class to build forms is included
+			[data/Form.php]
+		D)	Included class to build combos
+			[admin/sql/Combo.php]

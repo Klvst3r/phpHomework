@@ -27,6 +27,10 @@ if(isset($a)){
 		case 7:
 			require_once("view/addNewPrivilege.php");
 			break;
+		case 8:
+			require_once("view/addNewUser.php");
+			break;
+
 
 
 		case 10:

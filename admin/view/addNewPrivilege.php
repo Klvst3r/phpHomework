@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$priv = validate_field($_POST["desc_priv"]);
 				
 		/*Privilege::regPrivilege($priv);*/
-		PrivilegeController::regPrivilege($priv);
+		PrivilegeController::regPirvilege($priv);
 
 		//After the Insert list privileges
 		header("location:action.php?a=5"); 
