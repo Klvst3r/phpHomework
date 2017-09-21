@@ -101,10 +101,19 @@ Developments Steps
 52. Through the "new user" button we go to the new user Registration form
 	[admin/view/newUserForm.php]
 		A) It includes the class for the call of the function of obtaining table of data with users
-			[admin/sql/PrivilegeSQL.php]
+			[admin/sql/UserSQL.php]
 		B)  Management header is included
 			[admin/inc/adminHead.php]
 		C)  The class to build forms is included
 			[data/Form.php]
 		D)	Included class to build combos
 			[admin/sql/Combo.php]
+53. The parameters are passed to verify if the parameters are sent by the "POST" method and are validated to send data to the
+	user controller
+	[admin/view/addNewUser.php]
+		A) 	Management header is included
+			[admin/inc/adminHead.php]
+		B)	Controlador de Privilegios
+		 	[controller/PrivilegeController.php]
+		C)	Helpers to validate fiels
+			[helps/helps.php]

@@ -134,8 +134,9 @@
  -->
                           <?php
                           //aqui va el como
-                          /*$query = " SELECT A.id_priv as privilegio, B.desc_priv as descripcion FROM users A, privileges B where A.id_priv = B.id_priv ";
-                          $combo = new combo($query,"privilegio","inputPrivi","","Privilegio","required","","","1");*/
+                          //$query = " SELECT A.id_priv as privilegio, B.desc_priv as descripcion FROM users A, privileges B where A.id_priv = B.id_priv ";
+                          $query = " SELECT id_priv as privilegio, desc_priv as descripcion FROM privileges";
+                          $combo = new combo($query,"privilege","inputPrivi","","Privilegio","required","","","1");
                           //$combo->combo();
 
                           $form -> addField(3, array(
