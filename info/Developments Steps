@@ -113,7 +113,19 @@ Developments Steps
 	[admin/view/addNewUser.php]
 		A) 	Management header is included
 			[admin/inc/adminHead.php]
-		B)	Controlador de Privilegios
-		 	[controller/PrivilegeController.php]
+		B)	Controlador de Usurs
+		 	[controller/UserController.php]
 		C)	Helpers to validate fiels
 			[helps/helps.php]
+54.	Through the User controller, an object is created and data is sent using the object to the User model
+	[controller/UserController.php]
+		A)	User model included
+			[model/User.php]
+55. The UserDAO class establishes a connection with the DB, creates the query, receives the information in a form
+	of parameters of the DB model and executes the query
+	[data/UserDAO.php]
+		A)	Connection with the DB is included
+			[data/Connect.php]
+		B)	User registration function in included
+			[model/User.php]
+			

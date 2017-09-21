@@ -109,8 +109,10 @@ class UserDAO extends Connect {
 		$query = "SELECT id_user, user_name, user_email, name, id_priv, date_reg FROM users WHERE user_name = :user_name AND 
 		user_password_hash = :user_password";
 		
+		//Initialize the connection
 		self::getConection();
 		
+		//Returns the result, preparing the query
 		$result = self::$cnx->prepare($query);
 
 		$user_bd = $user->getUser_name();
@@ -142,9 +144,73 @@ class UserDAO extends Connect {
 
 
 
-/*	public static function regUser($user){
+	public static function regUser($user){
+		//Query to Execute
+		/*$query = "INSERT INTO users (id_user, user_name, user_password_hash, user_email, name, id_priv, date_reg) 
+				  VALUES (NULL, ':user_name', ':user_password_hash', ':user_email', ':name', ':id_priv', ':date_reg')";*/
+
+		$query = "INSERT INTO users (id_user, user_name, user_password_hash, user_email, name, id_priv, date_reg) VALUES (NULL, :user_name, :user_password_hash, :user_email, :name, :id_priv, :date_reg)";
+
+		self::getConection();
+	
+		$result = self::$cnx->prepare($query);
+
+				
+		$name = $user->getName();
+		$result->bindParam(":name", $name);
+
+		$user_name = $user->getUser_name();
+		$result->bindParam(":user_name", $user_name);
+
+		$user_email = $user->getUser_email();
+		$result->bindParam(":user_email", $user_email);
+
+		$user_password_hash = $user->getUser_password_hash();
+		$result->bindParam(":user_password_hash", $user_password_hash);
+
+		$id_priv = $user->getId_Priv();
+		$result->bindParam(":id_priv", $id_priv);
+
+		$date_reg = $user->getDate_reg();
+		$result->bindParam(":date_reg", $date_reg);
+
 		
-	}//function regUser*/
+
+		
+
+
+		/*echo "Username: " . $user_name . "<br/>";
+		echo "Name: " . $name . "<br/>";
+		echo "Email: " . $user_email . "<br/>";
+		echo "Password: " . $user_password_hash . "<br/>";
+		echo "Privilege: " . $id_priv . "<br/>";
+		echo "Date: " . $date_reg . "<br/>";
+		echo $query;
+
+		echo "<br/>Insercion Exitosa";*/
+	
+		
+		/*$result->execute();
+		
+		//We count the result, if there are results true otherwise false
+		//It is corrected since the result is in a static object and not in the variable $ result
+		//if(count($result)){
+		$filas = $result->rowCount();
+		echo "Filas: " . $filas;*/
+
+		if($result->execute()){
+			//return true;
+			echo "Insercion Exitosa";
+			return true;
+		}
+
+		return false;
+
+
+
+
+
+	}//function regUser
 
 	
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 //Import conection
@@ -14,7 +14,7 @@ class PrivilegeDAO extends Connect {
 		//self to invoke this class and invoke $cnx
 		/* With this the variable $cnx is generated, and is filled with the connection when the connection itself is established*/
 		self::$cnx = Connect::connection();
-		
+
 	}//function getConection
 
 
@@ -24,7 +24,7 @@ class PrivilegeDAO extends Connect {
 
 	private static function disconnect(){
 		//This close the conection in PDO
-		
+
 		self::$cnx = null;
 	}
 
@@ -33,17 +33,17 @@ class PrivilegeDAO extends Connect {
 		$query = "INSERT INTO privileges (id_priv, desc_priv) VALUES (NULL, :desc_priv)";
 
 		self::getConection();
-	
+
 		$result = self::$cnx->prepare($query);
 
 		//echo "Insercion Exitosa";
-		
-		$result = self::$cnx->prepare($query);
+
+		//$result = self::$cnx->prepare($query);
 
 		//Obtain data from Model
 		$priv = $privilege->getDesc_priv();
 		$result->bindParam(":desc_priv", $priv);
-		
+
 		//Execute Query
 		if($result->execute()){
 			//return true;
@@ -57,15 +57,15 @@ class PrivilegeDAO extends Connect {
 	}//
 
 	/*public static function regPrivilege($privilege){
-		
+
 		echo $privilege;
 
 		//$query = "INSERT INTO privileges (id_priv, desc_priv) VALUES (NULL, :desc_priv)";
-		
+
 		//self::getConection();
 
 		//$result = self::$cnx->prepare($query);
-		
+
 		//echo $query;
 
 		//$priv = $privilege->getDesc_priv();
@@ -83,10 +83,10 @@ class PrivilegeDAO extends Connect {
 		*/
 	//}
 
-		
 
-		
-	
+
+
+
 
 }//End Class PrivilegeDAO
 
