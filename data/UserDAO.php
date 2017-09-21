@@ -175,10 +175,6 @@ class UserDAO extends Connect {
 		$result->bindParam(":date_reg", $date_reg);
 
 		
-
-		
-
-
 		/*echo "Username: " . $user_name . "<br/>";
 		echo "Name: " . $name . "<br/>";
 		echo "Email: " . $user_email . "<br/>";
@@ -200,14 +196,16 @@ class UserDAO extends Connect {
 
 		if($result->execute()){
 			//return true;
-			echo "Insercion Exitosa";
+			//echo "Insercion Exitosa";
+			self::disconnect();
 			return true;
 		}
 
 		return false;
 
 
-
+		//disconect
+		
 
 
 	}//function regUser

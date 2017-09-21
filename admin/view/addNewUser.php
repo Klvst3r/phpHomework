@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		UserController::regUser($user_name, $user_password, $user_email, $name, $privilege, $date_reg);
 
 		//After the Insert list privileges
-		//header("location:action.php?a=3"); 
+		header("location:action.php?a=3"); 
 	
 	} //If of data from form
 }else{
