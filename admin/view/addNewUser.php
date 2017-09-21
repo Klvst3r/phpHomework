@@ -23,9 +23,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$user_email = validate_field($_POST["user_email"]);
 		$name = validate_field($_POST["name"]);
 		$privilege = validate_field($_POST["privilege"]);
+		/*
+		echo $date->now();
+		$date_reg = now();		
+		 */
 
+		$date_reg = date('Y-m-d H:i:s');
 				
-		UserController::regPirvilege($priv);
+		UserController::regUser($user_name, $user_password, $user_email, $name, $privilege, $date_reg);
 
 		//After the Insert list privileges
 		header("location:action.php?a=3"); 

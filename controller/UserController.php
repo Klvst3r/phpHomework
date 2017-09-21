@@ -32,19 +32,48 @@ class UserController {
 		echo "Estamos en UserControls";
 	}*/
 
-
-	public function registrar($nombre, $email, $user_name, $password, $privilegio){
+	//UserController::regPirvilege($user_name, $user_password, $user_email, $name, $privilege, $date_reg);
+	public function regUser($user, $pass, $email, $name, $priv, $date){
 
 		$obj_user = new User();
+
+		/*
+		 *
+		 
+	public function setName($name){
+		$this->name = $name;
+	}
+	
+	public function setUser_name($user_name){
+		$this->user_name = $user_name;
+	}
+
+	public function setUser_email($user_email){
+		$this->user_email = $user_email;
+	}
+
+	public function setUser_password_hash($user_password_hash){
+		$this->user_password_hash = md5($user_password_hash);
+	}
+
+	public function setId_Priv($id_priv){
+		$this->id_priv = $id_priv;
+	}
+
+	public function setDate_reg($date_reg){
+		$this->date_reg = $date_reg;
+	}
+		 */
 		
-		$obj_user->setNombre($nombre);
-		$obj_user->setEmail($email);
-		$obj_user->setUser($user_name);
-		$obj_user->setPassword($password);
-		$obj_user->setId_Priv($id_priv);
+		$obj_user->setName($name);
+		$obj_user->setUser_name($user);
+		$obj_user->setUser_email($email);
+		$obj_user->setUser_password_hash($pass);
+		$obj_user->setId_Priv($priv);
+		$obj_user->setDate_reg($date)
 
 		//We send the object from UserDAO
-		return UserDAO::registrar($obj_user);
+		return UserDAO::regUser($obj_user);
 
 	}
 
