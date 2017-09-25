@@ -206,30 +206,73 @@ class UserDAO extends Connect {
 	}//function regUser
 
 	public static function changePass($data_user){
+		$query_select = "SELECT id_user as id, user_password_hash as pass FROM users WHERE id_user = :id_user AND user_password_hash = :last_pass";
+
+		self::getConection();
+	
+		$result_select = self::$cnx->prepare($query_select);
+
 
 		$id_user =	$data_user->getId_user();
+		$result_select->bindParam(":id_user", $id_user);
 
 		$last_pass = $data_user->getUser_password_hash();
-		//$result->bindParam(":last_pass", $last_pass);
+		$result_select->bindParam(":last_pass", $last_pass);
 
 		$new_pass = $data_user->getNew_pass();
 		//$result->bindParam(":new_pass", $new_pass);
-
 		$rewrite_pass = $data_user->getRewrite_pass();
-		//$result->bindParam(":rewrite_pass", $rewrite_pass);
+		
 		//Print Variables		
-		echo "ID: " . $id_user . "<br/>";
+		/*echo "ID: " . $id_user . "<br/>";
 		echo "Password: " . $last_pass . "<br/>";
 		echo "New Password: " . $new_pass . "<br/>";
 		echo "Rewite Password: " . $rewrite_pass . "<br/>";
-
+		*/
 		//Verify new and Rewrite pass
 		//
 		if($new_pass == $rewrite_pass){
 			echo "Realizamos busqueda del password anterior<br/>";
+
+			
+
+			$result_select->execute();
+
+			if($result_select->rowCount() > 0){
+				echo "Usuario localizado<br/>";
+				$query_update = "UPDATE `users` SET `user_password_hash` = :new_pass WHERE `users`.`id_user` = :id_user";
+
+				$result_update = self::$cnx->prepare($query_update);
+
+				
+				//Add parameter to ejecute update
+				$id_user =	$data_user->getId_user();
+				$result_update->bindParam(":id_user", $id_user);
+				
+				$new_pass = $data_user->getNew_pass();
+				$result_update->bindParam(":new_pass", $new_pass);
+
+
+				if($result_update->execute()){
+					//return true;
+					echo "Actualización Exitosa<br/>";
+					self::disconnect();
+					return true;
+				}
+
+				return false;
+
+
+
+
+
+
+			}else{
+
+			}
+
 			return true;
-			/*$query = "SELECT id_user, user_name, user_email, name, id_priv, date_reg FROM users WHERE user_name = :user_name AND 
-		user_password_hash = :user_password";*/
+
 
 		}else {
 			echo "Verifique su nuevo Password y su confirmación, no son iguales";

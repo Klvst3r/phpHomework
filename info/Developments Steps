@@ -132,11 +132,40 @@ Developments Steps
 	users.php) by the controller's regUser method. Ending by redirection to the view of the list of privileges
 	[admin/view/users.php]
 	---------------------------- Process of Change Admin Password -----------------------------------------
-	57. Begin changing the view of Admin Configuration
-			[admin/view/config.php]
-			A) Class to Create forms
-					[data/Form.php]
-			B)  Management header is included
-				[admin/inc/adminHead.php]
-			C)  Management Menu is included
-				[admin/inc/adminMenu.php]
+57. Begin changing the view of Admin Configuration
+		[admin/view/config.php]
+		A) Class to Create forms
+				[data/Form.php]
+		B)  Management header is included
+			[admin/inc/adminHead.php]
+		C)  Management Menu is included
+			[admin/inc/adminMenu.php]
+		D) Add nuew option in menu Action
+			[admin/action.php]
+58. The parameters are passed to verify if the parameters are sent by the "POST" method and are validated to send data to the
+	user controller
+	[admin/view/changePass.php]
+		A) 	Management header is included
+			[admin/inc/adminHead.php]
+		B)	Controlador de Usurs
+		 	[controller/UserController.php]
+		C)	Helpers to validate fiels
+			[helps/helps.php]
+59.	Through the User controller, new method changePass(params) an object is created and data is sent using the object to the User model
+	[controller/UserController.php]
+		A)	User model included and modified to add new method changePass
+			[model/User.php]
+60-A. In the UserDAO method changePass is included, class USERDAO establishes a connection with the DB to find user to change password,
+		creates the queries to select, receives the information in a form of parameters of the DB model and executes the query to find user
+		[data/UserDAO.php]
+			A)	Connection with the DB is included
+				[data/Connect.php]
+			B)	The model is modified to insert the setters and getters to new password
+				[model/User.php]
+60-B. If the user is founded in UserDAO it verify if the actual and new password are the same, if ti is, create a query to update the password,
+		  execute the update and return the control to the index in admin Panel
+			[data / UserDAO.php]
+			A)	Connection with the DB is included
+				[data/Connect.php]
+			B)	User selection and update in  function in changePass is included
+				[model/User.php]

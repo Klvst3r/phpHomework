@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		UserController::changePass($id, $last_pass, $new_pass, $rewrite_pass);
 
 		//After the Insert list privileges
-		//header("location:action.php?a=5"); 
+		header("location:../admin/"); 
 	
 	} //If of data from form
 }else{
