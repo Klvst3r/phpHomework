@@ -205,21 +205,21 @@ class UserDAO extends Connect {
 
 	}//function regUser
 
-	public static function regUser($user){
+	public static function changePass($data_user){
 
-		$lastpass = $user->getName();
-		$result->bindParam(":name", $name);
+		$last_pass = $data_user->getUser_password_hash();
+		//$result->bindParam(":last_pass", $last_pass);
 
-		$user_name = $user->getUser_name();
-		$result->bindParam(":user_name", $user_name);
+		$new_pass = $data_user->getNew_pass();
+		//$result->bindParam(":new_pass", $new_pass);
 
-		$user_email = $user->getUser_email();
-		$result->bindParam(":user_email", $user_email);
+		$rewrite_pass = $data_user->getRewrite_pass();
+		//$result->bindParam(":rewrite_pass", $rewrite_pass);
 
 		//Print Variables		
-		echo "Name: " . $name . "<br/>";
-		echo "Email: " . $user_email . "<br/>";
-		echo "Password: " . $user_password_hash . "<br/>";
+		echo "Password: " . $last_pass . "<br/>";
+		echo "New Password: " . $new_pass . "<br/>";
+		echo "Rewite Password: " . $rewrite_pass . "<br/>";
 		
 
 	}

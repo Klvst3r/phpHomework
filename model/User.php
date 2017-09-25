@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 class User {
 	//variables names accord to the cols in the table, definded as properties from our class
 
-	//Private Propieties 
+	//Private Propieties
 	private $id_user;
 	private $name;
 	private $user_name;
@@ -18,7 +18,7 @@ class User {
 	 * The Getters and Setters are functions permit us to enter at definied properties
 	 * to mantain encapsulated and the enter to this is by next methods getters and setters
 	 */
-	
+
 
 	/*
 	Google: php getter and setters generator a falta de plugin pegando la clase en:
@@ -65,7 +65,7 @@ class User {
 	public function setUser_password_hash($user_password_hash){
 		$this->user_password_hash = md5($user_password_hash);
 	}
-	
+
 	public function getNew_pass(){
 		return $this->new_pass;
 	}

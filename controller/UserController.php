@@ -92,7 +92,7 @@ class UserController {
 		$obj_user = new User();
 
 
-		$obj_user->	setUser_password_hash($last_pass);
+		$obj_user->	setUser_password_hash($lastPass);
 		$obj_user-> setNew_pass($pass);
 		$obj_user->	setRewrite_pass($rewPass);
 
