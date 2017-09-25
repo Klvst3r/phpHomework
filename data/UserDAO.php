@@ -207,6 +207,8 @@ class UserDAO extends Connect {
 
 	public static function changePass($data_user){
 
+		$id_user =	$data_user->getId_user();
+
 		$last_pass = $data_user->getUser_password_hash();
 		//$result->bindParam(":last_pass", $last_pass);
 
@@ -216,15 +218,22 @@ class UserDAO extends Connect {
 		$rewrite_pass = $data_user->getRewrite_pass();
 		//$result->bindParam(":rewrite_pass", $rewrite_pass);
 		//Print Variables		
+		echo "ID: " . $id_user . "<br/>";
 		echo "Password: " . $last_pass . "<br/>";
 		echo "New Password: " . $new_pass . "<br/>";
 		echo "Rewite Password: " . $rewrite_pass . "<br/>";
 
 		//Verify new and Rewrite pass
+		//
 		if($new_pass == $rewrite_pass){
-			echo "Proced<br/>";
+			echo "Realizamos busqueda del password anterior<br/>";
+			return true;
+			/*$query = "SELECT id_user, user_name, user_email, name, id_priv, date_reg FROM users WHERE user_name = :user_name AND 
+		user_password_hash = :user_password";*/
+
 		}else {
 			echo "Verifique su nuevo Password y su confirmación, no son iguales";
+			return false;
 		}
 
 		
