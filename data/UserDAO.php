@@ -215,11 +215,18 @@ class UserDAO extends Connect {
 
 		$rewrite_pass = $data_user->getRewrite_pass();
 		//$result->bindParam(":rewrite_pass", $rewrite_pass);
-
 		//Print Variables		
 		echo "Password: " . $last_pass . "<br/>";
 		echo "New Password: " . $new_pass . "<br/>";
 		echo "Rewite Password: " . $rewrite_pass . "<br/>";
+
+		//Verify new and Rewrite pass
+		if($new_pass == $rewrite_pass){
+			echo "Proced<br/>";
+		}else {
+			echo "Verifique su nuevo Password y su confirmación, no son iguales";
+		}
+
 		
 
 	}

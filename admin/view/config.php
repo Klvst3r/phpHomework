@@ -45,19 +45,25 @@ include'../data/Form.php';
                    $form -> addField(2, array(
                               "field_name"    =>  "last_pass",
                               "label_field"   =>  "Password Actual",
-                              "placeholder"   =>  "********"
+                              "placeholder"   =>  "********",
+                              "required"      =>  "required",
+                              "autofocus"     =>  "autofocus"
                               )); 
 
                    $form -> addField(2, array(
                               "field_name"    =>  "new_pass",
                               "label_field"   =>  "Nuevo Password",
-                              "placeholder"   =>  "********"
+                              "placeholder"   =>  "********",
+                              "required"      =>  "required",
+                              "autofocus"     =>  ""
                               )); 
 
                     $form -> addField(2, array(
                               "field_name"    =>  "rewrite_pass",
                               "label_field"   =>  "Vuelva a esribir nueva Contraseña",
-                              "placeholder"   =>  "********"
+                              "placeholder"   =>  "********",
+                              "required"      =>  "required",
+                              "autofocus"     =>  ""
                               )); 
 
                     $form -> addField(3, array(
