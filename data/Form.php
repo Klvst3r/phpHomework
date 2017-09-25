@@ -67,10 +67,18 @@ class form {
                    }
                break;
         case 3: //submit-button
-  			if ($check = $this -> verifyParams($p, 1, "SUBMIT")){
+  			if ($check = $this -> verifyParams($p, 2, "SUBMIT")){
             	/*echo "<input type='submit' $p[disabled]  name='$p[nombre]' value='$p[value]' style='$p[style]' $p[js]>";   */
             	/*<button type="submit" class="btn btn-primary">Registrar</button>*/
-            	echo '<button type="submit" class="' . $p["type_button"] . '">Registrar</button>';
+              /*
+              <button type="button" class="btn btn-default">Default</button>
+              <button type="button" class="btn btn-primary">Botón primario</button>
+              <button type="button" class="btn btn-success">Acción Positiva</button>
+              <button type="button" class="btn btn-info">Información</button>
+              <button type="button" class="btn btn-warning">Aviso</button>
+              <button type="button" class="btn btn-danger">Error</button>
+               */
+            	echo '<button type="submit" class="' . $p["type_button"] . '">' . $p["legend"] . '</button>';
             }
         break;
         case 4: //hidden

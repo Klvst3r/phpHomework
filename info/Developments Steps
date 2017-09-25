@@ -128,4 +128,9 @@ Developments Steps
 			[data/Connect.php]
 		B)	User registration function in included
 			[model/User.php]
-			
+56. The latter script (data / UserDAO.php) returns control to the privilege controller in the data logging script (admin / view /
+	users.php) by the controller's regUser method. Ending by redirection to the view of the list of privileges
+	[admin/view/users.php]
+	---------------------------- Process of Change Admin Password -----------------------------------------
+	57. Begin changing the view of Admin Configuration
+			[admin/view/config.php]

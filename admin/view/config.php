@@ -4,6 +4,7 @@
 }else{
     echo "No existen variables de sesión";
 }*/
+include'../data/Form.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Configuración</h1>
+                    <h1 class="page-header">Panel de Administración</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -28,23 +29,59 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Mi Configuración</h3>
+                    <h3 class="panel-title">Configuración</h3>
                 </div>
                 
                 <div class="panel-body ">
-                    <!-- Información Pefil -->
-                   Información sobre el prefil...
-            <!-- End Información Pefil -->
-        </div>
+                    <!-- Formulario Cambio de Password -->
+                   <?php
+                  $form = new Form('newPrivilege','POST','action.php?a=7', 'form', '');
+                  ?>
+                    <legend>Cambiar Password</legend>
+
+
+                    <?php
+                    //Datos del usuario si es edición
+                   $form -> addField(2, array(
+                              "field_name"    =>  "last_pass",
+                              "label_field"   =>  "Password Actual",
+                              "placeholder"   =>  "********"
+                              )); 
+
+                   $form -> addField(2, array(
+                              "field_name"    =>  "new_pass",
+                              "label_field"   =>  "Nuevo Password",
+                              "placeholder"   =>  "********"
+                              )); 
+
+                    $form -> addField(2, array(
+                              "field_name"    =>  "rewrite_pass",
+                              "label_field"   =>  "Vuelva a esribir nueva Contraseña",
+                              "placeholder"   =>  "********"
+                              )); 
+
+                    $form -> addField(3, array(
+                              "type_button"    =>  "btn btn-warning",
+                              "legend"    =>  "Cambiar"
+
+
+                              ));
+                    
+                    $form->closeForm();                                   
+
+
+                      ?>
+
+
+            <!-- End Formulario Cambio de Passwordl -->
+                </div>
             
-    </div>          
+            </div>          
 
-    <!--TERMINO CONTENIDO -->
-
-
-</div>
-<!-- /#page-wrapper -->
-</div>
+        <!--TERMINO CONTENIDO -->
+        </div>
+    <!-- /#page-wrapper -->
+    </div>
 <!-- /#wrapper -->
 <?php  include 'inc/adminFooter.php'; ?>
 </body>
