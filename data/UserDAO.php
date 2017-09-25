@@ -203,12 +203,26 @@ class UserDAO extends Connect {
 
 		return false;
 
+	}//function regUser
 
-		//disconect
+	public static function regUser($user){
+
+		$lastpass = $user->getName();
+		$result->bindParam(":name", $name);
+
+		$user_name = $user->getUser_name();
+		$result->bindParam(":user_name", $user_name);
+
+		$user_email = $user->getUser_email();
+		$result->bindParam(":user_email", $user_email);
+
+		//Print Variables		
+		echo "Name: " . $name . "<br/>";
+		echo "Email: " . $user_email . "<br/>";
+		echo "Password: " . $user_password_hash . "<br/>";
 		
 
-
-	}//function regUser
+	}
 
 	
 

@@ -30,6 +30,9 @@ if(isset($a)){
 		case 8:
 			require_once("view/addNewUser.php");
 			break;
+		case 9:
+			require_once("view/changePass.php");
+			break;
 
 
 

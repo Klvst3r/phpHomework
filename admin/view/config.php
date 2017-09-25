@@ -35,7 +35,7 @@ include'../data/Form.php';
                 <div class="panel-body ">
                     <!-- Formulario Cambio de Password -->
                    <?php
-                  $form = new Form('newPrivilege','POST','action.php?a=7', 'form', '');
+                  $form = new Form('newPassword','POST','action.php?a=9', 'form', '');
                   ?>
                     <legend>Cambiar Password</legend>
 

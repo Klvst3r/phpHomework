@@ -9,6 +9,8 @@ class User {
 	private $user_name;
 	private $user_email;
 	private $user_password_hash;
+	private $new_pass;
+	private $rewrite_pass;
 	private $id_priv;
 	private $date_reg;
 
@@ -62,6 +64,22 @@ class User {
 
 	public function setUser_password_hash($user_password_hash){
 		$this->user_password_hash = md5($user_password_hash);
+	}
+	
+	public function getNew_pass(){
+		return $this->new_pass;
+	}
+
+	public function setNew_pass($new_pass){
+		$this->new_pass = md5($new_pass);
+	}
+
+	public function getRewrite_pass(){
+		return $this->rewrite_pass;
+	}
+
+	public function setRewrite_pass($rewrite_pass){
+		$this->rewrite_pass = md5($rewrite_pass);
 	}
 
 	public function getId_Priv(){

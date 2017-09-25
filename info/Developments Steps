@@ -134,3 +134,9 @@ Developments Steps
 	---------------------------- Process of Change Admin Password -----------------------------------------
 	57. Begin changing the view of Admin Configuration
 			[admin/view/config.php]
+			A) Class to Create forms
+					[data/Form.php]
+			B)  Management header is included
+				[admin/inc/adminHead.php]
+			C)  Management Menu is included
+				[admin/inc/adminMenu.php]

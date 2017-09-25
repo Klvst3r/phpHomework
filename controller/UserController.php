@@ -1,4 +1,4 @@
-<?php 
+<?php
 //After generating the entity we create the controller
 //we import UserDao to use it in the defined class
 include '../data/UserDAO.php';
@@ -20,7 +20,7 @@ class UserController {
 	public function getUser($user_name, $user_password){
 
 		$obj_user = new User();
-		
+
 		$obj_user->setUser_name($user_name);
 		$obj_user->setUser_password_hash($user_password);
 		//We send the object from UserDAO
@@ -39,11 +39,11 @@ class UserController {
 
 		/*
 		 *
-		 
+
 	public function setName($name){
 		$this->name = $name;
 	}
-	
+
 	public function setUser_name($user_name){
 		$this->user_name = $user_name;
 	}
@@ -85,9 +85,21 @@ class UserController {
 		return UserDAO::regUser($obj_user);
 
 
-	}
+	}//Function regUSer
+
+	public function changePass($lastPass, $pass, $rewPass){
+		//1. Ceerate Object to Work
+		$obj_user = new User();
 
 
+		$obj_user->	setUser_password_hash($last_pass);
+		$obj_user-> setNew_pass($pass);
+		$obj_user->	setRewrite_pass($rewPass);
+
+		//We send the object from UserDAO
+		return UserDAO::changePass($obj_user);
+
+	}//Function
 
 
 }

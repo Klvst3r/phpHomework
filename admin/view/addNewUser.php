@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 
-    <?php 
-    include'inc/adminHead.php'; 
+    <?php
+    include'inc/adminHead.php';
     /*include 'sql/Privilege.php';*/
     include '../controller/UserController.php';
     include '../helps/helps.php';
@@ -13,7 +13,7 @@
 <div id="wrapper">
 	<!-- Navigation -->
 <?php
-// The request to te server is type POST 
+// The request to te server is type POST
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	if(isset($_POST["user_name"]) && isset($_POST["user_password"]) && isset($_POST["user_email"]) && isset($_POST["name"]) && isset($_POST["privilege"])){
@@ -25,22 +25,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$privilege = validate_field($_POST["privilege"]);
 		/*
 		echo $date->now();
-		$date_reg = now();		
+		$date_reg = now();
 		 */
 
 		$date_reg = date('Y-m-d H:i:s');
 
 
-				
+
 		UserController::regUser($user_name, $user_password, $user_email, $name, $privilege, $date_reg);
 
 		//After the Insert list privileges
-		header("location:action.php?a=3"); 
-	
+		header("location:action.php?a=3");
+
 	} //If of data from form
 }else{
-	//In case fail register the user send again to the form 
-header("location:action.php?a=4"); 
+	//In case fail register the user send again to the form
+header("location:action.php?a=4");
 }
 ?>
 
@@ -51,4 +51,4 @@ header("location:action.php?a=4");
 
 </body>
 
-</html>    
+</html>
