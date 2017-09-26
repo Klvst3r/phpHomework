@@ -13,12 +13,18 @@
 <div id="wrapper">
 
 	<!-- Navigation -->
-        <?php  include'inc/adminMenu.php'; ?>
+        <?php  
+        include'inc/adminMenu.php'; 
+
+        //Receive var $id_user
+        $id_user = $_GET["id_user"];
+
+        ?>
         <div id="page-wrapper">
             <br/>
             <div class="row">
                 <div class="col-lg-12">
-                	<h1 class="page-header"><?php echo isset($user) ? 'Actualizar' : 'Nuevo' ?> Privilegio |
+                	<h1 class="page-header"><?php echo isset($id_user) ? 'Actualizar' : 'Nuevo' ?> Privilegio |
                     <a href="action.php?a=5" class="btn btn-default">
                         <i class="fa fa-users"></i> Ver Listado</a>
                     </h1>
@@ -42,11 +48,12 @@
 
                             <?php
                             //Datos del usuario si es edición
-                            if(isset($usuario)) {
+                            if(isset($id_user)) {
                                    $form -> addField(4, array(
-                                    "field_name"    =>  "usuario_id",
-                                    "value"   =>  ""
+                                    "field_name"    =>  "id_user",
+                                    "value"   =>  $id_user
                                     ));
+                                    //echo "Variable recibida: " . $id_user;
                              } ?>
 
                             <?php
