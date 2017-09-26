@@ -16,12 +16,22 @@
 // The request to te server is type POST 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-	if(isset($_POST["desc_priv"])){
+	if(isset($_POST["desc_priv"]) && isset($_POST["id_user"])){
+		$id = $_POST["id_user"];
+		$priv = validate_field($_POST["desc_priv"]);
+				
+		/*Privilege::regPrivilege($priv);*/
+		PrivilegeController::updatePrivilege($id, $priv);
+
+		//After the Insert list privileges
+		header("location:action.php?a=5"); 
+
+	}elseif(isset($_POST["desc_priv"])){
 		//Validate field before send to BD
 		$priv = validate_field($_POST["desc_priv"]);
 				
 		/*Privilege::regPrivilege($priv);*/
-		PrivilegeController::regPirvilege($priv);
+		PrivilegeController::regPrivilege($priv);
 
 		//After the Insert list privileges
 		header("location:action.php?a=5"); 

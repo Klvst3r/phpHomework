@@ -83,7 +83,37 @@ class PrivilegeDAO extends Connect {
 		*/
 	//}
 
+	public static function updatePrivilege($privilege){
 
+		$query = "UPDATE `privileges` SET `desc_priv` = :desc_priv WHERE `privileges`.`id_priv` = :id_priv";
+		//$query = "INSERT INTO privileges (id_priv, desc_priv) VALUES (NULL, :desc_priv)";
+
+		self::getConection();
+
+		$result = self::$cnx->prepare($query);
+
+		//echo "Insercion Exitosa";
+
+		//$result = self::$cnx->prepare($query);
+
+		//Obtain data from Model
+		$id_priv = $privilege->getId_priv();
+		$result->bindParam(":id_priv", $id_priv);
+		
+		$desc_priv = $privilege->getDesc_priv();
+		$result->bindParam(":desc_priv", $desc_priv);
+
+		//Execute Query
+		if($result->execute()){
+			//return true;
+			//echo "Insercion Exitosa";
+			return true;
+		}
+
+		return false;
+
+
+	}//function updatePrivilege($privilege)
 
 
 
