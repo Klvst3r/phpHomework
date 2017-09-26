@@ -17,7 +17,7 @@
         include'inc/adminMenu.php'; 
 
         //Receive var $id_user
-        $id_user = $_GET["id_user"];
+        $id_user = $_GET["b"];
 
         ?>
         <div id="page-wrapper">
