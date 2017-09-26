@@ -55,6 +55,9 @@ class PrivilegeSQL extends Connect {
 			echo '</tr>
 			</thead>
 			<tbody>';
+
+			
+
 			for($i = 0; $i < $rows; $i++){
 				$data = $result->fetch();
 				echo '<tr>';
@@ -62,7 +65,11 @@ class PrivilegeSQL extends Connect {
 				for($j = 0; $j < $cols; $j++){
 					echo '<td>' . $data[$j] .'</td>';
 				}
-				echo '<td>' . $action . '</td>';
+				//echo '<td>' . $action . '</td>';
+				$id = $i + 1;
+				$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=6&id_user='. $id .'">Editar</a>';
+            	$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar('."eliminarPrivilege.php".')">Eliminar</button>';
+				echo '<td>' . $edit . ' ' . $delete . '</td>';
 				echo '</tr>';
 
 

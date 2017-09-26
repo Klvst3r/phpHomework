@@ -24,10 +24,13 @@
 			
             $query = " SELECT id_priv as ID, desc_priv as Privilegio FROM privileges";
 
-            $edit = '<a class="btn btn-primary btn-sm" href="editPrivilege.php">Editar</a>';
-            $delete = '<button class="btn btn-danger btn-sm" onclick="confirmar('."eliminarPrivilege.php".')">Eliminar</button>';
+            //$id_user = $_SESSION["user"]["id_user"];
 
-            $params = $edit . ' ' . $delete;
+            /*$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=6">Editar</a>';
+            $delete = '<button class="btn btn-danger btn-sm" onclick="confirmar('."eliminarPrivilege.php".')">Eliminar</button>';*/
+
+            //$params = $edit . ' ' . $delete;
+            $params = "";
 
             PrivilegeSQL::getTablePrivileges($query, $params)
 
