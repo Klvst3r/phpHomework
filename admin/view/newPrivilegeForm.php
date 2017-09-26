@@ -6,6 +6,9 @@
     include'inc/adminHead.php';
     include'../data/Form.php';
     include 'sql/Combo.php';
+    include 'sql/Data.php';
+    //include 'Select_Privilege.php';
+    //include '../model/Privilege.php';
     ?>
 
 </head>
@@ -17,7 +20,9 @@
         include'inc/adminMenu.php'; 
 
         //Receive var $id_user
+        if(isset($_GET["b"])){
         $id_user = $_GET["b"];
+        }
 
         ?>
         <div id="page-wrapper">
@@ -54,16 +59,74 @@
                                     "value"   =>  $id_user
                                     ));
                                     //echo "Variable recibida: " . $id_user;
-                             } 
+                                    
+                             
+
+                             //Select data for values in form
+                             
+                             
+                             $query = "SELECT id_priv, desc_priv FROM privileges where id_priv = :id_priv";
+
+                             //Data::makeQuery($query, $id_user);
+
+                             //$privilegio = new Privilege();
+
+                             //$privilege = $privilegio->getDesc_priv();
+                              
+                             $select = new Data();                                                         
+
+                             $select::getConection();
+    
+                              //$query = $sql;
+
+                              $result = $select::$cnx->prepare($query);
+
+                              //The parameters are sent the user in the form by user_name field, the object $user, to the user of the form
+                              $id_priv = $id_user;
+                              $result->bindParam(":id_priv", $id_priv);
+
+                              //We run the query the PDO connection
+                              $result->execute();
+
+                              $rows = $result->rowCount();
+
+                              if($rows > 0){
+                                $data = $result->fetch();
+
+                                //$privilegio = new Privilege();
+
+                                $desc = $data["desc_priv"];
+
+                                //$privilegio->setDesc_priv($desc);
+
+                                //$desc = $privilegio->getDesc_priv($privilegio);
+
+                                //echo $desc;
+                                
+
+
+                              }else {
+                                echo "No Data in Query";
+                              }
 
                              
+                              
+                              $value = $desc;
+                              
+                                
+                              }
+                              else{
+                                $value = "";
+                              }//if(isset($id_user))
                              
+
+
                             $form -> addField(1, array(
                               "field_name"    =>  "desc_priv",
                               "label_field"   =>  "Nombre del privilegio",
                               "readonly"      =>  "",
                               "disabled"      =>  "",
-                              "value"         =>  "",
+                              "value"         =>  $value,
                               "maxlength"     =>  "",
                               "size"          =>  "",
                               "style"         =>  "",
