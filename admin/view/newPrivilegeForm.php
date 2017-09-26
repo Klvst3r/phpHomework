@@ -54,10 +54,10 @@
                                     "value"   =>  $id_user
                                     ));
                                     //echo "Variable recibida: " . $id_user;
-                             } ?>
+                             } 
 
-                            <?php
-
+                             
+                             
                             $form -> addField(1, array(
                               "field_name"    =>  "desc_priv",
                               "label_field"   =>  "Nombre del privilegio",

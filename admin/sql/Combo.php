@@ -3,14 +3,20 @@ include '../data/Connect.php';
 include '../assets/class/SQL.php';
 
 class Combo extends Connect {
-	
+
 	protected static $cnx;
 
 	function getConection(){
 
 		self::$cnx = Connect::connection();
-		
+
 	}//getConection
+
+	function disconnect(){
+		//This close the conection in PDO
+
+		self::$cnx = null;
+	}
 
 	function combo($sql, $name, $id, $value, $label, $req, $enable, $onchange, $iniselect){
 		//echo "combo<br/>";
@@ -62,7 +68,8 @@ class Combo extends Connect {
 		echo '<div>';
 
 		echo "<br/>";
-
+		//Disconect from BD
+		self::disconnect();
    }//function combo
 
 }//Class Combo
