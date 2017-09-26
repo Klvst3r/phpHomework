@@ -68,7 +68,8 @@
 
 
                           $form -> addField(3, array(
-                              "type_button"    =>  "btn btn-primary"
+                              "type_button"    =>  "btn btn-primary",
+                              "legend"    =>  "Registrar"
 
                               ));
 
