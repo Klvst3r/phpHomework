@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,12 @@
 </head>
 <body>
     <div id="wrapper">
-        <?php  include'inc/adminMenu.php'; ?>
+        <?php  
+        include'inc/adminMenu.php'; 
+
+     	//header("Content-Type: text/html; charset=UTF-8");
+  
+        ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -31,19 +40,23 @@
                     <!-- Formulario Cambio de Password -->
                    <?php
 
-                   if($_SERVER["REQUEST_METHOD"] == "GET"){
+                   if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["b"])){
 
-                   	   if(isset($_GET["b"])){
+                   	   /*if(isset($_GET["b"])){*/
                    	   		
                    	   		$id = $_GET["b"];   	
                    	   	
                    			echo $id;
-                   	   }
+                   	   //}
 
                    	
 
 
-                   }
+                   }else{
+				    //In case fail register the user send again to the form 
+					header("location:action.php?a=5");
+					//echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=action.php?a=5'<head/>";
+					}
 
                    ?>
 
@@ -59,3 +72,6 @@
 </body>
 
 </html>
+<?php
+ob_end_flush();
+?>

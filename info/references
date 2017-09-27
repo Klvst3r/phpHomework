@@ -37,3 +37,29 @@
 
 -- DISPLAY NOTIFICATIONS IN FORM --
 https://github.com/paulkr/overHang.js/
+
+
+
+-- ERROR IN THE HEADER --
+Script Del Privileges
+https://cybmeta.com/cannot-modify-header-information-headers-already-sent
+
+Send header anywhere
+http://librosweb.es/foro/pregunta/128/como-solucionar-el-problema-headers-already-sent-de-php/
+
+
+Hola, si el fallo siguiera dando, podéis hacer uso de esto:
+
+// antes de cualquier línea de código html o php:
+ 
+<?php
+ob_start();
+?>
+
+// al final del documento:
+ 
+<?php
+ob_end_flush();
+?>
+
+Con esto, se pueden enviar los headers en cualquier lugar del documento.
