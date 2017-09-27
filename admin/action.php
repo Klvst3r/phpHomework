@@ -33,6 +33,9 @@ if(isset($a)){
 		case 9:
 			require_once("view/changePass.php");
 			break;
+		case 10:
+			require_once("view/delPrivilege.php");
+			break;
 
 
 

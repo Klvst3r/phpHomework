@@ -50,4 +50,8 @@ function confirmar(url){
 
 	});
 }
+
+/*function confirmar(url){
+	alert("Prepare to Delete Record");
+}*/
  </script>

@@ -35,8 +35,6 @@
             PrivilegeSQL::getTablePrivileges($query, $params)
 
             ?>
-
-            <!--TERMINO CONTENIDO -->
         </div>
         <!-- /#page-wrapper -->
     </div>
