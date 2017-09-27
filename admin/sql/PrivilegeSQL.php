@@ -70,7 +70,7 @@ class PrivilegeSQL extends Connect {
 				$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=6&b='. $id .'">Editar</a>';
             	//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(action.php?a=6)">Eliminar</button>';
             	
-            	$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(\'action.php?a=10\')">Eliminar</button>';
+            	$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(\'action.php?a=10&b=' . $id . '\')">Eliminar</button>';
 				echo '<td>' . $edit . ' ' . $delete . '</td>';
 				echo '</tr>';
 

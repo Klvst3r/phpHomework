@@ -31,7 +31,19 @@
                     <!-- Formulario Cambio de Password -->
                    <?php
 
-                   
+                   if($_SERVER["REQUEST_METHOD"] == "GET"){
+
+                   	   if(isset($_GET["b"])){
+                   	   		
+                   	   		$id = $_GET["b"];   	
+                   	   	
+                   			echo $id;
+                   	   }
+
+                   	
+
+
+                   }
 
                    ?>
 
