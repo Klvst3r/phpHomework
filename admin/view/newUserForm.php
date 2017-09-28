@@ -73,7 +73,9 @@
                             $form -> addField(2, array(
                               "field_name"    =>  "user_password",
                               "label_field"   =>  "Password",
-                              "placeholder"   =>  "********"
+                              "placeholder"   =>  "********",
+                              "required"      =>  "",
+                              "autofocus"     =>  ""
                               )); 
 
                             $form -> addField(5, array(

@@ -24,10 +24,12 @@
             $query = " SELECT A.id_user as ID, A.user_name as Usuario, A.user_email as Email, A.name as Nombre, 
                         A.date_reg as Registro, B.desc_priv  as Privilegio FROM users A, privileges B where A.id_priv = B.id_priv ";
 
-            $edit = '<a class="btn btn-primary btn-sm" href="editUser.php">Editar</a>';
-            $delete = '<button class="btn btn-danger btn-sm" onclick="confirmar('."eliminar.php".')">Eliminar</button>';
+            /*$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=4">Editar</a>';
+            $delete = '<button class="btn btn-danger btn-sm" onclick="confirmar('."eliminar.php".')">Eliminar</button>';*/
 
-            $params = $edit . ' ' . $delete;
+            $params = "";
+
+            //$params = $edit . ' ' . $delete;
 
 			User::getTableUsers($query, $params);
 

@@ -199,4 +199,20 @@ Developments Steps
 		A) Receibe the object in method delPrivilege in PrivilegeDAO to execute the deletion
 			[data/PrivilegeDAO.php]
 		B) After the deletion the controller return the control to the view principal in panel admin an redirect to the Privilege List
-		
+----------------------------- Process of Edit Privilege -----------------------------------------
+61. From the User list view, the information in the table is modified to add the USER
+			[admin/view/users.php]
+			A) From the User list, the information in the table is modified to add the USER ID
+					[admin/sql/PrivilegeSQL.php]
+			B) The variable is received by the GET method with the User ID to generate a query for obtaining values ​​for the form
+				and make query to select the correct value in BD and put it in field Description User. In adition Create new
+				field hidden with id_user value
+				 [admin/view/newUserForm.php]
+		  C) Create file to stablish a conection and make the query to obtain data from query to the values in Form
+				[admin/sql/Data.php]
+62. A new verification is added with the User ID to execute the update of the current field
+		[admin/view/addNewPrivilege.php]
+		A) Create a new method updatePrivilege in Privilege Controller to update Values in BD
+				[controller/PrivilegeController.php]
+		B) In PrivilegeDAO the insertion ocurs receiving 1 object with the ID User and the Description for the Privilege
+			[data/PrivilegeDAO.php]
