@@ -58,11 +58,16 @@
                           $form -> addField(4, array(
                            "field_name"    =>  "id_user",
                            "value"   =>  $id_user
+                           )); 
+
+                           $form -> addField(4, array(
+                           "field_name"    =>  "update",
+                           "value"   =>  "true"
                           )); 
 
                             //Select data for values in form
                              
-                             $query = "SELECT A.user_name, A.user_email, A.name, A.id_priv, B.desc_priv FROM users A, privileges B where A.id_priv = B.id_priv and A.id_user = :id_user";
+                             $query = "SELECT A.user_name, A.user_email, A.user_password_hash, A.name, A.id_priv, B.desc_priv FROM users A, privileges B where A.id_priv = B.id_priv and A.id_user = :id_user";
 
                              $select = new Data();                                                         
 
@@ -81,7 +86,7 @@
                                 $data = $result->fetch();
 
                                 $user_name    = $data["user_name"];
-                                $user_pass    = "";
+                                $user_pass    = $data["user_password_hash"];
                                 $user_email   = $data["user_email"];
                                 $name         = $data["name"];
                                 $id_priv      = $data["id_priv"];

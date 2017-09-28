@@ -216,3 +216,7 @@ Developments Steps
 				[controller/PrivilegeController.php]
 		B) In PrivilegeDAO the insertion ocurs receiving 1 object with the ID User and the Description for the Privilege
 			[data/PrivilegeDAO.php]
+		C) Fixed the function combo to recibe vaues if data is from an Update Form
+			[admin/sql/Combo.php]
+
+			
