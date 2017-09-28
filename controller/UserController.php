@@ -101,6 +101,25 @@ class UserController {
 
 	}//Function
 
+	public function updateUser($user, $pass, $email, $name, $priv){
+		//1. Ceerate Object to Work
+		$obj_user = new User();
+
+		
+		//Set data to te model
+		$obj_user->setName($name);
+		$obj_user->setUser_name($user);
+		$obj_user->setUser_email($email);
+		$obj_user->setUser_password_hash($pass);
+		$obj_user->setId_Priv($priv);
+		
+
+		//We send the object from UserDAO
+		return UserDAO::updateUser($obj_user);
+
+
+	}//Function regUSer
+
 
 }
 

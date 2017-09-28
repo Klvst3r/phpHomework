@@ -219,4 +219,8 @@ Developments Steps
 		C) Fixed the function combo to recibe vaues if data is from an Update Form
 			[admin/sql/Combo.php]
 
-			
+63. Receibe data from Update Form to execute the update only with data modified
+		[admin/view/addNewUser.php]
+		A) Create a new method to update User data
+			 [controller/UserController.php]
+		B)
