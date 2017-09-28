@@ -7,7 +7,8 @@ ob_start();
 <head>
     <?php 
     include 'inc/adminHead.php'; 
-    include 'sql/PrivilegeSQL.php';
+    include '../controller/PrivilegeController.php';
+    //include 'sql/PrivilegeSQL.php';
     //include '../helps/helps.php';
 
     ?>
@@ -33,7 +34,7 @@ ob_start();
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Registro Eliminado</h3>
+                    <h3 class="panel-title">Registro de acciones</h3>
                 </div>
                 
                 <div class="panel-body ">
@@ -46,14 +47,14 @@ ob_start();
                    	   		
                    	   		$id = $_GET["b"];   	
                    	   	
-                   			echo $id;
+                   			//echo $id;
 
                    	   //Controller to delete privilege
                    	   PrivilegeController::delPrivilege($id);                   	   
 
                    	   //Redirect to the privilege list
-                   	   echo "Redirigiendo...";
-                   	   echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=action.php?a=5'<head/>";
+                   	   echo "Registro Eliminado, redirigiendo...";
+                   	   echo"<meta HTTP-EQUIV='Refresh' CONTENT='1; URL=action.php?a=5'<head/>";
                    	
 
 

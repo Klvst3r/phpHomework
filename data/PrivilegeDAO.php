@@ -117,6 +117,32 @@ class PrivilegeDAO extends Connect {
 
 
 
+	public function delPrivilege($privilege){
+		
+		$query = "DELETE from privileges where id_priv = :id_priv"; 
+
+		self::getConection();
+
+		$result = self::$cnx->prepare($query);
+
+		$id_priv = $privilege->getId_priv();
+		$result->bindParam(":id_priv", $id_priv);
+
+		if($result->execute()){
+			//return true;
+			//echo "Insercion Exitosa";
+			return true;
+		}
+
+		return false;		
+
+
+
+
+	}
+
+
+
 
 }//End Class PrivilegeDAO
 
