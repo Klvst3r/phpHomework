@@ -62,7 +62,15 @@ class User extends Connect {
 				for($j = 0; $j < $cols; $j++){
 					echo '<td>' . $data[$j] .'</td>';
 				}
-				echo '<td>' . $action . '</td>';
+				//echo '<td>' . $action . '</td>';
+
+				$id = $i + 1;
+				$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=4&b='. $id .'">Editar</a>';
+            	//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(action.php?a=6)">Eliminar</button>';
+            	
+            	$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(\'action.php?a=11&b=' . $id . '\')">Eliminar</button>';
+				echo '<td>' . $edit . ' ' . $delete . '</td>';
+
 				echo '</tr>';
 
 

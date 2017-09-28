@@ -203,7 +203,7 @@ Developments Steps
 61. From the User list view, the information in the table is modified to add the USER
 			[admin/view/users.php]
 			A) From the User list, the information in the table is modified to add the USER ID
-					[admin/sql/PrivilegeSQL.php]
+					[admin/sql/User.php]
 			B) The variable is received by the GET method with the User ID to generate a query for obtaining values ​​for the form
 				and make query to select the correct value in BD and put it in field Description User. In adition Create new
 				field hidden with id_user value
