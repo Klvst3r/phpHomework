@@ -87,7 +87,7 @@ class Combo extends Connect {
 		self::disconnect();
    }//function combo
 
-
+   //This method doesn*t use in the system
    function comboUpdate($sql, $name, $id, $value, $label, $req, $enable, $onchange, $iniselect){
 		//echo "combo<br/>";
         /*
