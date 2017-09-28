@@ -51,7 +51,7 @@ class form {
             }            
         break;
                case 2: //password
-                   if ($check = $this -> verifyParams($p, 5, "PASSWORD")){
+                   if ($check = $this -> verifyParams($p, 6, "PASSWORD")){
                        /*echo "<input type='password' name='$p[nombre]' maxlength='$p[maxlength]' size='$p[size]' style='$p[style]' $p[js]>";   */
                     /*   
        		    	1. nombre del campo = user_name -> $p["field_name"]
@@ -61,7 +61,7 @@ class form {
 
                     echo '<div class="form-group">
                             <label for="' . $p["field_name"] . '">' . $p["label_field"] . '</label>
-                              <input type="password" name="' . $p["field_name"] . '" class="form-control" id="' . $p["field_name"] .
+                              <input type="password" name="' . $p["field_name"] . '" value = "' . $p["value"] . '" class="form-control" id="' . $p["field_name"] .
                               '" placeholder="'. $p["placeholder"] . '" '. $p["required"].' ' . $p["autofocus"] .'/>
                           </div>';
                    }
