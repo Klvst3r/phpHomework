@@ -42,13 +42,18 @@ ob_start();
 
                    if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["b"])){
 
-                   	   /*if(isset($_GET["b"])){*/
+                   	   
                    	   		
                    	   		$id = $_GET["b"];   	
                    	   	
                    			echo $id;
-                   	   //}
 
+                   	   //Controller to delete privilege
+                   	   PrivilegeController::delPrivilege($id);                   	   
+
+                   	   //Redirect to the privilege list
+                   	   echo "Redirigiendo...";
+                   	   echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=action.php?a=5'<head/>";
                    	
 
 

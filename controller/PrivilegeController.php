@@ -42,4 +42,15 @@ class PrivilegeController {
 
 	}
 
+	public function delPrivilege($id){
+		$obj_priv = new Privilege();
+		
+		$obj_priv->setId_priv($id);
+
+		//We send the object to UserDAO in order to execute order
+		return PrivilegeDAO::delPrivilege($obj_priv);
+
+
+	}
+
 }//End Class PrivilegeController
