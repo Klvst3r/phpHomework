@@ -281,7 +281,50 @@ class UserDAO extends Connect {
 
 		
 
-	}
+	}//function changePass
+
+
+	public static function updateUser($user){
+		//Query to Execute
+		
+		//$query = "INSERT INTO users (id_user, user_name, user_password_hash, user_email, name, id_priv, date_reg) VALUES (NULL, :user_name, :user_password_hash, :user_email, :name, :id_priv, :date_reg)";
+
+		$query = "UPDATE `users` SET `user_name` = :user_name, `user_password_hash` = :user_password_hash, `user_email` = :user_email, `name` = :name, `id_priv` = :id_priv WHERE `users`.`id_user` = :id_user";
+
+		self::getConection();
+	
+		$result = self::$cnx->prepare($query);
+
+		$id_user =	$user->getId_user();
+		$result->bindParam(":id_user", $id_user);
+
+		$user_name = $user->getUser_name();
+		$result->bindParam(":user_name", $user_name);
+		
+		$user_password_hash = $user->getUser_password_hash();
+		$result->bindParam(":user_password_hash", $user_password_hash);
+				
+		$user_email = $user->getUser_email();
+		$result->bindParam(":user_email", $user_email);
+
+		$name = $user->getName();
+		$result->bindParam(":name", $name);
+
+		$id_priv = $user->getId_Priv();
+		$result->bindParam(":id_priv", $id_priv);
+
+		echo $query;
+
+		if($result->execute()){
+			//return true;
+			//echo "Insercion Exitosa";
+			self::disconnect();
+			return true;
+		}
+
+		return false;
+
+	}//function regUser
 
 	
 

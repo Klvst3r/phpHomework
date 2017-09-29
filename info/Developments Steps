@@ -223,4 +223,6 @@ Developments Steps
 		[admin/view/addNewUser.php]
 		A) Create a new method to update User data
 			 [controller/UserController.php]
-		B)
+		B) Create a new method to receive values to edit an user
+			[data/UserDAO.php]
+			After this return the control to the list Users

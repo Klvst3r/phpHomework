@@ -101,12 +101,13 @@ class UserController {
 
 	}//Function
 
-	public function updateUser($user, $pass, $email, $name, $priv){
+	public function updateUser($id, $user, $pass, $email, $name, $priv){
 		//1. Ceerate Object to Work
 		$obj_user = new User();
 
 		
 		//Set data to te model
+		$obj_user-> setId_user($id);
 		$obj_user->setName($name);
 		$obj_user->setUser_name($user);
 		$obj_user->setUser_email($email);

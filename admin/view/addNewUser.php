@@ -17,8 +17,9 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	//If comes data form an update form
   if(isset($_POST["update"])){
-  		if(isset($_POST["user_name"]) && isset($_POST["user_password"]) && isset($_POST["user_email"]) && isset($_POST["name"]) && isset($_POST["privilege"])){
+  		if(isset($_POST["id_user"]) && isset($_POST["user_name"]) && isset($_POST["user_password"]) && isset($_POST["user_email"]) && isset($_POST["name"]) && isset($_POST["privilege"])){
 		//Validate field before send to BD
+		$id_user = validate_field($_POST["id_user"]);
 		$user_name = validate_field($_POST["user_name"]);
 		$user_password = validate_field($_POST["user_password"]);
 		$user_email = validate_field($_POST["user_email"]);
@@ -29,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$date_reg = now();
 		 */
 
-		UserController::updateUser($user_name, $user_password, $user_email, $name, $privilege);
+		UserController::updateUser($id_user, $user_name, $user_password, $user_email, $name, $privilege);
 
 		//After the Insert list privileges
 		header("location:action.php?a=3");
