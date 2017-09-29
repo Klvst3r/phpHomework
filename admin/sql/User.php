@@ -64,7 +64,9 @@ class User extends Connect {
 				}
 				//echo '<td>' . $action . '</td>';
 
-				$id = $i + 1;
+				//Make the corrrecton to delete the rigth User not only for the number of the row in wtue query
+				//$id = $i + 1;
+				$id = $data["ID"];
 				$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=4&b='. $id .'">Editar</a>';
             	//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(action.php?a=6)">Eliminar</button>';
             	

@@ -313,7 +313,7 @@ class UserDAO extends Connect {
 		$id_priv = $user->getId_Priv();
 		$result->bindParam(":id_priv", $id_priv);
 
-		echo $query;
+		//echo $query;
 
 		if($result->execute()){
 			//return true;
@@ -326,8 +326,11 @@ class UserDAO extends Connect {
 
 	}//function regUser
 
+
+
 	
 
+	
 
-}
+}//Class
 

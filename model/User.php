@@ -13,6 +13,7 @@ class User {
 	private $rewrite_pass;
 	private $id_priv;
 	private $date_reg;
+	private $id_ext;
 
 	/**
 	 * The Getters and Setters are functions permit us to enter at definied properties
@@ -96,6 +97,14 @@ class User {
 
 	public function setDate_reg($date_reg){
 		$this->date_reg = $date_reg;
+	}
+
+	public function getId_Ext(){
+		return $this->id_ext;
+	}
+
+	public function setId_Ext($id_ext){
+		$this->id_ext = $id_ext;
 	}
 
 }

@@ -8,6 +8,8 @@ ob_start();
     <?php 
     include 'inc/adminHead.php'; 
     include '../controller/PrivilegeController.php';
+    include '../controller/OterController.php';
+
     //include 'sql/PrivilegeSQL.php';
     //include '../helps/helps.php';
 
@@ -45,16 +47,28 @@ ob_start();
 
                    	   
                    	   		
-                   	   		$id = $_GET["b"];   	
+                   	   		$id = $_GET["b"];   
+
+                       //Verify if any user has this Privilege if it is utilizzed for an user ask if really execute the deletion
+                       //Not Proceed if any user uses an privilege	
+                       /**
+                        * Thes method verify if exist an user that uses the privilege and can not delete the record, if any user 
+                        * uses the privilege, procede with the PrivilegeController::delPrivilege($id); andredirect to the list of privileges
+                        * in header("location:action.php?a=5");
+                        * 
+                        */
+                       OterController::verifyUser($id);
+
+                     
                    	   	
-                   			//echo $id;
+                  		 //echo $id;
 
                    	   //Controller to delete privilege
-                   	   PrivilegeController::delPrivilege($id);                   	   
+                   	   //PrivilegeController::delPrivilege($id);                   	   
 
                    	   //Redirect to the privilege list
-                   	   echo "Registro Eliminado, redirigiendo...";
-                   	   echo"<meta HTTP-EQUIV='Refresh' CONTENT='1; URL=action.php?a=5'<head/>";
+                   	   //echo "Registro Eliminado, redirigiendo...";
+                   	   //echo"<meta HTTP-EQUIV='Refresh' CONTENT='1; URL=action.php?a=5'<head/>";
                    	
 
 
