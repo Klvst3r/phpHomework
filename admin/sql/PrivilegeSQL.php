@@ -63,10 +63,18 @@ class PrivilegeSQL extends Connect {
 				echo '<tr>';
 
 				for($j = 0; $j < $cols; $j++){
+
 					echo '<td>' . $data[$j] .'</td>';
+
+
 				}
 				//echo '<td>' . $action . '</td>';
-				$id = $i + 1;
+				//$id = $data[$i];
+				$id = $data["ID"];
+				
+
+
+
 				$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=6&b='. $id .'">Editar</a>';
             	//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(action.php?a=6)">Eliminar</button>';
             	
@@ -79,7 +87,7 @@ class PrivilegeSQL extends Connect {
 			echo "</tbody></table><br/>";
 
 		}else{
-			echo "No hay privilegios en la BD";
+			echo "No hay privilegios en la BD to build table";
 		}
 
 		//free memory

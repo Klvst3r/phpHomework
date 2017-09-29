@@ -64,7 +64,7 @@
 
                              //Select data for values in form
                              
-                             
+
                              $query = "SELECT id_priv, desc_priv FROM privileges where id_priv = :id_priv";
 
                              //Data::makeQuery($query, $id_user);
@@ -81,6 +81,8 @@
 
                               $result = $select::$cnx->prepare($query);
 
+                              //echo $id_user;
+
                               //The parameters are sent the user in the form by user_name field, the object $user, to the user of the form
                               $id_priv = $id_user;
                               $result->bindParam(":id_priv", $id_priv);
@@ -96,6 +98,7 @@
                                 //$privilegio = new Privilege();
 
                                 $desc = $data["desc_priv"];
+                                //$desc = $id_user;
 
                                 //$privilegio->setDesc_priv($desc);
 
