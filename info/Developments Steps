@@ -226,3 +226,12 @@ Developments Steps
 		B) Create a new method to receive values to edit an user
 			[data/UserDAO.php]
 			After this return the control to the list Users
+----------------------------- Fix Process to Delete Privilege -----------------------------------------
+64. From the privilege List send Privilege ID to verify
+		[admin/view/privileges.php]
+		A) Receives the Privilege ID and uses Oter controller to reconect and set Id Privilege in the Class
+			[controller/OterController.php]
+		B) Create a class to verify the Privilege ID in the user in OterDAO, find the user, if exist a coincidence the deletion is canceled
+				beacuse an user uses the Privilege Id that intents delete, otherwise the deletion of privilege ocurs
+				[data/OterDAO.php]
+				Disconect and return the control to the viev in panel control and go to the Privilege List.
