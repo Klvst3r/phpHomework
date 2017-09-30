@@ -121,16 +121,7 @@ class UserController {
 
 	}//Function regUSer
 
-	public function verifyUser($id){
-		$obj_user = new User();
-
-		
-		//Set data to te model
-		$obj_user-> setId_Priv($id);
-
-		return UserDAO::verifyUser($obl_user);
-
-	}
+	
 
 
 }

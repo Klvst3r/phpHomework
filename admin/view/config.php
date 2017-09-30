@@ -37,7 +37,7 @@ include'../data/Form.php';
                    <?php
                   $form = new Form('newPassword','POST','action.php?a=9', 'form', '');
                   ?>
-                    <legend>Cambiar Password</legend>
+                     <legend>Cambiar Password</legend>
 
 
                     <?php
@@ -45,6 +45,7 @@ include'../data/Form.php';
                    $form -> addField(2, array(
                               "field_name"    =>  "last_pass",
                               "label_field"   =>  "Password Actual",
+                              "value"         =>  "",
                               "placeholder"   =>  "********",
                               "required"      =>  "required",
                               "autofocus"     =>  "autofocus"
@@ -53,6 +54,7 @@ include'../data/Form.php';
                    $form -> addField(2, array(
                               "field_name"    =>  "new_pass",
                               "label_field"   =>  "Nuevo Password",
+                              "value"         =>  "",
                               "placeholder"   =>  "********",
                               "required"      =>  "required",
                               "autofocus"     =>  ""
@@ -61,6 +63,7 @@ include'../data/Form.php';
                     $form -> addField(2, array(
                               "field_name"    =>  "rewrite_pass",
                               "label_field"   =>  "Vuelva a esribir nueva Contraseña",
+                              "value"         =>  "",
                               "placeholder"   =>  "********",
                               "required"      =>  "required",
                               "autofocus"     =>  ""

@@ -52,10 +52,10 @@ class OterDAO extends Reconnect {
 
 			if($rows == 1){
 				echo 'Existe ' . $rows . ' usuario registrado con el privilegio que intenta eliminar.';
-				echo '<br/><br/><p class="text-primary"> Redirigiendo...</p>';
+				echo '<br/><br/><div class="bg-success text-white"> <center>Redirigiendo...</center></div>';
 			}elseif($rows > 1){
 				echo 'Existen ' . $rows . ' usuarios registrados con el privilegio que intenta eliminar';
-				echo '<br/><br/><p class="text-primary"> Redirigiendo...</p>';
+				echo '<br/><br/><div class="bg-success text-white"> <center>Redirigiendo...</center></div>';
 			}
 
 			echo"<meta HTTP-EQUIV='Refresh' CONTENT='3; URL=action.php?a=5'<head/>";
