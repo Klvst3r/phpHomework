@@ -1,8 +1,10 @@
 <?php
 
 
-if(isset($_SESSION["user"])){
+if(isset($_SESSION["user"]) and isset($_SESSION["user"]["url"])){
+
   $code = $_SESSION["user"]["code"];
+//  echo $code;
   if($code == "true" and $_SESSION["user"]["code"] == "true"){
   //Definition of Paht principal
   define("PATH", $_SESSION["user"]["url"]);
@@ -97,13 +99,15 @@ if(isset($_SESSION["user"])){
 $_SESSION["user"]["code"] = "false";
 
 }else{
+      $_SESSION["user"]["code"] = "false";
       $code ="false";
-        header("location:login.php");
+        header("location:../login.php");
       }
 
+$_SESSION["user"]["code"] = "false";
 
 }else {
 
-header("location:login.php");
+header("location:../login.php");
 }
 ?>

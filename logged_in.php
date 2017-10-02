@@ -31,6 +31,7 @@ include 'assets/partials/menu.php';
 					//echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=administrador.php'<head/>";
 					header("location:admin/"); 
 					//$_SESSION["user"]["code"] = "false";
+
 				}else{
 					//header("location:usuario.php"); 
 					?>

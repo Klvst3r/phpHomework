@@ -235,3 +235,51 @@ Developments Steps
 				beacuse an user uses the Privilege Id that intents delete, otherwise the deletion of privilege ocurs
 				[data/OterDAO.php]
 				Disconect and return the control to the viev in panel control and go to the Privilege List.
+
+
+------------------------------- Process to validate stay inside in the system -------------------------
+65. After be loaded by [view/validaCode.php] return the control to [logged_in.php], this eval, if $_SESSION["user"]["id_priv"]==1 	
+	redirect to the admmin panel.
+	In the Admin Panel load 3 files, [admin/inc/adminHead.php] | [admin/inc/adminFooter.php] and [admin/inc/adminMeanu.php].
+	A) In admin Menu eval 2 sentences,
+		1. If exist un array (user) and if exist session variables taken a value (url), if it is exist evaluate the second sentences,
+			otherwise redirect to the login and the session variables are destroyed
+		2. The second evaluation, verify the session of variable (code) and if its value is true, each script in admon panel reload 	this variable with the value true, because in general this value is false.
+			If all is ok define the path and put it in in a constant and the session vairiable (url) is created, and will be propaged
+		3. After load the menu, the session variable ($_SESSION["user"]["code"] = "false") take the value false.
+			This is the reason of load in each file the value ($_SESSION["user"]["code"] = "true")
+
+	B) If some file redirect to the login file [login.php], this destroy any variable load in memory by session and unset the memory
+
+	C) To stay in the system all the files in admin panel will load the session ($_SESSION["user"]["code"] = "true")
+		Put it in each view of the action [admin/action] after load the menu:
+			- "view/perfil.php"
+			- "view/config.php"
+			- "view/users.php"
+			- "view/newUserForm.php"
+			- "view/privileges.php"
+			- "view/newPrivilegeForm.php"
+			- "view/addNewPrivilege.php"
+			- "view/addNewUser.php"
+			- "view/changePass.php"
+			- "view/delPrivilege.php"
+
+		example:	
+			 <?php  
+        		include'inc/adminMenu.php'; 
+        		$_SESSION["user"]["code"] = "true";
+        	 ?>
+
+        	 The principal file to stay in the system is 
+        	 	[admin/inc/adminMenu.php]
+66. If $_SESSION["user"]["id_priv"] is diferent of 1 redirect to the respective panel accord to the privilege, in this case only is a 	  register user.
+		<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=usuario.php'<head/
+	[logged_in.php]
+
+67. If the system or the user load the login this will destroy the session variables before load the form to the user and password with
+	session_destroy();
+	session_unset();	
+		[login.php]
+
+------------------------------- Pages in list Views ------------------------------------------------
+				

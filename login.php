@@ -1,6 +1,8 @@
 <?php include 'assets/partials/head.php'; 
 
 $code = $_POST["code"]="false";
+session_destroy();
+session_unset();
 ?>
 
 

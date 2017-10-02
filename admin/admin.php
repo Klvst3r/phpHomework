@@ -9,11 +9,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include'inc/adminHead.php'; ?>
+    <?php include'inc/adminHead.php'; 
+
+    ?>
 </head>
 <body>
     <div id="wrapper">
-        <?php  include'inc/adminMenu.php'; ?>
+        <?php  include'inc/adminMenu.php'; 
+            $_SESSION["user"]["code"] = "true";
+        ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -59,7 +63,7 @@
 
              <div>
                 <?php
-                /*echo $_SESSION["user"]["name"];
+               /* echo $_SESSION["user"]["name"];
                 echo "<br>";
                 //$_SESSION["user"]["op"] = "op";
                 echo $_SESSION["user"]["code"];

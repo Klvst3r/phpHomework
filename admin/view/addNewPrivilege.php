@@ -7,12 +7,19 @@
     /*include 'sql/Privilege.php';*/
     include '../controller/PrivilegeController.php';
     include '../helps/helps.php';
+    $_SESSION["user"]["code"] = "true";
+
     ?>
 </head>
 <body>
 <div id="wrapper">
 	<!-- Navigation -->
 <?php
+//load the menu
+include'inc/adminMenu.php'; 
+		//load the variable to stay inside
+        $_SESSION["user"]["code"] = "true";
+
 // The request to te server is type POST 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 

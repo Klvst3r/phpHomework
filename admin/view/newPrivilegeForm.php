@@ -18,6 +18,7 @@
 	<!-- Navigation -->
         <?php  
         include'inc/adminMenu.php'; 
+        $_SESSION["user"]["code"] = "true";
 
         //Receive var $id_user
         if(isset($_GET["b"])){

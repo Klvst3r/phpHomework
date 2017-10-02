@@ -3,11 +3,18 @@
 
 $a = $_GET['a'];
 
+/**
+ * Inside each option you should load the next session variable to stay inside in the system
+ * this value will be put it after load menu
+ */
+//$_SESSION["user"]["code"] = "true";
+
 if(isset($a)){
 	switch($a){
 		case 1:
 			//echo"Opcion 1";
 			require_once("view/perfil.php");
+
 			break;
 		case 2:
 			require_once("view/config.php");

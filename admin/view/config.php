@@ -14,7 +14,10 @@ include'../data/Form.php';
 </head>
 <body>
     <div id="wrapper">
-        <?php  include'inc/adminMenu.php'; ?>
+        <?php  
+        include'inc/adminMenu.php'; 
+        $_SESSION["user"]["code"] = "true";
+        ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">

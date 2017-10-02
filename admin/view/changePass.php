@@ -7,6 +7,9 @@
     /*include 'sql/Privilege.php';*/
     include '../controller/UserController.php';
     include '../helps/helps.php';
+
+    $_SESSION["user"]["code"] = "true";
+    
     ?>
 </head>
 <body>

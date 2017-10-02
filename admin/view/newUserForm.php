@@ -21,6 +21,8 @@
         <!-- Navigation -->
         <?php  
         include'inc/adminMenu.php'; 
+        //in each render load the value true to the session variable code in other wise will be redirected to the login
+        $_SESSION["user"]["code"] = "true";
 
         if(isset($_GET["b"])){
           $id_user = $_GET["b"];

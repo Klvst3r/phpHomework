@@ -20,6 +20,8 @@ ob_start();
         <?php  
         include'inc/adminMenu.php'; 
 
+        $_SESSION["user"]["code"] = "true";
+
      	//header("Content-Type: text/html; charset=UTF-8");
   
         ?>
