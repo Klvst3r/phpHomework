@@ -1,5 +1,8 @@
 Developments Steps
 
+/*******************************************************************************************************/
+/* Base of the web systems 																			   */
+/*******************************************************************************************************/
 ------------------------------ Prepare BD -----------------------------------------------
 1.  Create Structure of Database
 2.  Export Structure of DataBase
@@ -281,5 +284,13 @@ Developments Steps
 	session_unset();	
 		[login.php]
 
+------------------------------- Pages in list Views ------------------------------------------------
+68. In the Privileges List create a new query to count total rows in the table
+	[admin/view/privileges.php]				
+69. Create a new method with 3 parameters to create the pagination
+	[admin/sql/PrivilegeSQL.php]	
 
+/*******************************************************************************************************/
+/* Until here is the base of the web systems 														   */
+/*******************************************************************************************************/
 
