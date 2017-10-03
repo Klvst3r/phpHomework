@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,3 +61,6 @@ header("location:action.php?a=6");
 </body>
 
 </html>    
+<?php
+ob_end_flush();
+?>

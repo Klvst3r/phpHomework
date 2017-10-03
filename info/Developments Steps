@@ -241,7 +241,7 @@ Developments Steps
 
 
 ------------------------------- Process to validate stay inside in the system -------------------------
-65. After be loaded by [view/validaCode.php] return the control to [logged_in.php], this eval, if $_SESSION["user"]["id_priv"]==1 	
+65. After be loaded by [view/validaCode.php] return the control to [logged_in.php], this eval, if $_SESSION["user"]["id_priv"]==1
 	redirect to the admmin panel.
 	In the Admin Panel load 3 files, [admin/inc/adminHead.php] | [admin/inc/adminFooter.php] and [admin/inc/adminMeanu.php].
 	A) In admin Menu eval 2 sentences,
@@ -267,13 +267,13 @@ Developments Steps
 			- "view/changePass.php"
 			- "view/delPrivilege.php"
 
-		example:	
-			 <?php  
-        		include'inc/adminMenu.php'; 
+		example:
+			 <?php
+        		include'inc/adminMenu.php';
         		$_SESSION["user"]["code"] = "true";
         	 ?>
 
-        	 The principal file to stay in the system is 
+        	 The principal file to stay in the system is
         	 	[admin/inc/adminMenu.php]
 66. If $_SESSION["user"]["id_priv"] is diferent of 1 redirect to the respective panel accord to the privilege, in this case only is a 	  register user.
 		<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=usuario.php'<head/
@@ -281,16 +281,22 @@ Developments Steps
 
 67. If the system or the user load the login this will destroy the session variables before load the form to the user and password with
 	session_destroy();
-	session_unset();	
+	session_unset();
 		[login.php]
 
 ------------------------------- Pages in list Views ------------------------------------------------
 68. In the Privileges List create a new query to count total rows in the table
-	[admin/view/privileges.php]				
+	[admin/view/privileges.php]
 69. Create a new method with 3 parameters to create the pagination
-	[admin/sql/PrivilegeSQL.php]	
-
+	[admin/sql/PrivilegeSQL.php]
+	- Fixing the header in edit privileges and users
+		[admin/view/addNewPrivilege.php] | [admin/view/addNewUser.php]
 /*******************************************************************************************************/
 /* Until here is the base of the web systems 														   */
 /*******************************************************************************************************/
 
+
+/*******************************************************************************************************/
+/* Work with Users session																			   */
+/*******************************************************************************************************/
+70.
