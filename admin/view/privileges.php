@@ -25,7 +25,8 @@
             <!-- INICIO CONTENIDO -->
 			<?php
 			
-            $query = " SELECT id_priv as ID, desc_priv as Privilegio FROM privileges";
+            $query_count = "SELECT COUNT(*) FROM privileges";
+            $query = " SELECT id_priv as ID, desc_priv as Privilegio FROM privileges ORDER BY id_priv";
 
             //$id_user = $_SESSION["user"]["id_user"];
 
@@ -35,7 +36,8 @@
             //$params = $edit . ' ' . $delete;
             $params = "";
 
-            PrivilegeSQL::getTablePrivileges($query, $params)
+            //PrivilegeSQL::getTablePrivileges($query, $params)
+            PrivilegeSQL::getTablePrivileges_Pag($query_count, $query, $params)
 
             ?>
         </div>

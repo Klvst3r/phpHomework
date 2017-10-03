@@ -63,3 +63,44 @@ ob_end_flush();
 ?>
 
 Con esto, se pueden enviar los headers en cualquier lugar del documento.
+
+
+PAGINATION
+
+Enlcaes de Paginacion
+
+http://librosweb.es/libro/bootstrap_3/capitulo_6/paginadores.html
+
+https://es.stackoverflow.com/questions/24227/c%C3%B3mo-utilizar-paginaci%C3%B3n-en-bootstrap
+
+https://obedalvarado.pw/blog/paginacion-con-php-mysql-jquery-ajax-y-bootstrap/
+
+https://codepen.io/wanderlp/pen/WvYNKa
+
+http://wanderlp.com/pagineo-con-angularjs/
+
+view-source:https://codepen.io/wanderlp/pen/WvYNKa
+
+https://codepen.io/wanderlp/pen/WvYNKa
+
+https://codepen.io/wanderlp/pen/WvYNKa
+
+Bootstrap
+
+http://librosweb.es/libro/bootstrap_3/capitulo_6/paginadores.html
+
+
+
+CON JS
+
+http://wanderlp.com/pagineo-con-angularjs/
+
+
+
+
+
+con PHP
+
+http://icaza23.blogspot.mx/2013/08/paginacion-de-registro-con-bootstrap.html
+
+https://obedalvarado.pw/blog/paginacion-con-php-mysql-jquery-ajax-y-bootstrap/
