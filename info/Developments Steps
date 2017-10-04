@@ -315,3 +315,19 @@ Developments Steps
 				[user/inc/userFooter.php]
 		C) Create User Menu
 				[user/inc/userMenu.php]
+
+/*******************************************************************************************************/
+/* Users Panel																																							   				*/
+/*******************************************************************************************************/
+72. Create Users Panel
+		[assets/user-panel/index-html]
+		Include
+		- assets
+			-	boostrap folder
+			- font-awesome folder
+			- Ionicons folder
+		- dist
+			- css folder
+			- img folder
+			- js folder
+			- js_admin folder
