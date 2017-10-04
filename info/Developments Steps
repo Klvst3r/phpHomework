@@ -291,6 +291,7 @@ Developments Steps
 	[admin/sql/PrivilegeSQL.php]
 	- Fixing the header in edit privileges and users
 		[admin/view/addNewPrivilege.php] | [admin/view/addNewUser.php]
+	- Exporting the BD in Stage 3
 /*******************************************************************************************************/
 /* Until here is the base of the web systems 														   */
 /*******************************************************************************************************/
@@ -299,4 +300,18 @@ Developments Steps
 /*******************************************************************************************************/
 /* Work with Users session																			   */
 /*******************************************************************************************************/
-70.
+70. From login with User Privilege, redirect to Users Menu
+		[logged_in.php]
+		A) Create Index
+				[user/index.php]
+		B) Create Content of Users
+				[users/user.php]
+71. Create the includes for Users
+		A) Create Header
+				[user/inc/userHead.php]
+				1) Add the Assets
+					[user/assets/] | [bootstrap] | [css] | [font-awesome] ! [jquery] ! [js] ! [metisMenu]
+		B) Create Footer
+				[user/inc/userFooter.php]
+		C) Create User Menu
+				[user/inc/userMenu.php]

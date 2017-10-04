@@ -37,7 +37,8 @@ include 'assets/partials/menu.php';
 					?>
 					<p>Panel de Control | <span class="label label-info">Redirigiendo a su menu...</span></p>
 					<?php
-					echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=usuario.php'<head/>";
+					//echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=usuario.php'<head/>";
+					header("location:user/"); 
 				}
 
 			/*}
