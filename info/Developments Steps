@@ -331,3 +331,13 @@ Developments Steps
 			- img folder
 			- js folder
 			- js_admin folder
+73. Init the sessione variables
+	  [user/inc/userHead.php]
+74. Valid User if is logged and verify Session variables: URL, CODE, and if CODE is TRUE in Nav Bar
+		[user/inc/userNav]
+75. In Side Bar Stablish the route to redirect to the Panel User
+		[user/inc/userSideBar.php]
+76. In the Fotther add the JS references and add the script to confirm deletion
+		[user/inc/userFooter.php]
+77. Activate ACtual Session, this action is in all views of users to mantain the session active
+		[user/inc/user/Content.php]

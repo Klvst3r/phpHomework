@@ -1,3 +1,16 @@
+<?php
+
+
+if(isset($_SESSION["user"]) and isset($_SESSION["user"]["url"])){
+
+  $code = $_SESSION["user"]["code"];
+//  echo $code;
+  if($code == "true" and $_SESSION["user"]["code"] == "true"){
+  //Definition of Paht principal
+  define("PATH", $_SESSION["user"]["url"]);
+
+?>
+
 <!-- Logo -->
     <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -25,7 +38,9 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/Klvst3r.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Klvst3r</span>
+              <span class="hidden-xs">
+                <?php echo $_SESSION["user"]["name"];  ?> <i class="fa fa-caret-down"></i>
+              </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -45,20 +60,41 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="action.php?a=1" class="btn btn-default btn-flat">Profile 
+                    <i class="fa fa-cog fa-spin fa-1x fa-fw text-green"></i></a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Config</a>
+                  <a href="action.php?a=2" class="btn btn-default btn-flat">Config  
+                    <i class="fa fa-gears text-blue"></i></a>
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears text-red"></i></a>
-          </li>
+            <!-- LogOut -->
+            <a href="../view/signout.php" data-toggle="control-sidebar"><i class="fa fa-power-off fa-1x text-red"></i></a>          </li>
           <!-- End Control Sidebar Toggle Button -->
 
         </ul>
       </div>
     </nav>
+
+<?php
+
+//After login turn off code
+$_SESSION["user"]["code"] = "false";
+
+}else{
+      $_SESSION["user"]["code"] = "false";
+      $code ="false";
+        header("location:../login.php");
+      }
+
+$_SESSION["user"]["code"] = "false";
+
+}else {
+
+header("location:../login.php");
+}
+?>

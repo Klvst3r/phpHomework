@@ -1,14 +1,28 @@
+<?php
+  //activate the sactual session
+  $_SESSION["user"]["code"] = "true";
+?>      
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Sidebar Collapsed
-        <small>Layout with collapsed sidebar on load</small>
+        Inicio
+        <small>Actividades Principales</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li><a href="#">Layout</a></li>
         <li class="active">Collapsed Sidebar</li>
-      </ol>
+      </ol> -->
+      <?php
+      echo '
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+            <li class="active">Principal</li>
+          </ol>
+      ';
+      ?>
+
     </section>
 
     <!-- Main content -->

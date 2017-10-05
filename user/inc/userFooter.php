@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.0.1
     </div>
-    <strong>Copyright © 2016 <b class="text-blue">Klvst3r St.</b></strong> All rights reserved.
+    <strong>Copyright © <?php echo date("Y"); ?> <b class="text-blue">Klvst3r St.</b></strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -27,4 +27,40 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js_admin/demo.js"></script>
 
+<script>
 
+function confirmar(url){
+  $.confirm({
+    title: '¿Deseas eliminar este registro?',
+    content: 'Se eliminará completamente del sistema. \n Si elimino por error, esta acción se cancelara en 5 segundos.', 
+    icon: 'fa fa-question',
+    theme: 'modern', //modern, material, bootstrap, supervan
+    closeIcon: true,
+    animation: 'scale',
+    type: 'red',
+    autoClose: 'cancelAction|5000',
+      escapeKey: 'cancelAction',
+    buttons: {
+      confirm: {
+        btnClass: 'btn-red',
+        text: 'Confirmar',
+        action: function() {
+          window.location.href=url;
+        }
+      },
+      cancelAction: {
+        btnClass: 'btn-success',
+        text: 'Cancelar',
+        action: function() {
+          //$.alert('Cancelado!');
+        }
+      }
+    }
+
+  });
+}
+
+/*function confirmar(url){
+  alert("Prepare to Delete Record");
+}*/
+ </script>

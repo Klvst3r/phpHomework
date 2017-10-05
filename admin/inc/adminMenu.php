@@ -24,7 +24,7 @@ if(isset($_SESSION["user"]) and isset($_SESSION["user"]["url"])){
         <!-- /.navbar-header -->
 
         <ul class="nav navbar-top-links navbar-right">
-      
+
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -65,7 +65,7 @@ if(isset($_SESSION["user"]) and isset($_SESSION["user"]["url"])){
                         ?>
                     </li>
                     <li>
-                       
+
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-table fa-fw"></i> Calendarios</a>
@@ -82,7 +82,7 @@ if(isset($_SESSION["user"]) and isset($_SESSION["user"]["url"])){
                             <li>
                                 <a href="action.php?a=5">Privilegios</a>
                             </li>
-                        
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>

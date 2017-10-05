@@ -23,68 +23,81 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu tree" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header text-green">NAVEGACION PRINCIPAL</li>
+        
+        <li class="treeview">
+          
+          <?php
+            //Go to the principal route
+            echo '<a href="'. PATH .'/user/"><i class="fa fa-dashboard"></i> <span>Panel</span></a>';
+          ?>
+
+        
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span>Registro</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li><a href="action.php?a=3"><i class="fa fa-circle-o"></i> Registrar Tarea</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Registro 2</a></li>
           </ul>
         </li>
+
         <li class="treeview active menu-open">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
+            <span>Consultas</span>
             <span class="pull-right-container">
               <span class="label label-primary pull-right">4</span>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="#pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="#pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a>
+            <li><a href="#pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Consultar Tareas</a></li>
+            <li><a href="#pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Consulta 2</a></li>
+            <li><a href="#pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Consulta 3</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Consulta 4</a>
             </li>
           </ul>
         </li>
+
         <li>
           <a href="#">
-            <i class="fa fa-th"></i> <span>Widgets</span>
+            <i class="fa fa-th"></i> <span>Ejecutar</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green">ejecute</small>
             </span>
           </a>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <span>Modificar</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Modificar Tareas</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Modificar 1</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Flot</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <span>Imprimir</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> General</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Imprimir Tareas</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Icons</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Buttons</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Sliders</a></li>
@@ -92,6 +105,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Forms</span>
@@ -105,6 +119,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li>
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>
@@ -117,6 +132,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
+
         <li>
           <a href="#">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
@@ -126,6 +142,7 @@
             </span>
           </a>
         </li>
+
         <li>
           <a href="#">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
@@ -136,6 +153,7 @@
             </span>
           </a>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Examples</span>
@@ -155,6 +173,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
@@ -188,6 +207,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
+        
         <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
