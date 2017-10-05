@@ -27,34 +27,18 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="callout callout-info">
-        <h4>Tip!</h4>
+     
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+        <h3 class="panel-title">Tareas</h3>
+        </div>
+        <div class="panel-body">
+           <a href="action.php?a=3" class="btn btn-default btn-large">
+              <i class="fa fa-user" aria-hidden="true"></i>Tareas Desfasadas
+            </a>
+        </div>
+      </div>       
 
-        <p>Add the sidebar-collapse class to the body tag to get this layout. You should combine this option with a
-          fixed layout if you have a long sidebar. Doing that will prevent your page content from getting stretched
-          vertically.</p>
-      </div>
-      <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
-        <div class="box-body" style="">
-          Start creating your amazing application!
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer" style="">
-          Footer
-        </div>
-        <!-- /.box-footer-->
-      </div>
-      <!-- /.box -->
     </section>
     <!-- /.content -->

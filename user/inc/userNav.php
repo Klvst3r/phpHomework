@@ -39,7 +39,7 @@ if(isset($_SESSION["user"]) and isset($_SESSION["user"]["url"])){
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/Klvst3r.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">
-                <?php echo $_SESSION["user"]["name"];  ?> <i class="fa fa-caret-down"></i>
+                <?php echo $_SESSION["user"]["name"];  ?>  <i class="fa fa-caret-down"></i>
               </span>
             </a>
             <ul class="dropdown-menu">
@@ -73,7 +73,7 @@ if(isset($_SESSION["user"]) and isset($_SESSION["user"]["url"])){
           <!-- Control Sidebar Toggle Button -->
           <li>
             <!-- LogOut -->
-            <a href="../view/signout.php" data-toggle="control-sidebar"><i class="fa fa-power-off fa-1x text-red"></i></a>          </li>
+            <a href="../view/signout.php"><i class="fa fa-power-off fa-1x text-red"></i></a></li>
           <!-- End Control Sidebar Toggle Button -->
 
         </ul>
