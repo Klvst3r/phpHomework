@@ -17,7 +17,7 @@
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
-              </span>
+              </span> 
         </div>
       </form>
       <!-- /.search form -->

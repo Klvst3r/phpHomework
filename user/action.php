@@ -16,7 +16,7 @@ if(isset($a)){
 			break;
 		case 2:
 			// Config
-			require_once("view/config.php");
+			require_once("view/viewConfig.php");
 			break;
 		case 3:
 			//Listar Tareas
