@@ -19,6 +19,10 @@ if(isset($a)){
 			require_once("view/viewConfig.php");
 			break;
 		case 3:
+			//Changue Pass
+			require_once("view/viewChanguePass.php");
+			break;
+		case 4:
 			//Listar Tareas
 			require_once("view/tasks.php");
 			break;

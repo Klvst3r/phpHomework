@@ -1,3 +1,7 @@
+<?php
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +37,7 @@
 <!-- page content -->
 <?php
 	
-	include 'content/config.php';
+	include 'content/changuePass.php';
 
 ?>      
 
@@ -44,3 +48,7 @@
 <!-- End Footer -->
 </body>
 </html>
+
+<?php
+ob_end_flush();
+?>  

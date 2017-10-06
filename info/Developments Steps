@@ -341,3 +341,12 @@ Developments Steps
 		[user/inc/userFooter.php]
 77. Activate ACtual Session, this action is in all views of users to mantain the session active
 		[user/inc/user/Content.php]
+------------------------------- User Profile ------------------------------------------------
+78. From panel admin, create info page, in User menu show user profile.
+		[user/viewProfile.php] | [user/content/profile.php]
+------------------------------- User Password ------------------------------------------------
+79. From Panel Admin, create Form to changue current user password
+		[user/viewConfig.php]
+80.	Create the Script to process the change in password
+		[user/content/config.php]
+		
