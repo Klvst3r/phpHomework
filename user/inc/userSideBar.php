@@ -25,17 +25,17 @@
       <ul class="sidebar-menu tree" data-widget="tree">
         <li class="header text-green">NAVEGACION PRINCIPAL</li>
         
-        <li class="treeview">
-          
+        <li class="">
+
           <?php
             //Go to the principal route
             echo '<a href="'. PATH .'/user/"><i class="fa fa-dashboard"></i> <span>Panel</span></a>';
           ?>
 
-        
+        </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Registro</span>
+            <i class="fa fa-edit"></i> <span>Registro</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

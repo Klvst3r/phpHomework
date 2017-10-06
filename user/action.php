@@ -12,7 +12,7 @@ if(isset($a)){
 	switch($a){
 		case 1:
 			//Profile
-			require_once("view/profile.php");
+			require_once("view/viewProfile.php");
 			break;
 		case 2:
 			// Config
