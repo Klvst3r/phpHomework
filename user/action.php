@@ -26,39 +26,39 @@ if(isset($a)){
 			//Listar Tareas
 			require_once("view/tasks.php");
 			break;
-		case 4:
-			//Listar Areas
-			require_once("view/areas.php");
-			break;
 		case 5:
+			//Listar Areas
+			require_once("view/viewAreas.php");
+			break;
+		case 6:
 			//Registrar Tareas
 			require_once("view/");
 			break;
-		case 6:
+		case 7:
 			//Registrar Areas
 			require_once("view/");
 			break;
-		case 7:
+		case 8:
 			//Ajecutar Tareas
 			require_once("view/");
 			break;
-		case 8:
+		case 9:
 			//Consultar Tareas
 			require_once("view/");
 			break;
-		case 9:
+		case 10:
 			//Consultar Areas
 			require_once("view/");
 			break;
-		case 10:
+		case 11:
 			//Modificar Tareas
 			require_once("view/");
 			break;
-		case 11:
+		case 12:
 			//Modificar Areas
 			require_once("pdf.php");
 			break;
-		case 12:
+		case 13:
 			//Imprimir Tarea
 			require_once("pdf.php");
 			break;

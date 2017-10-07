@@ -55,10 +55,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Consultar Tareas</a></li>
-            <li><a href="#pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Consulta 2</a></li>
-            <li><a href="#pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Consulta 3</a></li>
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Consulta 4</a>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Consultar Tareas</a></li>
+            <li><a href="action.php?a=5"><i class="fa fa-circle-o"></i> Consultar Areas</a></li>
+            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Nueva Consulta</a>
             </li>
           </ul>
         </li>
