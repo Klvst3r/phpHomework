@@ -350,6 +350,5 @@ Developments Steps
 80.	Create the Script to process the change in password
 		[user/content/config.php]
 ------------------------------- Areas List ------------------------------------------------
-81. Create Model to the Area table
+81. Create Model to the Area table with setters and getters
 		[model/Area.php]
-		

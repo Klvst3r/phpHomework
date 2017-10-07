@@ -43,7 +43,7 @@ include 'sql/AreasSQL.php';
   $params = "";
 
   AreaSQL::getTableAreas_Pag($query_count, $query, $params);
-  
+
   ?>
        </div>
         <!-- /#page-wrapper -->
