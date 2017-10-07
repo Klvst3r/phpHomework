@@ -349,4 +349,7 @@ Developments Steps
 		[user/viewConfig.php]
 80.	Create the Script to process the change in password
 		[user/content/config.php]
-------------------------------- Areas List ------------------------------------------------		
+------------------------------- Areas List ------------------------------------------------
+81. Create Model to the Area table
+		[model/Area.php]
+		
