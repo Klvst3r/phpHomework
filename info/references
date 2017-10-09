@@ -144,3 +144,143 @@ https://adminlte.io/
 
 
 -------------------------------------------------------------------------------------------------------
+MySQL - PHP PDO: charset, set names
+
+https://stackoverflow.com/questions/4361459/php-pdo-charset-set-names
+
+http://www.php.net/manual/en/mysqlinfo.concepts.charset.php
+
+How to use UTF-8 with MySQL and PHP Data Objects (PDO)
+https://www.laszlo.nu/2008/05/08/how-to-use-utf-8-with-mysql-and-php-data-objects.html
+
+https://gist.github.com/luckyshot/9477105
+
+http://www.danibarreno.com/la-solucion-a-los-problemas-con-los-acentos-en-php-mysql-y-html/
+
+http://www.forosdelweb.com/f18/mysql-guarda-bien-acentos-n-pero-php-muestra-mal-1125543/
+
+--------------------
+
+http://xaviesteve.com/354/acentos-y-enes-aparecen-mal-a%C2%B1-en-php-con-mysql-utf-8-iso-8859-1/
+Error con acentos y eÑes en PHP/MySQL (Solucionado) 
+
+http://xaviesteve.com/354/acentos-y-enes-aparecen-mal-a%C2%B1-en-php-con-mysql-utf-8-iso-8859-1/
+
+Muchas veces al crear una web con PHP y MySQL, ocurre un problema al introducir y mostrar datos: estos se alteran acabando en Ã¡Ã³Ã± y cosas parecidas.
+
+Cuando me pasa esto suelo empezar a toquetear cosas, cambiar charsets y traducir a &ntilde; o &aacute; pero nada funciona. El problema es que la configuración del cotejamiento de los caracteres especiales como acentos, eñes y demás símbolos no es el mismo entre la base de datos (MySQL), el lenguaje de servidor (PHP) y el servidor (Apache). Así que me puse a buscar y después de encontrar comentarios buenísimos de gente por los foros puedo hacer un resumen de todo lo necesario cuando nos ocurre un problema de estos (id haciendo y testeando si ya funciona todo bien paso a paso).
+
+Guía paso a paso para solucionar el problema de los acentos y eñes
+
+    1. Cotejamiento
+    	Al crear la base de datos MySQL, asegúrate que los campos string y demás esten en [utf8_spanish_ci] y el cotejamiento de las tablas en [utf_unicode_ci] (más tarde en Operations > Collation de phpMyAdmin se puede cambiar)
+    
+    2. Content type HTML
+	    Pon en el "<head>" de todos los archivos HTML:
+	    [<meta http-equiv="Content-type" content="text/html; charset=utf-8" />]
+    
+    3. Content type PHP
+	    Y en los puramente PHP (que muestran XML, llamadas de AJAX, APIs…) pon el código:
+	    [header("Content-Type: text/html;charset=utf-8");]
+    
+    4. Set names
+	    Al crear la conexión de PHP con MySQL, envía esta consulta justo tras la conexión:
+	    mysqli_query("SET NAMES 'utf8'");
+	    [(Para MySQLi escribe $acentos = $db->query("SET NAMES 'utf8'"); gracias Fernando)]
+	    /*
+	    $connect = new PDO(
+			  "mysql:host=localhost;dbname=phpHomework", 
+			  $user, 
+			  $pass, 
+			  array(
+			    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+			    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+			  )
+			);
+	     */
+    
+    5. Convertir codificado a UTF-8
+	    Convierte todo lo que esté codificado de "latin1" a "UTF-8" (gracias Guillermo)
+	    [SELECT convert(cast(convert(content using latin1) as binary) using utf8) AS content]
+    
+    6. Apache
+    	Quita el DefaultCharset del Apache o modifícalo
+    
+    7. htmlentities
+    	Como última y desesperada opción, quita todos los htmlentities(); y sustitúyelo por otro parser para ‘sanitizar’ los datos.
+
+Haciendo estos pasos se solucionará cualquier problema de codificación de caracteres. Si te ha servido este artículo, ahorra la frustración a otros programadores compartiendo el artículo en Twitter, Facebook o Google+ con los botones de abajo.
+
+Si estás empezando con PHP/MySQL te recomiendo utilizar el código que tengo publicado aquí que es seguro, fácil de usar y funciona muy bien. También está la versión en PDO utilizando named parameters que es incluso más sencilla.
+
+Para aprender a programar lo mejor es que te compres un libro físico para tenerlo al lado del ordenador a modo de consulta/referencia, te recomiendo sin lugar a dudas Domine PHP y MySQL, es el libro mejor recomendado que desde hace muchos años siempre tengo al alcance cuando programo y el hecho de consultarlo físicamente me ayuda a consolidar y memorizar mucho mejor los conceptos.
+
+Y si estás buscando un framework PHP te recomiendo Fat-Free-Framework (también conocido como F3), es de código abierto y rapidísimo de aprender y utilizar.
+
+
+-----------------------------------------------------------------------------------
+
+
+Conexion con MySQL
+http://xaviesteve.com/4158/clase-php-mysql-simple-y-facil-de-usar-recomendada/
+
+
+
+Ejecutar consultas SQL con PHP es muy fácil aunque para los que acaban de empezar puede ser un poco desesperante encontrar un código corto y simple que funcione y que devuelva algo cómodo de usar y coherente. En Internet se encuentran muchos snippets (trozos de código) que puedes copiar y pegar aunque muchos de ellos o son demasiado complicados, o funcionan mal, o son larguísimos con más de 50 lineas de código PHP.
+
+Aquí os dejo la función que utilizo para proyectos pequeños en los que no necesito un framework PHP (normalmente prototipos rápidos y proyectos personales) o cuando utilizo micro-frameworks que no tienen librería de conexión a MySQL (como Lemonade). Os la dejo en una simple función aunque fácilmente se puede incorporar a una clase PHP para utilizar como método. Además, utiliza el método MySQLi que es la nueva versión que se recomienda.
+
+Este es todo el código que necesitamos! En la primera línea iniciamos una conexión y luego creamos la función:
+
+$c = mysqli_connect(MYSQL_SERVER, MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE);
+
+function db ($sql, $c) {
+    $res = false;
+	$q = ($c === null)?@mysqli_query($sql):@mysqli_query($c,$sql);
+
+	if($q) {
+		if(strpos(strtolower($sql),'select') === 0) {
+			$res = array();
+			while($r = mysqli_fetch_assoc($q)) {
+				$res[] = $r;
+			}
+		} else {
+			$res = ($c === null)?mysqli_affected_rows():mysqli_affected_rows($c);
+		}
+	}
+	return $res;
+}
+
+No necesitamos nada más :)
+Ejemplos de uso
+
+Como vemos más arriba, lo primero que necesitamos hacer es iniciar la conexión:
+
+$c = mysqli_connect(MYSQL_SERVER, MYSQL_USER, MYSQL_PASS, MYSQL_DATABASE);
+
+Y ahora podemos correr cualquier consulta SQL (recuerda añadir la $c en el segundo parámetro de la función!):
+
+$resultado = db('SELECT * FROM tabla', $c);
+
+Devuelve una matriz asociativa muy fácil de acceder:
+
+echo $resultado[0]['nombre'];
+
+Si queremos recorrer la matriz:
+
+foreach ($resultado as $fila) {
+	echo $fila['nombre'].'<br>';
+}
+
+Manejo de errores
+
+Si la consulta SQL no devuelve ningún resultado o hay un error de MySQL la función devolverá un booleano falso. Es tan fácil como comprobarlo con PHP así:
+
+if (!db('SELECT * FROM table WHERE 1 == 0') {
+	echo 'Error!';
+}
+
+
+
+
+-----------------------------------------------------------------------------------
