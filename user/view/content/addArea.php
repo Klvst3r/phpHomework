@@ -1,4 +1,6 @@
 <?php
+include '../controller/AreaController.php';
+include '../helps/helps.php';
 
 ?>  
   <!-- Content Wrapper. Contains page content -->

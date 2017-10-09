@@ -389,9 +389,42 @@ Developments Steps
 ------------------------------- Areas List ------------------------------------------------
 82. Create Model to the Area table with setters and getters
 		[model/Area.php]
+83. Create View of Area List to invoque getTableAreas_Method
+			[view/viewAreas.php]
+			- Include Content
+				[view/content/areas.php]
+84. Create Class AreasSQL, include connect, disconnect and get TableAreas_Pag methods
+	  a) Include Connection to BD
+			 [data/Connet.php]
+		b) Include Area model
+			 [model/Area.php]
 
 -------------------------- Fix Head Title in User Lists ------------------------------------------
-83. To avoid modifying the CSS of the Panel we use CSS in file
+85. To avoid modifying the CSS of the Panel we use CSS in file
 	<div class="col-lg-12 back-white" style="background-color: #f9f9f9;"> (line 30)
 	[user/view/content/areas.php]
-	
+-------------------------- New Area  ------------------------------------------
+86. From the Area List, exist a button to call the form to add area
+	  [view/viewNewAreaForm.php]
+87. Create Area Form
+		[view/viewNewAreaForm.php]
+		a) Include content form
+			[view/content/newAreaForm.php]
+			- Include Class Form
+				[data/Form.php]
+88. After get information, it will process in script to add area
+		[view/addNewArea.php]
+89. Create and include content of the script add area
+			[view/content/addArea.php]
+		  a) Include Area controller
+				[controller/AreaController.php]
+			b) Include Help to process data form
+				[helps/helps.php]
+90. Create Area controller
+		[controller/AreaController.php]
+		a) Include Area DAO
+				[data/AreaDAO.php]
+				- Include Connection to BD
+					[data/Connect.php]
+				- Include Model Area.php
+					[model/Area.php]
