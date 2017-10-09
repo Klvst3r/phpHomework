@@ -29,16 +29,16 @@ class AreaController {
 
 	}
 
-	public function updatePrivilege($id, $privilege){
+	public function updateArea($id, $area){
 
-		$obj_priv = new Privilege();
+		$obj_priv = new Area();
 		
-		$obj_priv->setId_priv($id);
-		$obj_priv->setDesc_priv($privilege);
+		$obj_area->setId_area($id);
+		$obj_area->setDesc_area($area);
 		
 
-		//We send the object from UserDAO
-		return PrivilegeDAO::updatePrivilege($obj_priv);
+		//We send the object to AreaDAO
+		return AreaDAO::updateArea($obj_area);
 
 	}
 
