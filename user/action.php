@@ -40,11 +40,11 @@ if(isset($a)){
 			break;
 		case 8:
 			//Register Area Form
-			require_once("view/newAreaForm.php");
+			require_once("view/viewNewAreaForm.php");
 			break;
 		case 9:
 			//Add Area
-			require_once("view/");
+			require_once("view/viewAddArea.php");
 			break;
 		case 10:
 			//Ajecutar Tareas

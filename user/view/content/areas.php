@@ -29,7 +29,7 @@ include 'sql/AreasSQL.php';
             <div class="row ">
                 <div class="col-lg-12 back-white" style="background-color: #f9f9f9;">
                     <h1 class="page-header">Listado de areas | 
-                      <a href="action.php?a=6" class="btn btn-primary"><i class="fa fa-plus"></i> Nueva Área</a>
+                      <a href="action.php?a=8" class="btn btn-primary"><i class="fa fa-plus"></i> Nueva Área</a>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
