@@ -1,5 +1,6 @@
 <?php
 include'../data/Form.php';
+include 'sql/Data.php';
 ?>  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -12,9 +13,15 @@ include'../data/Form.php';
       <ol class="breadcrumb">
         
         <?php
+        if(isset($_GET["b"])){
+          $id_user = $_GET["b"];
+          //echo "variable recibida via GET: " . $id_user;
+          }
+
         echo '<li><a href="'. PATH .'/user/"><i class="fa fa-user"></i> Inicio</a></li>';
         ?>
         <li class="active"><?php echo isset($id_user) ? 'Actualización' : 'Nueva' ?> de Área</li>
+        
       </ol>
     </section>
     
@@ -24,7 +31,9 @@ include'../data/Form.php';
     <!-- INICIO CONTENIDO -->
     <!-- ************************************************ -->       
    <div id="wrapper">
-        
+        <?php
+        //echo "Id User: " . $id_user;
+        ?>
         <div class="row" style="background-color: #f9f9f9">
                 <div class="col-lg-12">
                   <h1 class="page-header"><?php echo isset($id_user) ? 'Actualizar' : 'Nueva' ?> Área |
@@ -52,27 +61,26 @@ include'../data/Form.php';
                             //Data of area if is edition 
                             if(isset($id_user)) {
                                    $form -> addField(4, array(
-                                    "field_name"    =>  "id_area",
-                                    "value"   =>  $id_area
+                                    "field_name"    =>  "id_user",
+                                    "value"   =>  $id_user
                                     ));
-                                    //echo "Variable recibida: " . $id_area;
+
+
+
+                                  
                                     
-                             
-
                              //Select data for values in form
-                             
-
                              $query = "SELECT id_area, desc_area FROM areas where id_area = :id_area";
-
+                             
                              $select = new Data();                                                         
 
                              $select::getConection();
-    
+                              
                               //$query = $sql;
 
                               $result = $select::$cnx->prepare($query);
 
-                              //echo $id_area;
+                              //echo $id_user;
 
                               //The parameters are sent the user in the form by user_name field, the object $user, to the user of the form
                               $id_area = $id_user;
@@ -82,6 +90,7 @@ include'../data/Form.php';
                               $result->execute();
 
                               $rows = $result->rowCount();
+                              //echo $rows;
 
                               if($rows > 0){
                                 $data = $result->fetch();
@@ -90,13 +99,12 @@ include'../data/Form.php';
                                 $desc = $data["desc_area"];
 
                                 //echo $desc;
-                                
 
 
                               }else {
                                 echo "No Data in Query";
                               }
-
+                              
                              
                               
                               $value = $desc;
@@ -125,11 +133,21 @@ include'../data/Form.php';
                               ));
 
 
-                          $form -> addField(3, array(
-                              "type_button"    =>  "btn btn-primary",
-                              "legend"    =>  "Registrar"
+                          if(isset($id_user)) {
+                            $form -> addField(3, array(
+                                "type_button"    =>  "btn btn-primary",
+                                "legend"    =>  "Actualizar"
 
-                              ));
+                                ));
+
+                          }else{
+
+                             $form -> addField(3, array(
+                                "type_button"    =>  "btn btn-primary",
+                                "legend"    =>  "Registrar"
+
+                                ));
+                          }
 
                       $form->closeForm();
 

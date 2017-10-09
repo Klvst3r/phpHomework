@@ -3,13 +3,13 @@
 
 <head>
 
-    <?php 
-    include'inc/adminHead.php'; 
-    include'../data/Form.php'; 
+    <?php
+    include'inc/adminHead.php';
+    include'../data/Form.php';
     include 'sql/Combo.php';
     include 'sql/Data.php';
 
-    
+
     ?>
 
 </head>
@@ -19,8 +19,8 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <?php  
-        include'inc/adminMenu.php'; 
+        <?php
+        include'inc/adminMenu.php';
         //in each render load the value true to the session variable code in other wise will be redirected to the login
         $_SESSION["user"]["code"] = "true";
 
@@ -32,7 +32,7 @@
             <br/>
             <div class="row">
                 <div class="col-lg-12">
-                	<h1 class="page-header"><?php echo isset($id_user) ? 'Actualizar' : 'Nuevo' ?> Usuario | 
+                	<h1 class="page-header"><?php echo isset($id_user) ? 'Actualizar' : 'Nuevo' ?> Usuario |
                     <a href="action.php?a=3" class="btn btn-default">
                         <i class="fa fa-users"></i> Ver Listado</a>
                     </h1>
@@ -48,30 +48,30 @@
                      <div class="panel-body">
                         <!-- <form action="addNewUser.php" method="POST" role="form"> -->
 
-                        
+
                     <?php
                     $form = new Form('newUser','POST','action.php?a=8', 'form', '');
                     ?>
                       <legend>Datos del Usuario</legend>
 
-                      <?php 
-                      if(isset($id_user)) { 
+                      <?php
+                      if(isset($id_user)) {
                           /*<input type="hidden" value="<?php echo $usuario->id ?>" name="usuario_id" />*/
                           $form -> addField(4, array(
                            "field_name"    =>  "id_user",
                            "value"   =>  $id_user
-                           )); 
+                           ));
 
                            $form -> addField(4, array(
                            "field_name"    =>  "update",
                            "value"   =>  "true"
-                          )); 
+                          ));
 
                             //Select data for values in form
-                             
+
                              $query = "SELECT A.user_name, A.user_email, A.user_password_hash, A.name, A.id_priv, B.desc_priv FROM users A, privileges B where A.id_priv = B.id_priv and A.id_user = :id_user";
 
-                             $select = new Data();                                                         
+                             $select = new Data();
 
                              $select::getConection();
 
@@ -99,7 +99,7 @@
 
 
 
-                             } 
+                             }
                    else{
                       $user_name  = "";
                       $user_pass  = "";
@@ -111,22 +111,22 @@
 
                    ?>
 
-                            <?php 
+                            <?php
 
                             $form -> addField(1, array(
-                              "field_name"    =>  "user_name", 
+                              "field_name"    =>  "user_name",
                               "label_field"   =>  "Usuario",
                               "readonly"      =>  "",
                               "disabled"      =>  "",
-                              "value"         =>  $user_name, 
+                              "value"         =>  $user_name,
                               "maxlength"     =>  "",
                               "size"          =>  "",
-                              "style"         =>  "", 
+                              "style"         =>  "",
                               "js"            =>  "",
                               "placeholder"   =>  "Alias del Usuario",
                               "required"      =>  "required",
                               "autofocus"     =>  "autofocus"
-                              )); 
+                              ));
 
                             $form -> addField(2, array(
                               "field_name"    =>  "user_password",
@@ -135,7 +135,7 @@
                               "placeholder"   =>  "********",
                               "required"      =>  "",
                               "autofocus"     =>  ""
-                              )); 
+                              ));
 
                             $form -> addField(5, array(
                               "field_name"    =>  "user_email",
@@ -143,22 +143,22 @@
                               "value"         =>  $user_email,
                               "placeholder"   =>  "usuario@dominio",
                               "required"      =>  "required"
-                              )); 
+                              ));
 
                             $form -> addField(1, array(
-                              "field_name"    =>  "name", 
+                              "field_name"    =>  "name",
                               "label_field"   =>  "Nombre de Usuario",
                               "readonly"      =>  "",
                               "disabled"      =>  "",
-                              "value"         =>  $name, 
+                              "value"         =>  $name,
                               "maxlength"     =>  "",
                               "size"          =>  "",
-                              "style"         =>  "", 
+                              "style"         =>  "",
                               "js"            =>  "",
                               "placeholder"   =>  "Nombre y Apellidos",
                               "required"      =>  "required",
                               "autofocus"     =>  ""
-                              )); 
+                              ));
 
                             ?>
 
@@ -172,13 +172,13 @@
                               <label for="user_password">Password</label>
                               <input type="password" name="user_password" class="form-control" id="user_password" />
                             </div> -->
-                          
+
                            <!--  <div class="form-group">
                               <label for="user_email">Email</label>
                               <input value="<?php /*echo isset($usuario) ? $usuario->email : '' */?>"
                               type="email" name="user_email" class="form-control" id="user_email" placeholder="usuario@dominio" required  />
                             </div> -->
-                            
+
                             <!-- <div class="form-group">
                               <label for="name">Nombre</label>
                               <input value="<?php /*echo isset($usuario) ? $usuario->usuario : '' */?>"
@@ -196,11 +196,11 @@
                           <?php
                           //aqui va el como
                           //$query = " SELECT A.id_priv as privilegio, B.desc_priv as descripcion FROM users A, privileges B where A.id_priv = B.id_priv ";
-                          
+
                           $val = $id_priv . "-"  . $desc_priv;
                           //echo "ID: " . $val;
                           //If Form Update exist and combo with values
-                          if(isset($id_user)) { 
+                          if(isset($id_user)) {
 
                             $query = "SELECT id_priv, desc_priv FROM privileges EXCEPT where id_priv <> '$id_priv'";
                             $combo = new combo($query,"privilege","inputPrivi", $val ,"Privilegio","required","","","1");
@@ -215,13 +215,13 @@
                           $form -> addField(3, array(
                               "type_button"    =>  "btn btn-primary",
                               "legend"    =>  "Enviar"
-                              
-                              )); 
+
+                              ));
 
                       $form->closeForm();
 
                             ?>
-                        
+
                           <!-- <button type="submit" class="btn btn-primary">Registrar</button> -->
                       <!-- </form>   -->
                   </div>

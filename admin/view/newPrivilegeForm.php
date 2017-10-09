@@ -16,8 +16,8 @@
 <div id="wrapper">
 
 	<!-- Navigation -->
-        <?php  
-        include'inc/adminMenu.php'; 
+        <?php
+        include'inc/adminMenu.php';
         $_SESSION["user"]["code"] = "true";
 
         //Receive var $id_user
@@ -60,11 +60,11 @@
                                     "value"   =>  $id_user
                                     ));
                                     //echo "Variable recibida: " . $id_user;
-                                    
-                             
+
+
 
                              //Select data for values in form
-                             
+
 
                              $query = "SELECT id_priv, desc_priv FROM privileges where id_priv = :id_priv";
 
@@ -73,11 +73,11 @@
                              //$privilegio = new Privilege();
 
                              //$privilege = $privilegio->getDesc_priv();
-                              
-                             $select = new Data();                                                         
+
+                             $select = new Data();
 
                              $select::getConection();
-    
+
                               //$query = $sql;
 
                               $result = $select::$cnx->prepare($query);
@@ -106,23 +106,23 @@
                                 //$desc = $privilegio->getDesc_priv($privilegio);
 
                                 //echo $desc;
-                                
+
 
 
                               }else {
                                 echo "No Data in Query";
                               }
 
-                             
-                              
+
+
                               $value = $desc;
-                              
-                                
+
+
                               }
                               else{
                                 $value = "";
                               }//if(isset($id_user))
-                             
+
 
 
                             $form -> addField(1, array(

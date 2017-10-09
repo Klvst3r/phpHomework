@@ -428,3 +428,29 @@ Developments Steps
 					[data/Connect.php]
 				- Include Model Area.php
 					[model/Area.php]
+-------------------------- Edit Area  ------------------------------------------
+91. From the Area list view, the information in the table is modified to add the Area
+			[user/view/areas.php]
+			A) From the User list, the information in the table is modified to add the USER ID
+					[user/sql/Areas.php]
+			B) The variable is received by the GET method with the User ID to generate a query for obtaining values ​​for the form
+				and make query to select the correct value in BD and put it in field Description User. In adition Create new
+				field hidden with id_user value
+				 [user/view/viewNewAreaForm.php]
+		  C) Create file to stablish a conection and make the query to obtain data from query to the values in Form
+				[user/sql/Data.php]
+92. A new verification is added with the User ID to execute the update of the current field
+		[user/view/addNewArea.php]
+		A) Create a new method updateArea in Area Controller to update Values in BD
+				[controller/AreaController.php]
+		B) In AreaDAO the insertion ocurs receiving 1 object with the ID User and the Description for the Area
+			[data/AreaDAO.php]
+		C) Fixed the function combo to recibe vaues if data is from an Update Form
+			[user/sql/Combo.php]
+93. Receibe data from Update Form to execute the update only with data modified
+		[user/view/addNewArea.php]
+		A) Create a new method to update User data
+			 [controller/AreaController.php]
+		B) Create a new method to receive values to edit an area
+			[data/AreaDAO.php]
+			After this return the control to the Area list 
