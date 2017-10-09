@@ -26,8 +26,8 @@ include 'sql/AreasSQL.php';
    <div id="wrapper">
         
         <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
+            <div class="row ">
+                <div class="col-lg-12 back-white" style="background-color: #f9f9f9;">
                     <h1 class="page-header">Listado de areas | 
                       <a href="action.php?a=6" class="btn btn-primary"><i class="fa fa-plus"></i> Nueva Área</a>
                     </h1>
