@@ -14,7 +14,7 @@ include'../data/Form.php';
         <?php
         echo '<li><a href="'. PATH .'/user/"><i class="fa fa-user"></i> Inicio</a></li>';
         ?>
-        <li class="active">Listado de Áreas</li>
+        <li class="active"><?php echo isset($id_user) ? 'Actualización' : 'Nueva' ?> de Área</li>
       </ol>
     </section>
     

@@ -37,7 +37,8 @@ ob_start();
 <!-- page content -->
 <?php
 	
-	include 'content/newAreaForm.php';
+	include 'content/addArea.php';
+  
 
 ?>      
 

@@ -44,7 +44,7 @@ if(isset($a)){
 			break;
 		case 9:
 			//Add Area
-			require_once("view/viewAddArea.php");
+			require_once("view/addNewArea.php");
 			break;
 		case 10:
 			//Ajecutar Tareas
