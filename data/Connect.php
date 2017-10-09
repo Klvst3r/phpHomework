@@ -91,9 +91,10 @@
 			  )
 			);
 
-			//$cn = new PDO("mysql:host=localhost;dbname=phpHomework","dev","desarrollo");
+			/*$cn = new PDO("mysql:host=localhost;dbname=phpHomework","dev","desarrollo");
 
-			//$cn -> exec("set names utf8");
+			$cn -> exec("set names utf8");
+			*/
 
 			//echo "Connection Successful <br/>";
 			return $cn;

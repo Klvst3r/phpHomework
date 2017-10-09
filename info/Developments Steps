@@ -349,6 +349,49 @@ Developments Steps
 		[user/viewConfig.php]
 80.	Create the Script to process the change in password
 		[user/content/config.php]
+-------------------- Fix Connection and add PHP PDO: charset, set names--------------------------
+81 . Fixing accents and ñ chars in MySQL to PHP, show correct info to display
+
+		1. Matching
+		    When creating the MySQL database, make sure that the string and other fields are in [utf8_spanish_ci] and collation of the tables in [utf_unicode_ci] (later in Operations> Collation of phpMyAdmin can be changed)
+
+		2. Content type HTML
+		Put in the "<head>" of all HTML files:
+		[<http-equiv = "Content-type" content = "text / html; charset = utf-8" />]
+			[user/inc/userHead.php]
+
+		3. Content type PHP
+		And in the purely PHP (which show XML, AJAX calls, APIs ...) put the code:
+		[header ("Content-Type: text / html; charset = utf-8"];
+			[user/inc/userHead.php]
+
+		4. Set names
+		When creating the PHP connection with MySQL, send this query just after the connection:
+		mysqli_query ("SET NAMES 'utf8'");
+		[(For MySQLi write $ accents = $ db-> query ("SET NAMES 'utf8'"); thanks Fernando)]
+		/ *
+		$ connect = new PDO (
+		"mysql: host = localhost; dbname = phpHomework",
+		$ user,
+		$ pass,
+		array (
+		PDO :: ATTR_ERRMODE => PDO :: ERRMODE_EXCEPTION,
+		PDO :: MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+		)
+		);
+		* /
+			[data/Connect.php]
+
+		5. Convert encoded to UTF-8
+		Converts everything that is encoded from "latin1" to "UTF-8" (thanks Guillermo)
+		[SELECT convert (cast (convert (latin1) using binary) using utf8) AS content]
+
 ------------------------------- Areas List ------------------------------------------------
-81. Create Model to the Area table with setters and getters
+82. Create Model to the Area table with setters and getters
 		[model/Area.php]
+
+-------------------------- Fix Head Title in User Lists ------------------------------------------
+83. To avoid modifying the CSS of the Panel we use CSS in file
+	<div class="col-lg-12 back-white" style="background-color: #f9f9f9;"> (line 30)
+	[user/view/content/areas.php]
+	

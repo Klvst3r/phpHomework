@@ -23,42 +23,50 @@ if(isset($a)){
 			require_once("view/viewChanguePass.php");
 			break;
 		case 4:
-			//Listar Tareas
+			//List Task
 			require_once("view/tasks.php");
 			break;
 		case 5:
-			//Listar Areas
+			//List Areas
 			require_once("view/viewAreas.php");
 			break;
 		case 6:
-			//Registrar Tareas
+			//Register Form Task
 			require_once("view/");
 			break;
 		case 7:
-			//Registrar Areas
+			//Add Task
 			require_once("view/");
 			break;
 		case 8:
-			//Ajecutar Tareas
-			require_once("view/");
+			//Register Area Form
+			require_once("view/newAreaForm.php");
 			break;
 		case 9:
-			//Consultar Tareas
+			//Add Area
 			require_once("view/");
 			break;
 		case 10:
-			//Consultar Areas
+			//Ajecutar Tareas
 			require_once("view/");
 			break;
 		case 11:
-			//Modificar Tareas
+			//Consultar Tareas
 			require_once("view/");
 			break;
 		case 12:
+			//Consultar Areas
+			require_once("view/");
+			break;
+		case 13:
+			//Modificar Tareas
+			require_once("view/");
+			break;
+		case 14:
 			//Modificar Areas
 			require_once("pdf.php");
 			break;
-		case 13:
+		case 15:
 			//Imprimir Tarea
 			require_once("pdf.php");
 			break;
