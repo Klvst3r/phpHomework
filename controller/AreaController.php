@@ -48,7 +48,7 @@ class AreaController {
 		$obj_area->setId_area($id);
 
 		//We send the object to UserDAO in order to execute order
-		return AreaDAO::delArea($obj_Area);
+		return AreaDAO::delArea($obj_area);
 
 
 	}

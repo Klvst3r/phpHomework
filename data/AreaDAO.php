@@ -112,20 +112,19 @@ class AreaDAO extends Connect {
 
 
 
-	public function delPrivilege($privilege){
+	public function delArea($obj_area){
 		
-		$query = "DELETE from privileges where id_priv = :id_priv"; 
+		$query = "DELETE from areas where id_area = :id_area"; 
 
 		self::getConection();
 
 		$result = self::$cnx->prepare($query);
 
-		$id_priv = $privilege->getId_priv();
-		$result->bindParam(":id_priv", $id_priv);
+		$id_area = $obj_area->getId_area();
+		$result->bindParam(":id_area", $id_area);
 
 		if($result->execute()){
 			//return true;
-			//echo "Insercion Exitosa";
 			return true;
 		}
 

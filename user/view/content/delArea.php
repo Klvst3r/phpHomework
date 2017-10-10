@@ -29,8 +29,10 @@ include '../controller/OterController.php'; //verificar si no existen afectacion
    <?php
 
   	if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["b"])){
-  		//echo "eliminar registro";
-  		
+  		$id_area = $_GET["b"];   
+
+		AreaController::delArea($id_area);                   	   
+        header("location:action.php?a=5");  		
 
   	}else{
 	    //In case fail register the user send again to the form 
