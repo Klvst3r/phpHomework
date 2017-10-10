@@ -83,25 +83,20 @@ class AreaDAO extends Connect {
 		*/
 	//}
 
-	public static function updatePrivilege($privilege){
+	public static function updateArea($obj_area){
 
-		$query = "UPDATE `privileges` SET `desc_priv` = :desc_priv WHERE `privileges`.`id_priv` = :id_priv";
-		//$query = "INSERT INTO privileges (id_priv, desc_priv) VALUES (NULL, :desc_priv)";
+		$query = "UPDATE `areas` SET `desc_area` = :desc_area WHERE `areas`.`id_area` = :id_area";
 
 		self::getConection();
 
 		$result = self::$cnx->prepare($query);
 
-		//echo "Insercion Exitosa";
-
-		//$result = self::$cnx->prepare($query);
-
 		//Obtain data from Model
-		$id_priv = $privilege->getId_priv();
-		$result->bindParam(":id_priv", $id_priv);
+		$id_area = $obj_area->getId_area();
+		$result->bindParam(":id_area", $id_area);
 		
-		$desc_priv = $privilege->getDesc_priv();
-		$result->bindParam(":desc_priv", $desc_priv);
+		$desc_area = $obj_area->getDesc_area();
+		$result->bindParam(":desc_area", $desc_area);
 
 		//Execute Query
 		if($result->execute()){

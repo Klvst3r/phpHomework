@@ -31,7 +31,7 @@ class AreaController {
 
 	public function updateArea($id, $area){
 
-		$obj_priv = new Area();
+		$obj_area = new Area();
 		
 		$obj_area->setId_area($id);
 		$obj_area->setDesc_area($area);

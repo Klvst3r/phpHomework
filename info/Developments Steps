@@ -445,12 +445,10 @@ Developments Steps
 				[controller/AreaController.php]
 		B) In AreaDAO the insertion ocurs receiving 1 object with the ID User and the Description for the Area
 			[data/AreaDAO.php]
-		C) Fixed the function combo to recibe vaues if data is from an Update Form
-			[user/sql/Combo.php]
 93. Receibe data from Update Form to execute the update only with data modified
 		[user/view/addNewArea.php]
 		A) Create a new method to update User data
 			 [controller/AreaController.php]
 		B) Create a new method to receive values to edit an area
 			[data/AreaDAO.php]
-			After this return the control to the Area list 
+			After this return the control to the Area list
