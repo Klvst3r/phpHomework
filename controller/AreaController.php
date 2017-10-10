@@ -42,13 +42,13 @@ class AreaController {
 
 	}
 
-	public function delPrivilege($id){
-		$obj_priv = new Privilege();
+	public function delArea($id){
+		$obj_area = new Area();
 		
-		$obj_priv->setId_priv($id);
+		$obj_area->setId_area($id);
 
 		//We send the object to UserDAO in order to execute order
-		return PrivilegeDAO::delPrivilege($obj_priv);
+		return AreaDAO::delArea($obj_Area);
 
 
 	}

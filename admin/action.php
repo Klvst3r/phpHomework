@@ -46,7 +46,7 @@ if(isset($a)){
 
 
 
-		case 10:
+		case 12:
 			require_once("pdf.php");
 			break;
 		default:

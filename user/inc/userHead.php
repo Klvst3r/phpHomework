@@ -24,6 +24,9 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 
+  <!-- <link rel="stylesheet" href="dist/css/alertify/themes/alertify.core.css" />
+  <link rel="stylesheet" href="dist/css/alertify/themes/alertify.default.css" /> -->
+
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

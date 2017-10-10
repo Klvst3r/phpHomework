@@ -67,6 +67,14 @@ if(isset($a)){
 			require_once("pdf.php");
 			break;
 		case 15:
+			//Eliminar Tareas
+			require_once("view/");
+			break;
+		case 16:
+			//Eliminar Areas
+			require_once("view/viewDelArea.php");
+			break;
+		case 17:
 			//Imprimir Tarea
 			require_once("pdf.php");
 			break;
