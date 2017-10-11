@@ -34,7 +34,18 @@
         </div>
         <div class="panel-body">
            <a href="action.php?a=5" class="btn btn-default btn-large">
-              <i class="fa fa-user" aria-hidden="true"></i>Tareas Desfasadas
+              <i class="fa fa-tasks" aria-hidden="true"></i> Tareas Desfasadas
+            </a>
+        </div>
+      </div>       
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+        <h3 class="panel-title">Tareas</h3>
+        </div>
+        <div class="panel-body">
+           <a href="action.php?a=4" class="btn btn-default btn-large">
+              <i class="fa fa-external-link" aria-hidden="true"></i> Listado de Tareas
             </a>
         </div>
       </div>       
@@ -45,7 +56,7 @@
         </div>
         <div class="panel-body">
            <a href="action.php?a=5" class="btn btn-default btn-large">
-              <i class="fa fa-user" aria-hidden="true"></i>Listar Áreas
+              <i class="fa fa-list-ul" aria-hidden="true"></i> Listar Áreas
             </a>
         </div>
       </div>      

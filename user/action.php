@@ -24,7 +24,7 @@ if(isset($a)){
 			break;
 		case 4:
 			//List Task
-			require_once("view/tasks.php");
+			require_once("view/viewTasks.php");
 			break;
 		case 5:
 			//List Areas
