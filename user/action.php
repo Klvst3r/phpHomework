@@ -32,7 +32,7 @@ if(isset($a)){
 			break;
 		case 6:
 			//Register Form Task
-			require_once("view/");
+			require_once("view/viewNewTaskForm.php");
 			break;
 		case 7:
 			//Add Task

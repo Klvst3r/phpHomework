@@ -494,6 +494,15 @@ Process to Work with Tasks
  			[user/view/content/newTaskForm.php]
  			- Include Class Form
  				[data/Form.php]
+			- Include Class Combo
+				[sql/Combo.php]
+			- Include SQL Data
+				[sql/Data.php]
+				------------------------------> Here we go
+
+
+
+				
  102. After get information, it will process in script to add task
  		[user/view/addNewTask.php]
  103. Create and include content of the script add task

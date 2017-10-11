@@ -105,6 +105,24 @@ class form {
                       </div>';
         	}
         break;
+        case 6:
+          if ($check = $this -> verifyParams($p, 11, "EMAIL")){
+            /*
+          1. nombre del campo = user_name -> $p["field_name"] ->ok
+          2. etiqueta texto  -> $p["label_field"] -> ok
+          3. value -> $p["value"] -> ok
+          4. placeholder -> $p["placeholder"] ->
+          5. id -> $p["required"]
+            rows ->
+          */
+
+            echo '<div class="form-group">
+                        <label for="' . $p["field_name"] . '">' . $p["label_field"] . '</label>
+                          <textarea  value="' .$p["value"] . '" name="' . $p["field_name"] . '" class="form-control" id="' .
+                           $p["field_name"] . '" placeholder="' . $p["placeholder"] . '" ' . $p["required"]. ' rows=' . $p["rows"] . '></textarea>
+                  </div>';
+          }
+        break;
         default: //
                 echo 'Error al agregar el campo, opción no valida <b>' . ($type). '</b>...el programa abortó.';
         exit;

@@ -29,7 +29,7 @@ include 'sql/TaskSQL.php';
             <div class="row ">
                 <div class="col-lg-12 back-white" style="background-color: #f9f9f9;">
                     <h1 class="page-header">Listado de tareas | 
-                      <a href="action.php?a=8" class="btn btn-primary"><i class="fa fa-plus"></i> Nueva Tarea</a>
+                      <a href="action.php?a=6" class="btn btn-primary"><i class="fa fa-plus"></i> Nueva Tarea</a>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
