@@ -474,3 +474,14 @@ Process to Work with Area
 ------------------------------- Begin Task Work  ------------------------------------------------
 Process to Work with Tasks
 ------------------------------- Tasks List ------------------------------------------------
+97. Create Model to the Task table with setters and getters
+		[model/Task.php]
+98. Create View of Task List to invoque getTableTask_Method
+			[view/viewTask.php]
+			- Include Content
+				[view/content/tasks.php]
+99. Create Class TasksSQL, include connect, disconnect and get TableTasks_Pag methods
+	  a) Include Connection to BD
+			 [data/Connet.php]
+		b) Include Task model
+			 [model/Task.php]
