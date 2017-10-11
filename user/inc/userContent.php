@@ -33,11 +33,22 @@
         <h3 class="panel-title">Tareas</h3>
         </div>
         <div class="panel-body">
-           <a href="action.php?a=3" class="btn btn-default btn-large">
+           <a href="action.php?a=5" class="btn btn-default btn-large">
               <i class="fa fa-user" aria-hidden="true"></i>Tareas Desfasadas
             </a>
         </div>
       </div>       
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+        <h3 class="panel-title">Areas</h3>
+        </div>
+        <div class="panel-body">
+           <a href="action.php?a=5" class="btn btn-default btn-large">
+              <i class="fa fa-user" aria-hidden="true"></i>Listar Áreas
+            </a>
+        </div>
+      </div>      
 
 
     </section>

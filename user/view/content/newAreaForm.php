@@ -8,7 +8,7 @@ include 'sql/Data.php';
     <section class="content-header">
       <h1>
         Áreas
-        <small>Consulta</small>
+        <small>Registro</small>
       </h1>
       <ol class="breadcrumb">
         
