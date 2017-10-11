@@ -386,6 +386,8 @@ Developments Steps
 		Converts everything that is encoded from "latin1" to "UTF-8" (thanks Guillermo)
 		[SELECT convert (cast (convert (latin1) using binary) using utf8) AS content]
 
+------------------------------- Begin Area Work  ------------------------------------------------
+Process to Work with Area
 ------------------------------- Areas List ------------------------------------------------
 82. Create Model to the Area table with setters and getters
 		[model/Area.php]
@@ -452,3 +454,23 @@ Developments Steps
 		B) Create a new method to receive values to edit an area
 			[data/AreaDAO.php]
 			After this return the control to the Area list
+-------------------------- Delete Area  ------------------------------------------
+94. From the area list view, ID USER is Send to acept o denied the action to delete record
+			[user/view/viewDelArea.php]
+			- Include Content
+				[user/view/content/delArea.php]
+			A) From the area list, the information in the table is showed with the botton Delete
+					[user/sql/AreaSQL.php]
+			B) The variable is received by the GET method with the User ID to generate a query for delete record  in BD through
+				the Area Controller.
+				 [user/view/viewDelArea.php]
+95. The Area Controller receibe the id and put it in an object and return the object to Area Controller
+		[controller/AreaController.php]
+		A) Receibe the object in method delArea in AreaDAO to execute the deletion
+			[data/AreaDAO.php]
+		B) After the deletion the controller return the control to the view principal in panel admin an redirect to the Area List
+96. Verify inclution of Scriot Js to Confirm deletion
+------------------------------- End Area Work  ------------------------------------------------
+------------------------------- Begin Task Work  ------------------------------------------------
+Process to Work with Tasks
+------------------------------- Tasks List ------------------------------------------------
