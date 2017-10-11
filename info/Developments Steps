@@ -489,7 +489,7 @@ Process to Work with Tasks
  100. From the Task List, exist a button to call the form to add task
  	  [view/viewNewTaskForm.php]
  101. Create Task Form
- 		[user/view/viewNewAreaForm.php]
+ 		[user/view/viewNewTaskForm.php]
  		a) Include content form
  			[user/view/content/newTaskForm.php]
  			- Include Class Form

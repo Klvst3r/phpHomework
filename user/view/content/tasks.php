@@ -38,7 +38,7 @@ include 'sql/TaskSQL.php';
    <?php
       
   $query_count = "SELECT COUNT(*) FROM tasks";
-  $query = " SELECT id_task as ID, desc_task as Tarea FROM tasks ORDER BY id_task";
+  $query = " SELECT A.id_task as ID, B.desc_area as Area, C.name as Usuario, A.desc_task as Tarea FROM tasks A, areas B, users C WHERE A.id_area = B.id_area AND A.id_user = C.id_user ORDER BY id_task";
 
   $params = "";
 
