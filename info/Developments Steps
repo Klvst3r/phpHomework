@@ -485,3 +485,28 @@ Process to Work with Tasks
 			 [data/Connet.php]
 		b) Include Task model
 			 [model/Task.php]
+ -------------------------- New Task  ------------------------------------------
+ 100. From the Task List, exist a button to call the form to add task
+ 	  [view/viewNewTaskForm.php]
+ 101. Create Task Form
+ 		[user/view/viewNewAreaForm.php]
+ 		a) Include content form
+ 			[user/view/content/newTaskForm.php]
+ 			- Include Class Form
+ 				[data/Form.php]
+ 102. After get information, it will process in script to add task
+ 		[user/view/addNewTask.php]
+ 103. Create and include content of the script add task
+ 			[user/view/content/addTask.php]
+ 		  a) Include Task controller
+ 				[controller/TaskController.php]
+ 			b) Include Help to process data form
+ 				[helps/helps.php]
+ 104. Create Task controller
+ 		[controller/TaskController.php]
+ 		a) Include Task DAO
+ 				[data/TaskDAO.php]
+ 				- Include Connection to BD
+ 					[data/Connect.php]
+ 				- Include Model Task.php
+ 					[model/Task.php]
