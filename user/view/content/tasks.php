@@ -42,7 +42,7 @@ include 'sql/TasksSQL.php';
 
   $params = "";
 
-  AreaSQL::getTableTasks_Pag($query_count, $query, $params);
+  TaskSQL::getTableTasks_Pag($query_count, $query, $params);
 
   ?>
        </div>
