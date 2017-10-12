@@ -201,7 +201,7 @@
                           //echo "ID: " . $val;
                           //If Form Update exist and combo with values
                           if(isset($id_user)) {
-
+                            //function combo($sql, $name, $id, $value, $label, $req, $enable, $onchange, $iniselect){
                             $query = "SELECT id_priv, desc_priv FROM privileges EXCEPT where id_priv <> '$id_priv'";
                             $combo = new combo($query,"privilege","inputPrivi", $val ,"Privilegio","required","","","1");
 

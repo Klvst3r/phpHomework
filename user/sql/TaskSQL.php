@@ -110,10 +110,10 @@ class TaskSQL extends Connect {
 
 
 
-			$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=8&b='. $id .'">Editar</a>';
+			$edit = '<a class="btn btn-primary btn-sm" href="action.php?a=6&b='. $id .'">Editar</a>';
 	    	//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(action.php?a=6)">Eliminar</button>';
 	    	
-	    	$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(\'action.php?a=16&b=' . $id . '\')">Eliminar</button>';
+	    	$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(\'action.php?a=11&b=' . $id . '\')">Eliminar</button>';
 			echo '<td>' . $edit . ' ' . $delete . '</td>';
 			echo '</tr>';
 

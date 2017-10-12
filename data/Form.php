@@ -119,7 +119,7 @@ class form {
             echo '<div class="form-group">
                         <label for="' . $p["field_name"] . '">' . $p["label_field"] . '</label>
                           <textarea  value="' .$p["value"] . '" name="' . $p["field_name"] . '" class="form-control" id="' .
-                           $p["field_name"] . '" placeholder="' . $p["placeholder"] . '" ' . $p["required"]. ' rows=' . $p["rows"] . '></textarea>
+                           $p["field_name"] . '" placeholder="' . $p["placeholder"] . '" ' . $p["required"]. ' rows=' . $p["rows"] . '>' . $p["value"] . '</textarea>
                   </div>';
           }
         break;

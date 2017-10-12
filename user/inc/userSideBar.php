@@ -43,7 +43,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Consultar Tareas</a></li>
+            <li><a href="action.php?a=4"><i class="fa fa-circle-o"></i> Consultar Tareas</a></li>
             <li><a href="action.php?a=5"><i class="fa fa-circle-o"></i> Consultar Areas</a></li>
             </li>
           </ul>

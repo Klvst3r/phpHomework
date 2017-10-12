@@ -28,19 +28,19 @@
 
    // The request to te server is type POST 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
-  	/*
-    if(isset($_POST["area"]) && isset($_POST["usuario"]) && isset($_POST["desc_task"]) && isset($_POST["id_user"])){ //update_area
+  	
+    if(isset($_POST["area"]) && isset($_POST["usuario"]) && isset($_POST["desc_task"]) && isset($_POST["id_task"])){ //update_task
       $area = $_POST["area"];
       $usuario = $_POST["usuario"];
       $desc_task = validate_field($_POST["desc_task"]);
           
-      //AreaController::updateArea($id, $area);
+      AreaController::updateTask($area, $usuario, $desc_task);
 
       //After the Insert go task list 
       header("location:action.php?a=4"); 
 
     }else
-    */
+    
     if(isset($_POST["area"]) && isset($_POST["usuario"]) && isset($_POST["desc_task"])){ //new_area
     	
       //Validate field before send to BD
