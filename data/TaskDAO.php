@@ -5,7 +5,7 @@
 include 'Connect.php';
 include '../model/Task.php';
 
-
+class TaskDAO extends Connect {
 	//Variable protected
 	protected static $cnx;
 
@@ -42,7 +42,7 @@ include '../model/Task.php';
 		/*$query = "INSERT INTO users (id_user, user_name, user_password_hash, user_email, name, id_priv, date_reg) 
 				  VALUES (NULL, ':user_name', ':user_password_hash', ':user_email', ':name', ':id_priv', ':date_reg')";*/
 
-		$query = "INSERT INTO tasks (id_task, id_area, id_user, desc_task, date_task) VALUES (NULL, :id_area, :id_user, :desk_task, :date_task)";
+		$query = "INSERT INTO tasks (id_task, id_area, id_user, desc_task, date_task) VALUES (NULL, :id_area, :id_user, :desc_task, :date_task)";
 
 		self::getConection();
 	
@@ -55,10 +55,10 @@ include '../model/Task.php';
 		$id_user = $obj_task->getId_user();
 		$result->bindParam(":id_user", $id_user);
 
-		$desc_task = $user->getDesc_task();
+		$desc_task = $obj_task->getDesc_task();
 		$result->bindParam(":desc_task", $desc_task);
 
-		$date_task = $user->getDate_task();
+		$date_task = $obj_task->getDate_task();
 		$result->bindParam(":date_task", $date_task);
 
 		

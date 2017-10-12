@@ -1,5 +1,7 @@
 <?php
 ob_start();
+include '../controller/TaskController.php';
+include '../helps/helps.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

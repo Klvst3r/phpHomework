@@ -51,30 +51,14 @@ if(isset($a)){
 			require_once("view/");
 			break;
 		case 11:
-			//Consultar Tareas
-			require_once("view/");
-			break;
-		case 12:
-			//Consultar Areas
-			require_once("view/");
-			break;
-		case 13:
-			//Modificar Tareas
-			require_once("view/");
-			break;
-		case 14:
-			//Modificar Areas
-			require_once("pdf.php");
-			break;
-		case 15:
 			//Eliminar Tareas
 			require_once("view/");
 			break;
-		case 16:
+		case 12:
 			//Eliminar Areas
 			require_once("view/viewDelArea.php");
 			break;
-		case 17:
+		case 13:
 			//Imprimir Tarea
 			require_once("pdf.php");
 			break;

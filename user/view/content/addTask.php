@@ -1,8 +1,4 @@
-<?php
-include '../controller/TaskController.php';
-include '../helps/helps.php';
 
-?>  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -32,7 +28,7 @@ include '../helps/helps.php';
 
    // The request to te server is type POST 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+  	/*
     if(isset($_POST["area"]) && isset($_POST["usuario"]) && isset($_POST["desc_task"]) && isset($_POST["id_user"])){ //update_area
       $area = $_POST["area"];
       $usuario = $_POST["usuario"];
@@ -43,7 +39,10 @@ include '../helps/helps.php';
       //After the Insert go task list 
       header("location:action.php?a=4"); 
 
-    }elseif(isset($_POST["area"]) && isset($_POST["usuario"]) && isset($_POST["desc_task"])){ //new_area
+    }else
+    */
+    if(isset($_POST["area"]) && isset($_POST["usuario"]) && isset($_POST["desc_task"])){ //new_area
+    	
       //Validate field before send to BD
       $area = $_POST["area"];
       $usuario = $_POST["usuario"];
