@@ -29,12 +29,13 @@ class TaskController {
 
 
 
-	public function updateTask($area, $user, $desc){
+	public function updateTask($id_task, $area, $user, $desc){
 		//1. Ceerate Object to Work
 		$obj_task = new Task();
 
 		
 		//Set data to te model
+		$obj_task->setId_task($id_task);
 		$obj_task->setId_area($area);
 		$obj_task->setId_user($user);
 		$obj_task->setDesc_task($desc);		

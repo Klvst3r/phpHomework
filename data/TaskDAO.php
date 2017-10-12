@@ -1,6 +1,4 @@
 <?php 
-
-
 //Import conection
 include 'Connect.php';
 include '../model/Task.php';
@@ -76,34 +74,26 @@ class TaskDAO extends Connect {
 
 	
 
-	public static function updateUser($user){
+	public static function updateTask($user){
 		//Query to Execute
 		
-		//$query = "INSERT INTO users (id_user, user_name, user_password_hash, user_email, name, id_priv, date_reg) VALUES (NULL, :user_name, :user_password_hash, :user_email, :name, :id_priv, :date_reg)";
-
-		$query = "UPDATE `users` SET `user_name` = :user_name, `user_password_hash` = :user_password_hash, `user_email` = :user_email, `name` = :name, `id_priv` = :id_priv WHERE `users`.`id_user` = :id_user";
+		$query = "UPDATE `tasks` SET `id_area` = :id_area, `id_user` = :id_user, `desc_task` = :desc_task WHERE `tasks`.`id_task` = :id_task";
 
 		self::getConection();
 	
 		$result = self::$cnx->prepare($query);
 
-		$id_user =	$user->getId_user();
+		$id_area = $obj_task->getId_area();
+		$result->bindParam(":id_area", $id_area);
+
+		$id_user = $obj_task->getId_user();
 		$result->bindParam(":id_user", $id_user);
 
-		$user_name = $user->getUser_name();
-		$result->bindParam(":user_name", $user_name);
-		
-		$user_password_hash = $user->getUser_password_hash();
-		$result->bindParam(":user_password_hash", $user_password_hash);
-				
-		$user_email = $user->getUser_email();
-		$result->bindParam(":user_email", $user_email);
+		$desc_task = $obj_task->getDesc_task();
+		$result->bindParam(":desc_task", $desc_task);
 
-		$name = $user->getName();
-		$result->bindParam(":name", $name);
-
-		$id_priv = $user->getId_Priv();
-		$result->bindParam(":id_priv", $id_priv);
+		$id_task = $obj_task->getId_task();
+		$result->bindParam(":id_task", $id_task);
 
 		//echo $query;
 
@@ -116,7 +106,7 @@ class TaskDAO extends Connect {
 
 		return false;
 
-	}//function regUser
+	}//function updateTask
 
 
 
