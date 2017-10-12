@@ -3,18 +3,24 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+      <?php
+
+      if(isset($_GET["b"])){
+          $id_task = $_GET["b"];
+          //echo "variable recibida via GET: " . $id_task;
+          }
+
+      ?>
+
       <h1>
         Tareas
-        <small>Registro</small>
+        <small><?php echo isset($id_task) ? 'Edición' : 'Registro' ?></small>
       </h1>
       <ol class="breadcrumb">
         
         <?php
         
-        if(isset($_GET["b"])){
-          $id_task = $_GET["b"];
-          //echo "variable recibida via GET: " . $id_task;
-          }
+        
         
 
         echo '<li><a href="'. PATH .'/user/"><i class="fa fa-user"></i> Inicio</a></li>';
@@ -37,7 +43,7 @@
         <div class="row" style="background-color: #f9f9f9">
                 <div class="col-lg-12">
                   <h1 class="page-header"><?php echo isset($id_task) ? 'Actualizar' : 'Nueva' ?> Tarea |
-                    <a href="action.php?a=5" class="btn btn-default">
+                    <a href="action.php?a=4" class="btn btn-default">
                         <i class="fa fa-users"></i> Ver Listado Tareas</a>
                     </h1>
                 </div>

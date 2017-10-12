@@ -5,14 +5,14 @@
     <section class="content-header">
       <h1>
         Tareas
-        <small>Registro</small>
+        <small><?php echo isset($id_task) ? 'Edición' : 'Registro' ?></small>
       </h1>
       <ol class="breadcrumb">
         
         <?php
         echo '<li><a href="'. PATH .'/user/"><i class="fa fa-user"></i> Inicio</a></li>';
         ?>
-        <li class="active"><?php echo isset($id_user) ? 'Actualización' : 'Nueva' ?> de Tarea</li>
+        <li class="active"><?php echo isset($id_task) ? 'Actualización' : 'Nueva' ?> de Tarea</li>
       </ol>
     </section>
     
