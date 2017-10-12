@@ -22,33 +22,27 @@ class TaskController {
 		$obj_task->setDate_task($date);
 
 
-		//We send the object from UserDAO
+		//We send the object from TaskDAO
 		return TaskDAO::regTask($obj_task);
-
 
 	}//Function regTask
 
 
 
-	public function updateUser($id, $user, $pass, $email, $name, $priv){
+	public function updateTask($area, $user, $desc){
 		//1. Ceerate Object to Work
-		$obj_user = new User();
+		$obj_task = new Task();
 
 		
 		//Set data to te model
-		$obj_user-> setId_user($id);
-		$obj_user->setName($name);
-		$obj_user->setUser_name($user);
-		$obj_user->setUser_email($email);
-		$obj_user->setUser_password_hash($pass);
-		$obj_user->setId_Priv($priv);
-		
+		$obj_task->setId_area($area);
+		$obj_task->setId_user($user);
+		$obj_task->setDesc_task($desc);		
 
-		//We send the object from UserDAO
-		return UserDAO::updateUser($obj_user);
+		//We send the object from TaskDAO
+		return TaskDAO::updateTask($obj_task);
 
-
-	}//Function regUSer
+	}//Function updateTask
 
 	
 
