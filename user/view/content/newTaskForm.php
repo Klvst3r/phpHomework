@@ -52,7 +52,7 @@
                      <div class="panel-body">
 
                           <?php
-                          $form = new Form('newTask','POST','action.php?a=6', 'form', '');
+                          $form = new Form('newTask','POST','action.php?a=7', 'form', '');
                           ?>
                             <legend>Información de la tarea</legend>
 

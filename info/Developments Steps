@@ -498,11 +498,7 @@ Process to Work with Tasks
 				[sql/Combo.php]
 			- Include SQL Data
 				[sql/Data.php]
-				------------------------------> Here we go
 
-
-
-				
  102. After get information, it will process in script to add task
  		[user/view/addNewTask.php]
  103. Create and include content of the script add task
@@ -519,3 +515,10 @@ Process to Work with Tasks
  					[data/Connect.php]
  				- Include Model Task.php
  					[model/Task.php]
+105. Create Task DAO to eject the sentence SQL
+		[data/TaskDAO.php]
+			- Include Conection to BD
+				[data/Connect.php]
+			- Include Model of Tasks
+				[model/Task.php]
+				
