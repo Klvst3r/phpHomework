@@ -30,12 +30,12 @@
   if($_SERVER["REQUEST_METHOD"] == "POST"){
   	
     if(isset($_POST["area"]) && isset($_POST["usuario"]) && isset($_POST["desc_task"]) && isset($_POST["id_task"])){ //update_task
-      $id_task = $POST["id_task"];
+      $id_task = $_POST["id_task"];
       $area = $_POST["area"];
       $usuario = $_POST["usuario"];
       $desc_task = validate_field($_POST["desc_task"]);
           
-      AreaController::updateTask($id_task, $area, $usuario, $desc_task);
+      TaskController::updateTask($id_task, $area, $usuario, $desc_task);
 
       //After the Insert go task list 
       header("location:action.php?a=4"); 

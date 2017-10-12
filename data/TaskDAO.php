@@ -74,7 +74,7 @@ class TaskDAO extends Connect {
 
 	
 
-	public static function updateTask($user){
+	public static function updateTask($obj_task){
 		//Query to Execute
 		
 		$query = "UPDATE `tasks` SET `id_area` = :id_area, `id_user` = :id_user, `desc_task` = :desc_task WHERE `tasks`.`id_task` = :id_task";
