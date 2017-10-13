@@ -52,7 +52,7 @@ if(isset($a)){
 			break;
 		case 11:
 			//Eliminar Tareas
-			require_once("view/");
+			require_once("view/viewDelTask.php");
 			break;
 		case 12:
 			//Eliminar Areas
