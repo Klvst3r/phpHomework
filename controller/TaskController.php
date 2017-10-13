@@ -45,6 +45,16 @@ class TaskController {
 
 	}//Function updateTask
 
+	public function delTask($id){
+		$obj_task = new Task();
+		
+		$obj_task->setId_task($id);
+
+		//We send the object to TaskDAO in order to execute order
+		return TaskDAO::delTask($obj_task);
+
+	}//function to delete Task
+
 	
 
 
