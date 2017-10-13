@@ -11,7 +11,7 @@ class TaskController {
 	 * @param  [type] $desc 		[Receive description of task]
 	 * @param  [type] $date  		[Receive date of task in format YY-mm-dd HH:mm:ss]
 	 */
-	public function regTask($area, $user, $desc, $date){
+	public function regTask($area, $user, $desc, $date, $status){
 		//1. Ceerate Object to Work
 		$obj_task = new Task();
 
@@ -20,7 +20,7 @@ class TaskController {
 		$obj_task->setId_user($user);
 		$obj_task->setDesc_task($desc);
 		$obj_task->setDate_task($date);
-
+		$obj_task->setStatus($status);
 
 		//We send the object from TaskDAO
 		return TaskDAO::regTask($obj_task);

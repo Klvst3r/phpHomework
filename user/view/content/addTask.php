@@ -49,8 +49,9 @@
       $usuario = $_POST["usuario"];
       $desc_task = validate_field($_POST["desc_task"]);
       $date_task = date('Y-m-d H:i:s');
+      $status = 0;
           
-      TaskController::regTask($area, $usuario, $desc_task, $date_task);
+      TaskController::regTask($area, $usuario, $desc_task, $date_task, $status);
 
       //After the Insert go task list 
       header("location:action.php?a=4"); 

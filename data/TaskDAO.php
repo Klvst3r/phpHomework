@@ -40,7 +40,7 @@ class TaskDAO extends Connect {
 		/*$query = "INSERT INTO users (id_user, user_name, user_password_hash, user_email, name, id_priv, date_reg) 
 				  VALUES (NULL, ':user_name', ':user_password_hash', ':user_email', ':name', ':id_priv', ':date_reg')";*/
 
-		$query = "INSERT INTO tasks (id_task, id_area, id_user, desc_task, date_task) VALUES (NULL, :id_area, :id_user, :desc_task, :date_task)";
+		$query = "INSERT INTO tasks (id_task, id_area, id_user, desc_task, date_task, status) VALUES (NULL, :id_area, :id_user, :desc_task, :date_task, :status)";
 
 		self::getConection();
 	
@@ -58,6 +58,9 @@ class TaskDAO extends Connect {
 
 		$date_task = $obj_task->getDate_task();
 		$result->bindParam(":date_task", $date_task);
+
+		$status = $obj_task->getStatus();
+		$result->bindParam(":status", $status);
 
 		
 
