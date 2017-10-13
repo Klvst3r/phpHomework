@@ -533,16 +533,44 @@ Process to Work with Tasks
 				 [user/view/viewNewTaskForm.php]
 		  C) Create file to stablish a conection and make the query to obtain data from query to the values in Form
 				[user/sql/Data.php]
-92. A new verification is added with the User ID to execute the update of the current field
+107. A new verification is added with the User ID to execute the update of the current field
 		[user/view/addNewTask.php]
 		A) Create a new method updateTask in Task Controller to update Values in BD
 				[controller/TaskController.php]
 		B) In TaskDAO the insertion ocurs receiving 1 object with the ID User and the Description for the Task
 			[data/TaskDAO.php]
-93. Receibe data from Update Form to execute the update only with data modified
+108. Receive data from Update Form to execute the update only with data modified
 		[user/view/addNewTask.php]
 		A) Create a new method to update User data
 			 [controller/TaskController.php]
 		B) Create a new method to receive values to edit an task
 			[data/TaskDAO.php]
 			After this return the control to the Task list
+------------------------- Add Field Status in Task ------------------------------
+109. Modify table Task in BD and export it in SQL File
+		[assets/bd/5. Mod Task-Add Status/]
+110. Modify View, Controller and Model to Add field Satstus in Table Task
+			- View
+				[user/view/addNewTask.php] | [user/view/content/AddTask.php]
+			- Controller
+				[controller/TaskController.php]
+			- Model
+				[model/Task.php]
+			- DAO
+				[data/TaskDAO.php]
+-------------------------- Delete Task  ------------------------------------------
+111. From the task list view, ID USER is Send to acept o denied the action to delete record
+			[user/view/viewDelTask.php]
+			- Include Content
+				[user/view/content/delTask.php]
+			A) From the task list, the information in the table is showed with the botton Delete
+					[user/sql/TaskSQL.php]
+			B) The variable is received by the GET method with the User ID to generate a query for delete record  in BD through
+				the Task Controller.
+				 [user/view/viewDelTask.php]
+112. The Task Controller receive the id and put it in an object and return the object to Task Controller
+		[controller/TaskController.php]
+		A) Receibe the object in method delTask in TaskDAO to execute the deletion
+			[data/TaskDAO.php]
+		B) After the deletion the controller return the control to the view principal in panel admin an redirect to the Task List
+113. Verify inclution of Script Js to Confirm deletion
