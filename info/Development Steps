@@ -574,3 +574,4 @@ Process to Work with Tasks
 			[data/TaskDAO.php]
 		B) After the deletion the controller return the control to the view principal in panel admin an redirect to the Task List
 113. Verify inclution of Script Js to Confirm deletion
+114. After the deletion the Controller send the view again to Task List
