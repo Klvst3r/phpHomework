@@ -12,6 +12,7 @@ class Task {
 	private $id_user;
 	private $desc_task;
 	private $date_task;
+	private $status;
 
 	//Setters and Getters of Class
 	public function getId_task(){
@@ -54,6 +55,13 @@ class Task {
 		$this->date_task = $date_task;
 	}
 	
+	public function getStatus(){
+		return $this->status;
+	}
+
+	public function setStatus($status){
+		$this->status = $status;
+	}
 
 
 
