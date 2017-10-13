@@ -113,6 +113,31 @@ class TaskDAO extends Connect {
 
 
 
+	public function delTask($obj_task){
+		
+		$query = "DELETE from tasks where id_task = :id_task"; 
+
+		self::getConection();
+
+		$result = self::$cnx->prepare($query);
+
+		$id_task = $obj_task->getId_task();
+		$result->bindParam(":id_task", $id_task);
+
+		if($result->execute()){
+			//return true;
+			return true;
+		}
+
+		return false;		
+
+
+
+
+	}
+
+
+
 	
 
 	
