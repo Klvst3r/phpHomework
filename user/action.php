@@ -59,6 +59,10 @@ if(isset($a)){
 			require_once("view/viewDelArea.php");
 			break;
 		case 13:
+			//Done Task
+			require_once("view/executeTask.php");
+			break;
+		case 14:
 			//Imprimir Tarea
 			require_once("pdf.php");
 			break;

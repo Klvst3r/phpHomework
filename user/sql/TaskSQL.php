@@ -293,7 +293,7 @@ class TaskSQL extends Connect {
 
 
 
-			$toExecute = '<a class="btn btn-success btn-sm" href="action.php?a=6&b='. $id .'">Realizar <i class="fa fa-check"></i></a>';
+			$toExecute = '<a class="btn btn-success btn-sm" href="action.php?a=13&b='. $id .'">Realizar <i class="fa fa-check"></i></a>';
 	    	//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(action.php?a=6)">Eliminar</button>';
 	    	
 	    	
