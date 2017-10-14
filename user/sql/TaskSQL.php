@@ -168,7 +168,26 @@ class TaskSQL extends Connect {
 
 
 	}else{
-		echo "There aren't areas in BD to build table";
+		echo '
+			<div class="space"></div>
+			 <!-- Default box -->
+	      <div class="box">
+	        <div class="box-header with-border">
+	          <h3 class="box-title">Tareas</h3>
+
+	          <div class="box-tools pull-right">
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+	              <i class="fa fa-minus"></i></button>
+	            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+	              <i class="fa fa-times"></i></button>
+	          </div>
+	        </div>
+	        <div class="box-body" style="">
+	          No existen datos en la Bd para mostrar con el criterio establecido
+	        </div>
+	      </div>
+	      <!-- /.box -->
+		';
 	}
 
 	//free memory
@@ -177,6 +196,191 @@ class TaskSQL extends Connect {
 
 	}//function getTableTasks
 
-}
+
+
+	/**
+	 * Task to Execute
+	 */
+	
+	public static function getTableTasksExecute_Pag($query_count, $sql, $action){
+
+	/**
+	 * Vars to build pagination
+	 */
+	$order="id_task ASC";
+	$id_url = $_GET["a"];
+	$url = basename($_SERVER ["PHP_SELF"]) . '?a=' . $id_url;
+	$limit_end = 7;
+	//safe the value of the actual position
+	if(!isset($_GET["pos"])){
+		$ini = 1;
+	}else{
+		$ini = $_GET["pos"];
+
+	}
+	$init = ($ini-1) * $limit_end;
+
+	/*-------------------------*/
+
+	$query = $sql;
+	$query .= " LIMIT $init, $limit_end";//add limit init and limit end to the query
+
+
+
+	self::getConection();
+
+	/**
+	 * -Execute a new query only to count the fields in the table of BD
+	 */
+	$count = self::$cnx->prepare($query_count);
+
+	$count->execute();
+
+	$rows_count = $count->fetch();
+
+	$counted = $rows_count[0];
+	/*---------------------------------------------------------*/
+
+
+	//Query of data 
+	$result = self::$cnx->prepare($query);
+
+	$result->execute();
+
+	$rows = $result->rowCount();
+	$cols = $result->columnCount();
+
+	/**
+	 * Calculate pages
+	 */
+	$total = ceil($counted/$limit_end);
+
+		/*-------------------------------------*/
+
+	if($rows > 0){
+
+		echo '<table class="table table-striped table-hover">';
+		echo '<thead>
+		<tr>';
+		foreach(range(0, $result->columnCount() - 1) as $column_index){
+			$meta[] = $result->getColumnMeta($column_index);
+		}
+
+		for ($i=0; $i < $cols; $i++){
+			echo '<th>' . $meta[$i]["name"] . '</td>';	
+		}       		
+		echo '<th>Acción</th>';
+
+		echo '</tr>
+		</thead>
+		<tbody>';
+
+
+		for($i = 0; $i < $rows; $i++){
+			$data = $result->fetch();
+			echo '<tr>';
+
+			for($j = 0; $j < $cols; $j++){
+
+				echo '<td>' . $data[$j] .'</td>';
+
+
+			}
+			//echo '<td>' . $action . '</td>';
+			//$id = $data[$i];
+			$id = $data["ID"];
+			
+
+
+
+			$toExecute = '<a class="btn btn-success btn-sm" href="action.php?a=6&b='. $id .'">Realizar <i class="fa fa-check"></i></a>';
+	    	//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(action.php?a=6)">Eliminar</button>';
+	    	
+	    	
+			echo '<td>' . $toExecute . '</td>';
+			echo '</tr>';
+
+
+		}
+		echo "</tbody></table>";
+
+		  /*
+		   * numeration of records [important]
+		   */ 
+			  //echo "<div class='pagination'>";
+			  echo '<ul class="pagination">';
+			  /****************************************/
+			  if(($ini - 1) == 0)
+			  {
+			    echo '<li class="disabled"><a href="#">&laquo;</a></li>';
+			  }
+			  else
+			  {
+			    echo '<li><a href="'.$url.'&pos='.($ini-1).'"><b>&laquo;</b></a></li>';
+			  }
+			  /****************************************/
+			  for($k=1; $k <= $total; $k++)
+			  {
+			    if($ini == $k)
+			    {
+			      echo '<li class="active"><a href="#""><b>'.$k.'</b></a></li>';
+			      
+			    }
+			    else
+			    {
+			    	
+			      echo "<li><a href='$url&pos=$k'>".$k."</a></li>";
+			    }
+			  }
+			  /****************************************/
+			  if($ini == $total)
+			  {
+			    echo '<li class="disabled"><a href="#">&raquo;</a></li>';
+			  }
+			  else
+			  {
+			  	echo '<li><a href="'.$url.'&pos='.($ini+1).'"><b>&raquo;</b></a></li>';
+
+			  }
+			  echo "</ul>";
+			  //echo "</div>";
+			  /*******************END*******************/
+			 /*
+		   * End numeration of records [important]
+		   */ 
+
+
+	}else{
+		echo '
+			<div class="space"></div>
+			 <!-- Default box -->
+	      <div class="box">
+	        <div class="box-header with-border">
+	          <h3 class="box-title">Tareas</h3>
+
+	          <div class="box-tools pull-right">
+	            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+	              <i class="fa fa-minus"></i></button>
+	            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+	              <i class="fa fa-times"></i></button>
+	          </div>
+	        </div>
+	        <div class="box-body" style="">
+	          No existen datos en la Bd para mostrar con el criterio establecido
+	        </div>
+	      </div>
+	      <!-- /.box -->
+		';
+	}
+
+	//free memory
+	self::disconnect();
+
+
+	}//function getTableTasks
+	
+
+
+}//Class TaskSQL
 
 ?>
