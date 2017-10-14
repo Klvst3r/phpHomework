@@ -131,10 +131,36 @@ class TaskDAO extends Connect {
 
 		return false;		
 
+	} // Function del Task
 
+	public static function doneTask($obj_task){
+		//Query to Execute
+		
+		$query = "UPDATE `tasks` SET `status` = :status WHERE `tasks`.`id_task` = :id_task";
 
+		self::getConection();
+	
+		$result = self::$cnx->prepare($query);
 
-	}
+		$id_task = $obj_task->getId_task();
+		$result->bindParam(":id_task", $id_task);
+
+		$status = $obj_task->getStatus();
+		$result->bindParam(":status", $status);
+
+		//echo $query;
+
+		if($result->execute()){
+			//return true;
+			//echo "Insercion Exitosa";
+			self::disconnect();
+			return true;
+		}
+
+		return false;
+
+	}//function updateTask
+
 
 
 

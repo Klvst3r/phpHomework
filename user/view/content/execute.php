@@ -27,13 +27,17 @@
    <?php
 
    // The request to te server is type POST 
-  if($_SERVER["REQUEST_METHOD"] == "POST"){
-  	
-    if(isset($_POST["b"])){ //update_task
-      $id_task = $_POST["b"];
+  if($_SERVER["REQUEST_METHOD"] == "GET"){
+    
+    if(isset($_GET["b"])){ //update_task
+      $id_task = $_GET["b"];
       $status = 1;
+
+
           
       TaskController::doneTask($id_task, $status);
+      
+      //echo "id tarea: " . $id_task;
 
       //After the Update go task list 
       header("location:action.php?a=10"); 
@@ -48,7 +52,7 @@
     
   }else{
     //In case fail register the user send again to the form [viewNewTaskForm.php]
-  header("location:action.php?a=10"); 
+  //header("location:action.php?a=10"); 
   }  
  
 
