@@ -55,6 +55,22 @@ class TaskController {
 
 	}//function to delete Task
 
+
+	public function doneTask($id_task, $status){
+		//1. Ceerate Object to Work
+		$obj_task = new Task();
+
+		
+		//Set data to te model
+		$obj_task->setId_task($id_task);
+		$obj_task->setStatus($status);
+
+
+		//We send the object from TaskDAO
+		return TaskDAO::doneTask($obj_task);
+
+	}//Function doneTask
+
 	
 
 

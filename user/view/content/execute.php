@@ -31,8 +31,9 @@
   	
     if(isset($_POST["b"])){ //update_task
       $id_task = $_POST["b"];
+      $status = 1;
           
-      TaskController::doneTask($id_task);
+      TaskController::doneTask($id_task, $status);
 
       //After the Update go task list 
       header("location:action.php?a=10"); 
@@ -44,7 +45,7 @@
     }//variables received
       
     
-    } //If of data from form
+    
   }else{
     //In case fail register the user send again to the form [viewNewTaskForm.php]
   header("location:action.php?a=10"); 
