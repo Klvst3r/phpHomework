@@ -63,10 +63,10 @@
         </li>
 
         <li>
-          <a href="#">
+          <a href="action.php?a=10">
             <i class="fa fa-th"></i> <span>Ejecutar</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">ejecute</small>
+              <small class="label pull-right bg-green">2</small>
             </span>
           </a>
         </li>

@@ -48,7 +48,7 @@ if(isset($a)){
 			break;
 		case 10:
 			//Ajecutar Tareas
-			require_once("view/");
+			require_once("view/viewExecuteTask.php");
 			break;
 		case 11:
 			//Eliminar Tareas
