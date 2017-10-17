@@ -67,10 +67,14 @@ if(isset($a)){
 			require_once("view/finalizedTask.php");  //----------------------------> Por realizar consulta de tareas finalizadas
 			break;
 		case 15:
+			//Done Task
+			require_once("view/unfinalizedTask.php");  
+			break;			
+		case 16:
 			//Imprimir Tarea realizadas
 			require_once("pdfDoneTask.php");
 			break;
-		case 16:
+		case 17:
 			//Imprimir Tarea por realizar
 			require_once("pdfTask.php");
 			break;
