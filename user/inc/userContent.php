@@ -61,6 +61,17 @@
         </div>
       </div>      
 
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+        <h3 class="panel-title">Tareas</h3>
+        </div>
+        <div class="panel-body">
+           <a href="action.php?a=10" class="btn btn-default btn-large">
+              <i class="fa fa-check" aria-hidden="true"></i> Ejecutar Tareas
+            </a>
+        </div>
+      </div>     
+
 
     </section>
     <!-- /.content -->

@@ -63,8 +63,16 @@ if(isset($a)){
 			require_once("view/executeTask.php");
 			break;
 		case 14:
-			//Imprimir Tarea
-			require_once("pdf.php");
+			//Done Task
+			require_once("view/finalizedTask.php");  //----------------------------> Por realizar consulta de tareas finalizadas
+			break;
+		case 15:
+			//Imprimir Tarea realizadas
+			require_once("pdfDoneTask.php");
+			break;
+		case 16:
+			//Imprimir Tarea por realizar
+			require_once("pdfTask.php");
 			break;
 		default:
 			echo"No hay mas Opciones";
