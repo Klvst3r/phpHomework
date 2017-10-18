@@ -7,14 +7,14 @@ include 'sql/TaskSQL.php';
     <section class="content-header">
       <h1>
         Tareas
-        <small>Pendientes por ejecutar</small>
+        <small>Ejecutadas</small>
       </h1>
       <ol class="breadcrumb">
         
         <?php
         echo '<li><a href="'. PATH .'/user/"><i class="fa fa-user"></i> Inicio</a></li>';
         ?>
-        <li class="active">Listado de Tareas pendientes</li>
+        <li class="active">Listado de Tareas Ejecutada</li>
       </ol>
     </section>
     
@@ -28,7 +28,7 @@ include 'sql/TaskSQL.php';
         <div id="page-wrapper">
             <div class="row ">
                 <div class="col-lg-12 back-white" style="background-color: #f9f9f9;">
-                    <h1 class="page-header">Listado de tareas pendientes
+                    <h1 class="page-header">Listado de tareas realizadas
 
                     </h1>
                 </div>
@@ -42,7 +42,7 @@ include 'sql/TaskSQL.php';
 
   $params = "";
 
-  TaskSQL::getTableTasksUnfinalized($query_count, $query, $params);
+  TaskSQL::getTableTasksFinalized($query_count, $query, $params);
 
   ?>
        </div>

@@ -42,7 +42,7 @@ include 'sql/TaskSQL.php';
 
   $params = "";
 
-  TaskSQL::getTableTasksUnfinalized($query_count, $query, $params);
+  TaskSQL::getTableTasksFinalized($query_count, $query, $params);
 
   ?>
        </div>

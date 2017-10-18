@@ -387,7 +387,7 @@ class TaskSQL extends Connect {
 	 * Task Unfinalized
 	 */
 	
-	public static function getTableTasksUnfinalized($query_count, $sql, $action){
+	public static function getTableTasksFinalized($query_count, $sql, $action){
 
 	/**
 	 * Vars to build pagination
