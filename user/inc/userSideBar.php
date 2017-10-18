@@ -94,7 +94,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="action.php?a=10"><i class="fa fa-circle-o"></i> Tareas Ejecutadas</a></li>
+            <li><a href="action.php?a=14"><i class="fa fa-circle-o"></i> Tareas Ejecutadas</a></li>
             <li><a href="action.php?a=15"><i class="fa fa-circle-o"></i> Tareas sin Ejecutar</a></li>
           </ul>
         </li>
