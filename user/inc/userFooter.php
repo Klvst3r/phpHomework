@@ -1,6 +1,6 @@
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.0.1
+      <b>Version</b> 2.1.2
     </div>
     <strong>Copyright © <?php echo date("Y"); ?> <b class="text-blue">Klvst3r St.</b></strong> All rights reserved.
   </footer>
