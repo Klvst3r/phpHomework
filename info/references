@@ -286,3 +286,64 @@ if (!db('SELECT * FROM table WHERE 1 == 0') {
 
 
 -----------------------------------------------------------------------------------
+
+FPDF
+Pagina Oficial
+http://www.fpdf.org/
+
+Github
+https://github.com/Setasign/FPDF
+
+Importar Páginas
+https://www.setasign.com/products/fpdi/about/
+https://github.com/Setasign/FPDI
+
+
+Codificación de acentos y tildes con FDPF
+http://www.forosdelweb.com/f18/problema-con-acentos-fpdf-961423/
+
+
+
+Cita:
+Para las personas que utilizan fpdf como libreria para generar archivos PDF con php y tienen el molesto problema de no poder escribir caracteres como (á, é, í, ó, ú, ñ) porque les aparecen unos simbolos extraños, les comento que la solcuión para ello es hacer uso de la función utf8_decode() de php que convierte nuestros caracteres a ISO-8859-1, de tal forma que si desean ingresar el siguiente texto.
+
+"la niña juega en un árbol"
+
+Debemos ponerla de la siguiente forma
+
+utf8_decode("la niña juega en un árbol")
+
+Y listo, tendremos nuestros caracteres bien.
+
+
+
+http://acko.net/
+
+
+
+Cita 2:
+YO IGUAL ME QUEDE UN BUEN TIEMPO CON ESE PROBLEMA PERO AL FIN TENGO UNA SOLUCION!!!
+
+para escribir ACENTOS O Ñs directamente utiliza:
+Código:
+
+ html_entity_decode("&aacute;")
+
+y para acentos y Ñs que quieras imprimir desde una consulta sql agrega a tu codigo php:
+Código:
+
+ header("Content-Type: text/html; charset=iso-8859-1 ");
+
+Aqui hay un ejemplo que funciona perfectamente:
+Código:
+
+ $temp = "\nCat".html_entity_decode("&aacute;")."logo de productos de\n".$row["nombre"]."\n";
+
+Espero les sirva a todos los q vean este post, yo no encontre en ningun lado una explicacion asi de facil.
+
+
+
+
+Articulo
+http://www.aldibier.com/blog/articulo/fpdf-t%C3%ADldes-y-caracteres-utf-8
+
