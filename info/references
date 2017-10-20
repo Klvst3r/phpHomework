@@ -365,7 +365,53 @@ http://www.udb.edu.sv/udb/archivo/guia/informatica-ingenieria/php/2012/ii/guia-1
 http://www.fpdf.org/es/tutorial/index.php
 
 
-Scripts
+Scripts FPDF
+-------------------------------------------------
 http://www.fpdf.org/es/script/index.php
+http://www.fpdf.org/en/script/
+
+
+External scripts
+-------------------------------------------------
+
+    cPdfWriter
+    http://www.palos.ro/category/software-projects/#post-41
+
+    FPDI
+    http://www.setasign.de/products/pdf-php-solutions/fpdi/
+
+    HTML2PDF
+    http://www.html2pdf.fr/
+
+    HTML 2 PDF
+    http://html2fpdf.sourceforge.net/
+
+    Interpid components (Tag-based MultiCell | Table | Graph)
+    http://www.interpid.eu/development/46
+    http://www.interpid.eu/development/45
+    http://www.interpid.eu/development/47
+    http://www.interpid.eu/development/49
+
+
+    mPDF
+    http://mpdf.bpm1.com/
+
+    PDFB
+    http://www.chir.ag/tech/download/pdfb/
+
+    PDML | PDML2
+    http://pdml.sourceforge.net/
+    http://pdml2.sourceforge.net/
+
+    Shimbun
+    http://www.tplsystems.co.uk/shimbun/
+
+    svg2pdf
+    http://www.godisaduck.com/svg2pdf_with_fpdf
+
+    xhtml2pdf
+    http://xhtml2pdf.mandragor.org/
+
+
 
 
