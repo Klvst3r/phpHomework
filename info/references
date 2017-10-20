@@ -415,3 +415,44 @@ External scripts
 
 
 
+Enlaces PDF
+------------------------------------------------------------------------
+
+    Versiones de FPDF en otros lenguajes :
+        http://www.aspxnet.it   (ASP)
+        http://wxcode.sourceforge.net/components/wxpdfdoc/   (C++)
+        http://code.google.com/p/fpdf-plus-plus/   (C++)
+        https://github.com/jung-kurt/gofpdf   (Go)
+        http://lib.haxe.org/p/radpdf   (haXe)
+        http://sourceforge.net/projects/javafpdf/   (Java)
+        http://dasdeck.de/staff/valentin/lingo/pdf_class/   (Lingo)
+        http://code.google.com/p/fpdf-plus-plus/downloads/list   (Lua)
+        http://www.dgmgdm.com/fpdf4mvs   (z/OS - MVS)
+        https://github.com/jepafi/Free-JPDF-Pascal   (Free Pascal)
+        http://www.erasme.org/PL-FPDF,1337   (PL/SQL)
+        http://code.google.com/p/pyfpdf/   (Python)
+        http://www.fpdf.org/dl.php?id=94   (Python; Max Pat)
+        http://juanfernandoe.googlepages.com   (Python)
+        http://zeropluszero.com/software/fpdf/   (Ruby)
+        https://github.com/lamuzzachiodi/tclfpdf   (TCL)
+        http://www.linares.net/wxpdfcom/   (VB)
+        http://sourceforge.net/projects/fpdfnet/   (VB.NET)
+    Referencias del formato PDF :
+        http://www.adobe.com/devnet/pdf/pdf_reference.html
+    Lista de documentos de referencia sobre PDF :
+        http://www.adobe.com/devnet/acrobat/
+    Sitios dedicados al PDF :
+        http://www.pdfzone.com
+        http://www.planetpdf.com
+
+
+Example with MySQL
+http://www.fpdf.org/en/script/script30.php
+
+Example with MySQL
+http://www.fpdf.org/en/script/script10.php
+
+Table with MySQL
+http://www.fpdf.org/en/script/script14.php
+
+

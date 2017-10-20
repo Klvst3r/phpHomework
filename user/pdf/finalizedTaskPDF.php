@@ -571,7 +571,7 @@ $this->Cell(160,0,'','T');
 
 
 // Creación del objeto de la clase heredada
-$pdf = new PDF();
+$pdf = new FPDF();
 $pdf->AliasNbPages();
 
 $header = array(utf8_decode('País'), 'Capital', 'Superficie (km2)', 'Pobl. (en miles)');
