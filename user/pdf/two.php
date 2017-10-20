@@ -70,6 +70,6 @@ $prop=array('HeaderColor'=>array(230,230,230),
 $query = "SELECT A.id_task as ID, B.desc_area as Area, C.name as Usuario, A.desc_task as Tarea FROM tasks A, areas B, users C WHERE A.id_area = B.id_area AND A.id_user = C.id_user and A.status = '0' ORDER BY id_task";
 
 $pdf->Table($link, $query, $prop);
-$filename="TareasPendientes.pdf"; 
-$pdf->Output($filename);
+$fileNamePDF="TareasPendientes"; 
+$pdf->Output($fileNamePDF,'I');
 ?>
