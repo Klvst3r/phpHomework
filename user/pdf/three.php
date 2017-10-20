@@ -10,8 +10,8 @@ class PDF extends PDF_MySQL_Table{
 		//Title
 		$this->SetFont('Arial','',18);
 		$this->setX(20);
-		$this->Cell(0,6,'Tareas pendientes de ejecutar',0,1,'C');
-		$this->Line(20, 28, 195, 28); // 20mm from each edge
+		$this->Cell(0,6,'Tareas ejecutadas',0,1,'C');
+		$this->Line(20, 28, 280, 28); // 20mm from each edge
 		$this->Ln(20);
 		//Ensure table header is output
 		parent::Header();
@@ -19,7 +19,7 @@ class PDF extends PDF_MySQL_Table{
 
 	function Footer()
 	{
-		$this->Line(20, 285, 200, 285); // 20mm from each edge
+		$this->Line(20, 199, 280, 199); // 20mm from each edge
 	    // Posición: a 1,5 cm del final
 	    $this->SetY(-12);
 	    // Arial italic 8
@@ -42,7 +42,8 @@ class PDF extends PDF_MySQL_Table{
 	}
 
 
-$pdf=new PDF();
+$pdf=new PDF('L');
+
 $pdf->AliasNbPages();
 //$pdf->AddPage();
 //First table: put all columns automatically
@@ -58,18 +59,19 @@ $title = array(
 	);
 
 
-$pdf->AddCol('ID',15,$title["ID"],'C');
-$pdf->AddCol('Area',45,$title["Area"],'L');
-$pdf->AddCol('Usuario',40,$title["Usuario"],'C');
-$pdf->AddCol('Tarea',80,$title["Tarea"],'L');
+$pdf->AddCol('ID',10,$title["ID"],'C');
+$pdf->AddCol('Area',50,$title["Area"],'L');
+$pdf->AddCol('Usuario',30,$title["Usuario"],'C');
+$pdf->AddCol('Tarea',180,$title["Tarea"],'L');
 $prop=array('HeaderColor'=>array(230,230,230),
 			'color1'=>array(210,245,255),
 			'color2'=>array(255,255,210),
 			'padding'=>2);
 
-$query = "SELECT A.id_task as ID, B.desc_area as Area, C.name as Usuario, A.desc_task as Tarea FROM tasks A, areas B, users C WHERE A.id_area = B.id_area AND A.id_user = C.id_user and A.status = '0' ORDER BY id_task";
+$query = "SELECT A.id_task as ID, B.desc_area as Area, C.name as Usuario, A.desc_task as Tarea FROM tasks A, areas B, users C WHERE A.id_area = B.id_area AND A.id_user = C.id_user and A.status = '1' ORDER BY id_task";
 
 $pdf->Table($link, $query, $prop);
-$filename="TareasPendientes.pdf"; 
-$pdf->Output($filename);
+$fileNamePDF="TareasFinalizadas"; 
+$pdf->Output($fileNamePDF,'I');
+?>
 ?>

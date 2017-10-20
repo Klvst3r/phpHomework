@@ -100,11 +100,11 @@
         </li>
 
 
-        <li><a href="action.php?a=17"><i class="fa fa-book"></i> <span>Imprimir</span></a></li>
+        <li><a href="pdf/two.php"><i class="fa fa-book"></i> <span>Imprimir</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="pdf/one.php"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="pdf/two.php"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        <li><a href="pdf/three.php"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+        <li><a href="action.php?a=17"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

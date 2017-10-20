@@ -1,6 +1,6 @@
 <?php
 
-require_once("../assets/fpdf/fpdf.php");
+require_once("../../assets/fpdf/fpdf.php");
 //require('fpdf.php');
 
 header("Content-Type: text/html; charset=iso-8859-1 ");
